@@ -1,0 +1,230 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2040 1500" width="2040" height="1500">
+  <defs>
+    <marker id="dimArrow" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,5 L10,0 L8,5 L10,10 z" fill="#1f2933"/>
+    </marker>
+    <marker id="flowArrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L12,6 L0,12 z" fill="#2563eb"/>
+    </marker>
+    <style>
+      .title { font: 700 24px Arial, sans-serif; fill: #1f2933; }
+      .subtitle { font: 700 18px Arial, sans-serif; fill: #1f2933; }
+      .label { font: 14px Arial, sans-serif; fill: #1f2933; }
+      .small { font: 12px Arial, sans-serif; fill: #1f2933; }
+      .tiny { font: 11px Arial, sans-serif; fill: #1f2933; }
+      .outline { fill: none; stroke: #1f2933; stroke-width: 2; }
+      .hidden { fill: none; stroke: #7b90b8; stroke-width: 1.5; stroke-dasharray: 8 6; }
+      .centerline { fill: none; stroke: #98a1af; stroke-width: 1.2; stroke-dasharray: 10 6 2 6; }
+      .dim { fill: none; stroke: #1f2933; stroke-width: 1.3; marker-start: url(#dimArrow); marker-end: url(#dimArrow); }
+      .ext { fill: none; stroke: #1f2933; stroke-width: 1; }
+      .leader { fill: none; stroke: #1f2933; stroke-width: 1; }
+      .divider { fill: none; stroke: #98a1af; stroke-width: 1.2; }
+      .water { fill: #d9ecff; stroke: #2563eb; stroke-width: 1.6; }
+      .metalA { fill: #f7f8fa; stroke: #1f2933; stroke-width: 2; }
+      .metalB { fill: #e6e9ef; stroke: #1f2933; stroke-width: 2; }
+      .oring { fill: none; stroke: #2f7d4a; stroke-width: 2; stroke-dasharray: 10 5; }
+      .heat { fill: #fde1c4; stroke: #c56a1b; stroke-width: 1.2; }
+      .noteBox { fill: #fcfdff; stroke: #1f2933; stroke-width: 1.5; }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="2040" height="1500" fill="#fff"/>
+
+  <text x="1020" y="48" text-anchor="middle" class="title">Whole-Block Preview, 6-Channel Low-Restriction Version</text>
+  <text x="1020" y="78" text-anchor="middle" class="label">Custom inline TEC cold block for Fluval 107-class hose, optimized for full-bore flow and smooth transitions</text>
+  <text x="1020" y="102" text-anchor="middle" class="small">Units: mm | Scale: not to scale | Source of truth: tec_cold_block_mockup.scad</text>
+  <text x="1020" y="124" text-anchor="middle" class="small">Reference diagram only; use formal CAD and a release drawing for manufacturing.</text>
+
+  <g transform="translate(80,220)">
+    <text x="8" y="-50" class="subtitle">Top View</text>
+    <rect x="0" y="0" width="700" height="460" class="outline"/>
+    <rect x="70" y="75" width="560" height="310" class="hidden"/>
+    <polygon points="70,198.75 210,75 210,385 70,261.25" class="hidden"/>
+    <polygon points="490,75 630,198.75 630,261.25 490,385" class="hidden"/>
+    <rect x="210" y="75" width="280" height="43.33" class="hidden"/>
+    <rect x="210" y="128.33" width="280" height="43.33" class="hidden"/>
+    <rect x="210" y="181.67" width="280" height="43.33" class="hidden"/>
+    <rect x="210" y="235" width="280" height="43.33" class="hidden"/>
+    <rect x="210" y="288.33" width="280" height="43.33" class="hidden"/>
+    <rect x="210" y="341.67" width="280" height="43.33" class="hidden"/>
+    <rect x="190" y="70" width="320" height="320" class="outline"/>
+    <rect x="220" y="100" width="260" height="260" class="outline"/>
+    <rect x="60" y="60" width="580" height="340" class="oring"/>
+    <text x="10" y="18" class="tiny">6 x M3</text>
+    <text x="88" y="18" class="tiny">4 x hot-side mount</text>
+    <text x="224" y="18" class="tiny">Flat landing 64 x 64</text>
+    <text x="372" y="18" class="tiny">Hidden cavity 112 x 62 x 6</text>
+    <text x="546" y="18" class="tiny" fill="#2f7d4a">O-ring groove CL 116 x 68</text>
+    <circle cx="35" cy="35" r="8.5" class="outline"/>
+    <circle cx="155" cy="35" r="10.75" class="outline"/>
+    <circle cx="350" cy="35" r="8.5" class="outline"/>
+    <circle cx="545" cy="35" r="10.75" class="outline"/>
+    <circle cx="665" cy="35" r="8.5" class="outline"/>
+    <circle cx="35" cy="425" r="8.5" class="outline"/>
+    <circle cx="155" cy="425" r="10.75" class="outline"/>
+    <circle cx="350" cy="425" r="8.5" class="outline"/>
+    <circle cx="545" cy="425" r="10.75" class="outline"/>
+    <circle cx="665" cy="425" r="8.5" class="outline"/>
+    <line x1="-25" y1="230" x2="725" y2="230" class="centerline"/>
+    <text x="-38" y="225" class="tiny">B</text>
+    <text x="732" y="225" class="tiny">B</text>
+    <line x1="-30" y1="566" x2="50" y2="566" stroke="#2563eb" stroke-width="3" marker-end="url(#flowArrow)"/>
+    <text x="60" y="571" class="label" fill="#2563eb">Flow direction</text>
+    <line x1="0" y1="0" x2="0" y2="-36" class="ext"/>
+    <line x1="700" y1="0" x2="700" y2="-36" class="ext"/>
+    <line x1="0" y1="-36" x2="700" y2="-36" class="dim"/>
+    <text x="350" y="-48" text-anchor="middle" class="label">140</text>
+    <line x1="0" y1="0" x2="-36" y2="0" class="ext"/>
+    <line x1="0" y1="460" x2="-36" y2="460" class="ext"/>
+    <line x1="-36" y1="0" x2="-36" y2="460" class="dim"/>
+    <text x="-54" y="230" transform="rotate(-90 -54 230)" text-anchor="middle" class="label">92</text>
+    <line x1="70" y1="594" x2="630" y2="594" class="dim"/>
+    <line x1="70" y1="385" x2="70" y2="594" class="ext"/>
+    <line x1="630" y1="385" x2="630" y2="594" class="ext"/>
+    <text x="350" y="616" text-anchor="middle" class="label">112 cavity length</text>
+    <line x1="652" y1="75" x2="692" y2="75" class="ext"/>
+    <line x1="652" y1="385" x2="692" y2="385" class="ext"/>
+    <line x1="692" y1="75" x2="692" y2="385" class="dim"/>
+    <text x="710" y="230" transform="rotate(-90 710 230)" text-anchor="middle" class="label">62 cavity width</text>
+    <line x1="190" y1="455" x2="510" y2="455" class="dim"/>
+    <line x1="190" y1="390" x2="190" y2="455" class="ext"/>
+    <line x1="510" y1="390" x2="510" y2="455" class="ext"/>
+    <line x1="70" y1="470" x2="630" y2="470" class="divider"/>
+    <text x="120" y="498" text-anchor="middle" class="tiny">28 mm inlet diffuser</text>
+    <line x1="120" y1="486" x2="142" y2="385" class="leader"/>
+    <text x="350" y="475" text-anchor="middle" class="label">64 landing</text>
+    <text x="350" y="498" text-anchor="middle" class="tiny">Critical flat zone 52 x 52 min</text>
+    <text x="575" y="498" text-anchor="middle" class="tiny">28 mm outlet converger</text>
+    <line x1="575" y1="486" x2="558" y2="385" class="leader"/>
+    <line x1="180" y1="509" x2="520" y2="509" class="divider"/>
+    <text x="350" y="521" text-anchor="middle" class="tiny">6 channels, each about 8.67 x 56 x 6</text>
+    <text x="350" y="544" text-anchor="middle" class="tiny">5 fins at 2 mm, no dedicated side walls</text>
+  </g>
+
+  <g transform="translate(1072,220)">
+    <text x="8" y="-50" class="subtitle">External Side Elevation</text>
+    <rect x="108" y="50" width="630" height="108" class="metalA"/>
+    <rect x="0" y="55.625" width="108" height="72" rx="10" ry="10" class="metalB"/>
+    <rect x="738" y="55.625" width="108" height="72" rx="10" ry="10" class="metalB"/>
+    <line x1="0" y1="64.625" x2="12" y2="55.625" class="outline"/>
+    <line x1="0" y1="118.625" x2="12" y2="127.625" class="outline"/>
+    <line x1="846" y1="64.625" x2="834" y2="55.625" class="outline"/>
+    <line x1="846" y1="118.625" x2="834" y2="127.625" class="outline"/>
+    <line x1="82" y1="52.625" x2="82" y2="130.625" class="outline"/>
+    <line x1="764" y1="52.625" x2="764" y2="130.625" class="outline"/>
+    <line x1="108" y1="86" x2="738" y2="86" class="outline"/>
+    <text x="746" y="80" class="tiny">Lid / base split</text>
+    <rect x="279" y="42" width="288" height="16" class="outline"/>
+    <text x="574" y="38" class="tiny">64 mm flat thermal landing</text>
+    <line x1="610" y1="40" x2="567" y2="50" class="leader"/>
+    <text x="16" y="42" class="tiny">1 x 45 degree entry chamfer</text>
+    <line x1="112" y1="44" x2="12" y2="64.625" class="leader"/>
+    <text x="10" y="170" class="tiny">0.8 mm retention bead</text>
+    <line x1="92" y1="168" x2="62" y2="127.625" class="leader"/>
+    <text x="304" y="178" class="tiny">Light edge break acceptable</text>
+    <line x1="418" y1="174" x2="380" y2="158" class="leader"/>
+    <line x1="108" y1="18" x2="738" y2="18" class="dim"/>
+    <line x1="108" y1="50" x2="108" y2="18" class="ext"/>
+    <line x1="738" y1="50" x2="738" y2="18" class="ext"/>
+    <text x="423" y="8" text-anchor="middle" class="label">140 body</text>
+    <line x1="0" y1="182" x2="108" y2="182" class="dim"/>
+    <line x1="0" y1="127.625" x2="0" y2="182" class="ext"/>
+    <line x1="108" y1="127.625" x2="108" y2="182" class="ext"/>
+    <text x="54" y="204" text-anchor="middle" class="label">24 stub</text>
+    <line x1="780" y1="55.625" x2="824" y2="55.625" class="ext"/>
+    <line x1="780" y1="127.625" x2="824" y2="127.625" class="ext"/>
+    <line x1="824" y1="55.625" x2="824" y2="127.625" class="dim"/>
+    <text x="842" y="91.625" transform="rotate(-90 842 91.625)" text-anchor="middle" class="label">16.0 OD preview</text>
+    <line x1="870" y1="50" x2="870" y2="158" class="dim"/>
+    <line x1="738" y1="50" x2="870" y2="50" class="ext"/>
+    <line x1="738" y1="158" x2="870" y2="158" class="ext"/>
+    <text x="888" y="104" transform="rotate(-90 888 104)" text-anchor="middle" class="label">24 total thickness</text>
+  </g>
+
+  <g transform="translate(80,860)">
+    <rect x="0" y="0" width="860" height="580" class="noteBox"/>
+    <g transform="translate(0,110)">
+      <text x="8" y="-50" class="subtitle">Section B-B</text>
+      <rect x="108" y="50" width="630" height="108" class="metalA"/>
+      <rect x="0" y="55.625" width="108" height="72" rx="10" ry="10" class="metalB"/>
+      <rect x="738" y="55.625" width="108" height="72" rx="10" ry="10" class="metalB"/>
+      <line x1="108" y1="86" x2="738" y2="86" class="outline"/>
+      <text x="750" y="82" class="tiny">Split plane</text>
+      <path d="M 108 59 L 738 59 L 738 124 L 675 124 C 643 124 630 117 612 108 C 594 99 581 91 549 86 L 297 86 C 265 91 252 99 234 108 C 216 117 203 124 171 124 L 108 124 Z" class="water"/>
+      <rect x="297" y="59" width="252" height="27" class="water" opacity="0.45"/>
+      <rect x="260" y="6" width="326" height="44" class="heat"/>
+      <text x="423" y="31" text-anchor="middle" class="tiny">TEC / copper spreader zone above</text>
+      <line x1="-20" y1="86" x2="866" y2="86" class="centerline"/>
+      <line x1="-20" y1="91.625" x2="866" y2="91.625" class="centerline"/>
+      <text x="20" y="80" class="tiny">Split plane</text>
+      <text x="20" y="105" class="tiny">Port axis 1.25 mm below split</text>
+      <text x="14" y="32" class="tiny">Full-bore split passage</text>
+      <line x1="128" y1="34" x2="108" y2="59" class="leader"/>
+      <text x="620" y="32" class="tiny">No threaded restriction</text>
+      <line x1="714" y1="34" x2="738" y2="59" class="leader"/>
+      <line x1="108" y1="18" x2="738" y2="18" class="dim"/>
+      <line x1="108" y1="50" x2="108" y2="18" class="ext"/>
+      <line x1="738" y1="50" x2="738" y2="18" class="ext"/>
+      <text x="423" y="8" text-anchor="middle" class="label">140 body</text>
+      <line x1="0" y1="190" x2="108" y2="190" class="dim"/>
+      <line x1="0" y1="127.625" x2="0" y2="190" class="ext"/>
+      <line x1="108" y1="127.625" x2="108" y2="190" class="ext"/>
+      <text x="54" y="212" text-anchor="middle" class="label">24 stub</text>
+      <line x1="760" y1="59" x2="805" y2="59" class="ext"/>
+      <line x1="760" y1="124" x2="805" y2="124" class="ext"/>
+      <line x1="805" y1="59" x2="805" y2="124" class="dim"/>
+      <text x="823" y="91" transform="rotate(-90 823 91)" text-anchor="middle" class="label">14.5 min bore</text>
+      <line x1="840" y1="50" x2="840" y2="86" class="dim"/>
+      <line x1="738" y1="50" x2="840" y2="50" class="ext"/>
+      <line x1="738" y1="86" x2="840" y2="86" class="ext"/>
+      <text x="858" y="68" transform="rotate(-90 858 68)" text-anchor="middle" class="label">8 lid</text>
+      <line x1="860" y1="86" x2="860" y2="158" class="dim"/>
+      <line x1="738" y1="86" x2="860" y2="86" class="ext"/>
+      <line x1="738" y1="158" x2="860" y2="158" class="ext"/>
+      <text x="878" y="122" transform="rotate(-90 878 122)" text-anchor="middle" class="label">16 base</text>
+      <line x1="900" y1="50" x2="900" y2="59" class="dim"/>
+      <line x1="738" y1="50" x2="900" y2="50" class="ext"/>
+      <line x1="738" y1="59" x2="900" y2="59" class="ext"/>
+      <text x="918" y="55" transform="rotate(-90 918 55)" text-anchor="middle" class="tiny">2 roof</text>
+      <line x1="920" y1="59" x2="920" y2="86" class="dim"/>
+      <line x1="738" y1="59" x2="920" y2="59" class="ext"/>
+      <line x1="738" y1="86" x2="920" y2="86" class="ext"/>
+      <text x="938" y="72" transform="rotate(-90 938 72)" text-anchor="middle" class="tiny">6 cavity depth</text>
+      <line x1="171" y1="222" x2="297" y2="222" class="dim"/>
+      <line x1="171" y1="124" x2="171" y2="222" class="ext"/>
+      <line x1="297" y1="86" x2="297" y2="222" class="ext"/>
+      <text x="234" y="244" text-anchor="middle" class="label">28 diffuser</text>
+      <line x1="297" y1="260" x2="549" y2="260" class="dim"/>
+      <line x1="297" y1="86" x2="297" y2="260" class="ext"/>
+      <line x1="549" y1="86" x2="549" y2="260" class="ext"/>
+      <text x="423" y="282" text-anchor="middle" class="label">56 straight core</text>
+      <line x1="549" y1="222" x2="675" y2="222" class="dim"/>
+      <line x1="549" y1="86" x2="549" y2="222" class="ext"/>
+      <line x1="675" y1="124" x2="675" y2="222" class="ext"/>
+      <text x="612" y="244" text-anchor="middle" class="label">28 converger</text>
+      <line x1="171" y1="150" x2="675" y2="150" class="divider"/>
+      <text x="423" y="168" text-anchor="middle" class="tiny">Other 5 lanes parallel behind this cut</text>
+    </g>
+  </g>
+
+  <g transform="translate(1100,860)">
+    <rect x="0" y="0" width="860" height="580" class="noteBox"/>
+    <text x="20" y="34" class="subtitle">Refined Main-Block Notes</text>
+    <text x="20" y="74" class="label">1. The block grew to 140 x 92 x 24 so the 14.5 mm bore and smooth</text>
+    <text x="44" y="98" class="label">manifolds fit cleanly without hidden neck-downs.</text>
+    <text x="20" y="138" class="label">2. The core stays at 6 wider channels because low head loss matters more</text>
+    <text x="44" y="162" class="label">than squeezing in extra lanes.</text>
+    <text x="20" y="202" class="label">3. The channel pack open area remains above the Fluval hose area, so the</text>
+    <text x="44" y="226" class="label">core should not become the hydraulic choke point.</text>
+    <text x="20" y="266" class="label">4. The port axis sits 1.25 mm below the split plane so the lid still keeps</text>
+    <text x="44" y="290" class="label">a 2 mm roof over the upper half-bore.</text>
+    <text x="20" y="330" class="label">5. The full-block spigot OD is still provisional; only that OD should move</text>
+    <text x="44" y="354" class="label">after the hose coupons are tested.</text>
+    <text x="20" y="394" class="label">6. Keep the split spigots smooth outside and full-bore inside.</text>
+    <text x="20" y="426" class="label">7. Hot-side mount: 4 x Intel LGA1700 / LGA1851 on a 78 x 78 mm square.</text>
+    <text x="20" y="474" class="subtitle">Current Fixed Geometry</text>
+    <text x="20" y="504" class="label">Body 140 x 92 x 24 | Lid 8 | Base 16 | Cavity 112 x 62 x 6</text>
+    <text x="20" y="528" class="label">Channels 6 x 8.67 x 56 x 6 | Fins 5 x 2 | 14.5 mm min bore</text>
+    <text x="20" y="552" class="label">Landing 64 x 64 | Hot-side mount 78 x 78</text>
+  </g>
+</svg>

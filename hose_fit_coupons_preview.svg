@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 920" width="1920" height="920">
+  <defs>
+    <style>
+      .title { font: 700 24px Arial, sans-serif; fill: #1f2933; }
+      .subtitle { font: 700 18px Arial, sans-serif; fill: #1f2933; }
+      .label { font: 14px Arial, sans-serif; fill: #1f2933; }
+      .small { font: 12px Arial, sans-serif; fill: #1f2933; }
+      .tiny { font: 11px Arial, sans-serif; fill: #1f2933; }
+      .outline { fill: none; stroke: #1f2933; stroke-width: 2; }
+      .solid { fill: #e6e9ef; stroke: #1f2933; stroke-width: 2; }
+      .accent { fill: #d9ecff; stroke: #2563eb; stroke-width: 1.5; }
+      .divider { fill: none; stroke: #98a1af; stroke-width: 1.2; }
+      .noteBox { fill: #fcfdff; stroke: #1f2933; stroke-width: 1.5; }
+    </style>
+  </defs>
+
+  <rect width="1920" height="920" fill="#fff"/>
+  <text x="960" y="48" text-anchor="middle" class="title">Hose-Fit Coupon Set</text>
+  <text x="960" y="78" text-anchor="middle" class="label">Three PLA-first fit gauges for hose grip only. Use them to lock the split-spigot OD before the wet-part release.</text>
+  <text x="960" y="102" text-anchor="middle" class="small">Units: mm | Scale: not to scale | Source of truth: tec_cold_block_mockup.scad</text>
+  <text x="960" y="124" text-anchor="middle" class="small">Reference diagram only; use formal CAD and a release drawing for manufacturing.</text>
+
+  <g transform="translate(70,170)">
+    <rect x="0" y="0" width="520" height="520" rx="10" ry="10" class="noteBox"/>
+    <text x="260" y="36" text-anchor="middle" class="subtitle">Coupon A</text>
+    <text x="260" y="62" text-anchor="middle" class="label">14.8 OD easy-fit fallback</text>
+    <line x1="40" y1="78" x2="480" y2="78" class="divider"/>
+    <rect x="140" y="240" width="240" height="40" rx="6" ry="6" class="solid"/>
+    <rect x="180" y="180.8" width="180" height="88.8" rx="8" ry="8" class="accent"/>
+    <rect x="318" y="178" width="8" height="94.4" class="solid"/>
+    <circle cx="210" cy="436" r="44.4" class="accent"/>
+    <text x="210" y="442" text-anchor="middle" class="small">14.8</text>
+    <line x1="40" y1="460" x2="480" y2="460" class="divider"/>
+    <text x="260" y="488" text-anchor="middle" class="small">Use when larger diameters feel too aggressive</text>
+    <text x="260" y="512" text-anchor="middle" class="small">on the real hose.</text>
+  </g>
+
+  <g transform="translate(700,170)">
+    <rect x="0" y="0" width="520" height="520" rx="10" ry="10" class="noteBox"/>
+    <text x="260" y="36" text-anchor="middle" class="subtitle">Coupon B</text>
+    <text x="260" y="62" text-anchor="middle" class="label">15.4 OD middle-ground check</text>
+    <line x1="40" y1="78" x2="480" y2="78" class="divider"/>
+    <rect x="140" y="240" width="240" height="40" rx="6" ry="6" class="solid"/>
+    <rect x="180" y="178.4" width="180" height="92.4" rx="8" ry="8" class="accent"/>
+    <rect x="318" y="175.8" width="8" height="97.6" class="solid"/>
+    <circle cx="210" cy="436" r="46.2" class="accent"/>
+    <text x="210" y="442" text-anchor="middle" class="small">15.4</text>
+    <line x1="40" y1="460" x2="480" y2="460" class="divider"/>
+    <text x="260" y="488" text-anchor="middle" class="small">Use if 16.0 OD is too tight but 14.8 OD</text>
+    <text x="260" y="512" text-anchor="middle" class="small">looks unnecessarily loose.</text>
+  </g>
+
+  <g transform="translate(1330,170)">
+    <rect x="0" y="0" width="520" height="520" rx="10" ry="10" class="noteBox"/>
+    <text x="260" y="36" text-anchor="middle" class="subtitle">Main Guess</text>
+    <text x="260" y="62" text-anchor="middle" class="label">16.0 OD used on the full block preview</text>
+    <line x1="40" y1="78" x2="480" y2="78" class="divider"/>
+    <rect x="140" y="240" width="240" height="46" rx="6" ry="6" class="solid"/>
+    <rect x="190" y="167" width="180" height="96" rx="8" ry="8" class="accent"/>
+    <rect x="325" y="164" width="10" height="102" class="solid"/>
+    <circle cx="210" cy="436" r="48" class="accent"/>
+    <text x="210" y="442" text-anchor="middle" class="small">16.0</text>
+    <line x1="40" y1="460" x2="480" y2="460" class="divider"/>
+    <text x="260" y="488" text-anchor="middle" class="small">Best-guess full-block OD with more wall</text>
+    <text x="260" y="512" text-anchor="middle" class="small">around the near-full 14.5 mm bore.</text>
+  </g>
+
+  <g transform="translate(70,760)">
+    <rect x="0" y="0" width="1780" height="110" rx="10" ry="10" class="noteBox"/>
+    <text x="20" y="34" class="label">Shared coupon geometry: base 40 x 24 x 5 | stub length 30 | retaining bead 1.0 | same insertion length on all three.</text>
+    <text x="20" y="66" class="label">These are grip and sizing checks only, not leak or hydraulic tests.</text>
+    <text x="20" y="94" class="label">Use the winning coupon OD to update the split spigots on the full block before releasing the wet-service part.</text>
+  </g>
+</svg>

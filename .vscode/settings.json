@@ -1,0 +1,7 @@
+{
+  "openscad.launchPath": "C:\\Program Files (x86)\\OpenSCAD\\openscad.exe",
+  "terminal.integrated.env.windows": {
+    "OPENSCAD_EXE": "C:\\Program Files (x86)\\OpenSCAD\\openscad.com",
+    "PATH": "${env:PATH};C:\\Program Files (x86)\\OpenSCAD\\openscad.exe"
+  }
+}

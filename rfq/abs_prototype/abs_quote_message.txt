@@ -1,0 +1,28 @@
+Please quote this as a PLA fit and geometry prototype only for an aquarium chiller cold block.
+
+All stated dimensions are in mm.
+
+Required core parts in this first order:
+
+1. Lid half of the cold block
+2. Base half of the cold block
+3. Hose-fit coupon at 16.0 mm OD
+4. Hose-fit coupon at 15.4 mm OD
+5. Hose-fit coupon at 14.8 mm OD
+6. Open prototype support frame
+
+Critical requirements:
+
+- prioritize dimensional fidelity over cosmetic finish
+- use the lowest-cost PLA printing option that still keeps dimensions accurate enough for fit checks
+- do not alter the hose spigot profiles without approval
+- do not make any manufacturability-driven geometry changes without approval
+- keep the coupon diameters accurate
+- preserve the block outline, current 6-screw assembly layout, the Intel LGA1700 / LGA1851 hot-side hole pattern, and the short split-relief notches at the port roots
+
+Notes:
+
+- this is not a final wet-service part
+- this prototype is for hose fit, installation space, clamp access, lid/base alignment, support-frame fit, and general assembly checks only
+- if any preview SVGs are shared later, treat them as reference-only, not-to-scale support sheets; the STL files remain the primary print geometry
+- final 316L stainless machining will be quoted later after these PLA parts are tested

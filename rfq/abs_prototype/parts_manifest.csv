@@ -1,0 +1,7 @@
+part_id,quote_group,file_name,quantity,description,source
+FIT-A,core,cold_block_lid.stl,1,Cold block lid half,rfq/abs_prototype/exports/export_lid.scad
+FIT-B,core,cold_block_base.stl,1,Cold block base half,rfq/abs_prototype/exports/export_base.scad
+FIT-C,core,coupon_main_16_0mm.stl,1,Hose-fit coupon at 16.0 mm OD,rfq/abs_prototype/exports/export_coupon_main.scad
+FIT-D,core,coupon_mid_15_4mm.stl,1,Hose-fit coupon at 15.4 mm OD,rfq/abs_prototype/exports/export_coupon_mid.scad
+FIT-E,core,coupon_small_14_8mm.stl,1,Hose-fit coupon at 14.8 mm OD,rfq/abs_prototype/exports/export_coupon_small.scad
+FIT-F,core,prototype_support_frame.stl,1,Open prototype support frame with display mast and vertical PSU stack,rfq/abs_prototype/exports/export_prototype_support.scad

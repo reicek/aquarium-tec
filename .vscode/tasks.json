@@ -1,0 +1,11 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Export OpenSCAD Prototype STL Set",
+      "type": "shell",
+      "command": "$ErrorActionPreference = 'Stop'; Set-Location '${workspaceFolder}'; $out = Join-Path $PWD 'rfq\\abs_prototype\\stl'; $src = Join-Path $PWD 'rfq\\abs_prototype\\exports'; New-Item -ItemType Directory -Force -Path $out | Out-Null; $exe = if (Test-Path 'C:\\Program Files (x86)\\OpenSCAD\\openscad.com') { 'C:\\Program Files (x86)\\OpenSCAD\\openscad.com' } elseif ($env:OPENSCAD_EXE) { $env:OPENSCAD_EXE } else { 'C:\\Program Files (x86)\\OpenSCAD\\openscad.exe' }; & $exe -o (Join-Path $out 'cold_block_lid.stl') (Join-Path $src 'export_lid.scad'); & $exe -o (Join-Path $out 'cold_block_base.stl') (Join-Path $src 'export_base.scad'); & $exe -o (Join-Path $out 'coupon_main_16_0mm.stl') (Join-Path $src 'export_coupon_main.scad'); & $exe -o (Join-Path $out 'coupon_mid_15_4mm.stl') (Join-Path $src 'export_coupon_mid.scad'); & $exe -o (Join-Path $out 'coupon_small_14_8mm.stl') (Join-Path $src 'export_coupon_small.scad'); & $exe -o (Join-Path $out 'prototype_support_frame.stl') (Join-Path $src 'export_prototype_support.scad')",
+      "problemMatcher": []
+    }
+  ]
+}

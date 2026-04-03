@@ -1,0 +1,154 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2060 1460" width="2060" height="1460">
+  <defs>
+    <marker id="dimArrow" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,5 L10,0 L8,5 L10,10 z" fill="#1f2933"/>
+    </marker>
+    <style>
+      .title { font: 700 24px Arial, sans-serif; fill: #1f2933; }
+      .subtitle { font: 700 18px Arial, sans-serif; fill: #1f2933; }
+      .label { font: 14px Arial, sans-serif; fill: #1f2933; }
+      .small { font: 12px Arial, sans-serif; fill: #1f2933; }
+      .tiny { font: 11px Arial, sans-serif; fill: #1f2933; }
+      .outline { fill: none; stroke: #1f2933; stroke-width: 2; }
+      .hidden { fill: none; stroke: #7b90b8; stroke-width: 1.5; stroke-dasharray: 8 6; }
+      .centerline { fill: none; stroke: #98a1af; stroke-width: 1.2; stroke-dasharray: 10 6 2 6; }
+      .dim { fill: none; stroke: #1f2933; stroke-width: 1.3; marker-start: url(#dimArrow); marker-end: url(#dimArrow); }
+      .ext { fill: none; stroke: #1f2933; stroke-width: 1; }
+      .leader { fill: none; stroke: #1f2933; stroke-width: 1; }
+      .divider { fill: none; stroke: #98a1af; stroke-width: 1.2; }
+      .water { fill: #d9ecff; stroke: #2563eb; stroke-width: 1.6; }
+      .metal { fill: #e6e9ef; stroke: #1f2933; stroke-width: 2; }
+      .oring { fill: none; stroke: #2f7d4a; stroke-width: 2; stroke-dasharray: 10 5; }
+      .seal { fill: #eaf5ec; stroke: #2f7d4a; stroke-width: 1.5; }
+      .noteBox { fill: #fcfdff; stroke: #1f2933; stroke-width: 1.5; }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="2060" height="1460" fill="#fff"/>
+
+  <text x="1030" y="48" text-anchor="middle" class="title">Cold-Block Base Preview</text>
+  <text x="1030" y="78" text-anchor="middle" class="label">Base-half reference sheet for the PLA-first prototype round and the later stainless freeze</text>
+  <text x="1030" y="102" text-anchor="middle" class="small">Units: mm | Scale: not to scale | Source of truth: tec_cold_block_mockup.scad</text>
+  <text x="1030" y="124" text-anchor="middle" class="small">Reference diagram only; use formal CAD and a release drawing for manufacturing.</text>
+
+  <g transform="translate(80,220)">
+    <text x="8" y="-50" class="subtitle">Split-Plane Face</text>
+    <rect x="0" y="0" width="700" height="460" class="outline"/>
+    <rect x="210" y="75" width="280" height="310" class="hidden"/>
+    <polygon points="70,198.75 210,75 210,385 70,261.25" class="hidden"/>
+    <polygon points="490,75 630,198.75 630,261.25 490,385" class="hidden"/>
+    <rect x="60" y="60" width="580" height="340" class="oring"/>
+    <text x="10" y="18" class="tiny">6 x 2.5 pilot</text>
+    <text x="108" y="18" class="tiny">4 x 4.3 hot-side through-holes</text>
+    <text x="286" y="18" class="tiny">Hidden lid-only six-lane zone</text>
+    <text x="528" y="18" class="tiny" fill="#2f7d4a">O-ring groove CL 116 x 68</text>
+    <circle cx="35" cy="35" r="6.25" class="outline"/>
+    <circle cx="155" cy="35" r="10.75" class="outline"/>
+    <circle cx="350" cy="35" r="6.25" class="outline"/>
+    <circle cx="545" cy="35" r="10.75" class="outline"/>
+    <circle cx="665" cy="35" r="6.25" class="outline"/>
+    <circle cx="35" cy="425" r="6.25" class="outline"/>
+    <circle cx="155" cy="425" r="10.75" class="outline"/>
+    <circle cx="350" cy="425" r="6.25" class="outline"/>
+    <circle cx="545" cy="425" r="10.75" class="outline"/>
+    <circle cx="665" cy="425" r="6.25" class="outline"/>
+    <line x1="-25" y1="230" x2="725" y2="230" class="centerline"/>
+    <text x="-38" y="225" class="tiny">A</text>
+    <text x="732" y="225" class="tiny">A</text>
+    <line x1="0" y1="0" x2="0" y2="-36" class="ext"/>
+    <line x1="700" y1="0" x2="700" y2="-36" class="ext"/>
+    <line x1="0" y1="-36" x2="700" y2="-36" class="dim"/>
+    <text x="350" y="-48" text-anchor="middle" class="label">140 body</text>
+    <line x1="0" y1="0" x2="-36" y2="0" class="ext"/>
+    <line x1="0" y1="460" x2="-36" y2="460" class="ext"/>
+    <line x1="-36" y1="0" x2="-36" y2="460" class="dim"/>
+    <text x="-54" y="230" transform="rotate(-90 -54 230)" text-anchor="middle" class="label">92</text>
+    <line x1="60" y1="548" x2="640" y2="548" class="dim"/>
+    <line x1="60" y1="400" x2="60" y2="548" class="ext"/>
+    <line x1="640" y1="400" x2="640" y2="548" class="ext"/>
+    <text x="350" y="570" text-anchor="middle" class="label">116 groove CL length</text>
+    <line x1="652" y1="60" x2="692" y2="60" class="ext"/>
+    <line x1="652" y1="400" x2="692" y2="400" class="ext"/>
+    <line x1="692" y1="60" x2="692" y2="400" class="dim"/>
+    <text x="718" y="230" transform="rotate(-90 718 230)" text-anchor="middle" class="label">68 groove CL width</text>
+    <line x1="70" y1="470" x2="630" y2="470" class="divider"/>
+    <text x="130" y="492" text-anchor="middle" class="tiny">28 mm inlet lower half</text>
+    <line x1="130" y1="480" x2="142" y2="385" class="leader"/>
+    <text x="570" y="492" text-anchor="middle" class="tiny">28 mm outlet lower half</text>
+    <line x1="570" y1="480" x2="558" y2="385" class="leader"/>
+  </g>
+
+  <g transform="translate(1060,220)">
+    <text x="8" y="-50" class="subtitle">Section A-A Through Base-Only Water Geometry</text>
+    <rect x="108" y="84" width="630" height="72" class="metal"/>
+    <rect x="0" y="84" width="108" height="59" class="metal"/>
+    <rect x="738" y="84" width="108" height="59" class="metal"/>
+    <line x1="108" y1="84" x2="738" y2="84" class="outline"/>
+    <text x="746" y="100" class="tiny">Split plane to lid</text>
+    <rect x="189" y="57" width="252" height="27" class="hidden"/>
+    <rect x="0" y="71" width="108" height="13" class="hidden"/>
+    <rect x="738" y="71" width="108" height="13" class="hidden"/>
+    <text x="14" y="58" class="tiny">Hidden upper split support</text>
+    <line x1="146" y1="60" x2="108" y2="71" class="leader"/>
+    <text x="470" y="58" class="tiny">Hidden lid-only lane volume</text>
+    <line x1="588" y1="60" x2="441" y2="57" class="leader"/>
+    <path d="M 108 84 L 189 84 C 160 84 145 89 132 97 C 120 104 113 112 108 122 Z" class="water"/>
+    <path d="M 441 84 L 738 84 L 738 122 L 630 122 C 598 122 585 115 567 106 C 525 89 490 84 441 84 Z" class="water"/>
+    <text x="146" y="176" class="tiny">Lower inlet half-bore</text>
+    <text x="306" y="176" class="tiny">Solid base below lid-only lanes</text>
+    <text x="590" y="176" class="tiny">Lower outlet half-bore</text>
+    <line x1="108" y1="42" x2="738" y2="42" class="dim"/>
+    <line x1="108" y1="84" x2="108" y2="42" class="ext"/>
+    <line x1="738" y1="84" x2="738" y2="42" class="ext"/>
+    <text x="423" y="32" text-anchor="middle" class="label">140 body</text>
+    <line x1="0" y1="198" x2="108" y2="198" class="dim"/>
+    <line x1="0" y1="149" x2="0" y2="198" class="ext"/>
+    <line x1="108" y1="149" x2="108" y2="198" class="ext"/>
+    <text x="54" y="220" text-anchor="middle" class="label">24 stub</text>
+    <line x1="782" y1="84" x2="832" y2="84" class="ext"/>
+    <line x1="782" y1="143" x2="832" y2="143" class="ext"/>
+    <line x1="832" y1="84" x2="832" y2="143" class="dim"/>
+    <text x="850" y="114" transform="rotate(-90 850 114)" text-anchor="middle" class="tiny">Lower support</text>
+    <line x1="900" y1="84" x2="900" y2="156" class="dim"/>
+    <line x1="738" y1="84" x2="900" y2="84" class="ext"/>
+    <line x1="738" y1="156" x2="900" y2="156" class="ext"/>
+    <text x="918" y="120" transform="rotate(-90 918 120)" text-anchor="middle" class="tiny">16 base</text>
+
+    <g transform="translate(0,290)">
+      <text x="0" y="-18" class="subtitle">Groove Detail</text>
+      <rect x="0" y="0" width="470" height="214" class="noteBox"/>
+      <rect x="70" y="84" width="280" height="50" class="metal"/>
+      <rect x="166" y="84" width="88" height="17" class="seal"/>
+      <line x1="166" y1="84" x2="166" y2="60" class="ext"/>
+      <line x1="254" y1="84" x2="254" y2="60" class="ext"/>
+      <line x1="166" y1="60" x2="254" y2="60" class="dim"/>
+      <text x="210" y="48" text-anchor="middle" class="label">2.4 groove width</text>
+      <line x1="278" y1="84" x2="318" y2="84" class="ext"/>
+      <line x1="278" y1="101" x2="318" y2="101" class="ext"/>
+      <line x1="318" y1="84" x2="318" y2="101" class="dim"/>
+      <text x="336" y="92" transform="rotate(-90 336 92)" text-anchor="middle" class="label">1.5 depth</text>
+      <text x="24" y="160" class="small">Rectangular groove centered on the 116 x 68 mm seal centerline.</text>
+      <text x="24" y="182" class="small">This base face carries the seal in both the PLA fit round</text>
+      <text x="24" y="204" class="small">and the later metal release.</text>
+    </g>
+  </g>
+
+  <g transform="translate(80,860)">
+    <rect x="0" y="0" width="860" height="540" class="noteBox"/>
+    <text x="20" y="34" class="subtitle">What The Base Actually Owns</text>
+    <text x="20" y="74" class="label">1. The base carries the 2.4 x 1.5 mm rectangular seal groove on the</text>
+    <text x="44" y="98" class="label">116 x 68 mm centerline rectangle.</text>
+    <text x="20" y="138" class="label">2. The base owns the lower split-spigot support, lower half-bore,</text>
+    <text x="44" y="162" class="label">and both lower transition floors.</text>
+    <text x="20" y="202" class="label">3. The six straight 56 mm lanes are cut into the lid, so a base-only</text>
+    <text x="44" y="226" class="label">print should not be judged by channel appearance.</text>
+    <text x="20" y="266" class="label">4. The six assembly holes in the base are 2.5 mm pilot holes, not</text>
+    <text x="44" y="290" class="label">lid clearance holes.</text>
+    <text x="20" y="330" class="label">5. The four 4.3 mm hot-side mount holes pass through the base as well,</text>
+    <text x="44" y="354" class="label">preserving the 78 x 78 mm cooler pattern.</text>
+    <text x="20" y="394" class="label">6. This sheet is for geometry control; PCBWay still only needs the STL</text>
+    <text x="44" y="418" class="label">set for the PLA quote round.</text>
+    <text x="20" y="458" class="label">7. Do not freeze the final stainless part until the hose coupons lock</text>
+    <text x="44" y="482" class="label">the real spigot OD.</text>
+  </g>
+</svg>
