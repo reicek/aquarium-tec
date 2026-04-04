@@ -4,7 +4,7 @@
 
 - Confirm the sheet matches the current SCAD geometry.
 - Confirm the channel count shown is six, not five or seven.
-- Confirm lid/base ownership of the split spigots is correct.
+- Confirm lid/base ownership and separate hose-plug ownership are shown correctly.
 - Confirm the base sheet does not imply straight-channel water volume in the base.
 - Confirm the seal groove appears only on the base-oriented sheet.
 

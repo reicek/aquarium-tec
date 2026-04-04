@@ -1,0 +1,6 @@
+part_id,quote_group,file_name,quantity,material,description,source
+CNC-A,required,cold_block_lid.step,1,316L stainless steel,Cold block lid with thermal landing and six straight channels,rfq/final_hybrid_cnc/exports/export_lid.scad
+CNC-B,required,cold_block_base.step,1,CNC POM,Cold block base with seal groove and lower transition floors,rfq/final_hybrid_cnc/exports/export_base.scad
+CNC-C,option_16_0,hose_plug_main_16_0mm.step,2,CNC POM,Hose-plug pair at 16.0 mm OD with shared trapped root,rfq/final_hybrid_cnc/exports/export_plug_main.scad
+CNC-D,option_15_4,hose_plug_mid_15_4mm.step,2,CNC POM,Hose-plug pair at 15.4 mm OD with shared trapped root,rfq/final_hybrid_cnc/exports/export_plug_mid.scad
+CNC-E,option_14_8,hose_plug_small_14_8mm.step,2,CNC POM,Hose-plug pair at 14.8 mm OD with shared trapped root,rfq/final_hybrid_cnc/exports/export_plug_small.scad

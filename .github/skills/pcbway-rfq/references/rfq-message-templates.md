@@ -6,8 +6,8 @@ Please quote this as a PLA-first fit and geometry prototype only.
 
 Critical requirements:
 
-- keep the hose spigot diameters accurate
-- do not alter the spigot profiles without approval
+- keep the hose-plug outer diameters accurate
+- do not alter the hose-plug outside profiles or trapped root geometry without approval
 - preserve the block envelope and screw-hole layout
 - prioritize dimensional fidelity over cosmetic finish
 - keep any attached reference SVGs aligned to the current SCAD geometry

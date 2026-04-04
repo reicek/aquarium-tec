@@ -84,32 +84,45 @@ One earlier concept kept the channel pack open enough but used a 13.5 mm port bo
 - use smooth round-to-plenum transitions
 - avoid threaded fittings in the flow path for the first version
 
-## Spigot strategy
+## Hose-plug strategy
 
 ### Selected for prototype
 
-- split spigots machined half in lid and half in base
+- separate replaceable hose plugs, one per port
 - no threads required
 - user plans to clamp the hose externally
 
 Reason:
 
-- supports the smooth outer hose interface desired by the user
+- lets the PLA prototype validate the same swappable hose-plug architecture planned for the final hybrid build
 - avoids extra fittings in the flow path
-- keeps the geometry simple enough for both plastic mockup and final CNC part
+- keeps hose OD changes isolated to the plug parts
 
-### Spigot fit approach
+### Hose-plug fit approach
 
 The final OD is not yet frozen. The current strategy is:
 
 - full block best guess: 16.0 mm OD
-- coupon 1: 15.4 mm OD
-- coupon 2: 14.8 mm OD
+- option 1: 15.4 mm OD hose plug
+- option 2: 14.8 mm OD hose plug
 
 Reason:
 
-- resolve hose grip in one prototype round
-- do not lock the final stainless spigot OD before physical hose testing
+- resolve hose grip in one prototype round using the real plug geometry
+- do not lock the final hose-plug OD before physical hose-plug testing
+
+### Selected for final wet revision
+
+- separate replaceable hose plugs, one per port
+- trapped anti-rotation plug interface between lid and base
+- lid stays 316L stainless steel
+- base and hose plugs move to CNC POM
+
+Reason:
+
+- keep metal only where the TEC landing and channel pack need it
+- reduce final wet-part cost versus a full 316L block
+- make hose-plug replacement or OD changes possible without remachining the lid
 
 ## Materials
 
@@ -120,27 +133,27 @@ Reason:
 - poor choice for long-term aquarium water contact
 - avoid corrosion and contamination risk
 
-### Selected: 316L stainless as default final wet material
+### Selected: 316L lid plus CNC POM base and hose plugs as default final wet architecture
 
 Reason:
 
-- good availability and machinability
-- aquarium-safe enough for freshwater when properly finished and passivated
-- easier to quote than titanium
+- lid keeps the TEC landing and channel pack in metal
+- POM is a realistic CNC aquarium-contact plastic for the base and replaceable hose plugs
+- easier cost target than a full 316L block
 
-### Premium option: Grade 2 titanium
+### Rejected for final wet release: coated 3D-printed plastic wet parts
 
 Reason:
 
-- better corrosion comfort margin
-- more expensive, so not the default baseline
+- coating integrity becomes the water barrier instead of the substrate
+- seal grooves, bores, and clamp-load regions are poor places to depend on hand-applied coatings
 
 ## Manufacturing path
 
 ### Selected phase order
 
 1. PLA prototype for fit and space validation
-2. stainless CNC block after fit is confirmed
+2. hybrid CNC lid, base, and hose-plug set after fit is confirmed
 3. controller carrier PCB and wiring harness refinement
 
 Reason:
@@ -215,11 +228,12 @@ Reason:
 
 ### Prototype driver status
 
-- external BTS7960 / IBT-2 style module remains the current low-cost prototype reference
-- but it is treated as provisional, not sacred
+- the approved first powered-prototype driver is the external Double BTS7960 43A H-bridge module
+- a better-qualified driver still remains the later upgrade path if reliability becomes more important than cost
 
 Reason:
 
+- user-approved exact low-cost module for prototype bring-up is now known
 - quality variation in clone modules is a known concern
 - if reliability becomes more important than cost, a better-qualified driver should replace it
 

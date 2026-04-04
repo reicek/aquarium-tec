@@ -1,6 +1,6 @@
 ---
 name: "Cold Block Reference Drawings"
-description: "Use for SCAD-to-SVG mechanical reference drawing maintenance, preview SVG fixes, section-view water-path corrections, split-spigot ownership checks, palette consistency, combined overview cleanup, and XML-safe diagram updates for the cold block."
+description: "Use for SCAD-to-SVG mechanical reference drawing maintenance, preview SVG fixes, section-view water-path corrections, hose-plug ownership checks, palette consistency, combined overview cleanup, and XML-safe diagram updates for the cold block."
 tools: [read, edit, search]
 user-invocable: false
 ---
@@ -19,13 +19,13 @@ You specialize in keeping the cold-block reference drawings aligned with the act
 
 - DO NOT let manual SVG sketches drift away from the SCAD geometry.
 - DO NOT show blue water overlays outside block-owned internal volumes unless both split halves are intentionally being shown.
-- DO NOT forget that split spigot support is shared: lid owns the upper half and base owns the lower half, aligned at the split plane.
+- DO NOT forget that the hose plug is a separate trapped part; the lid owns the straight-channel region while the base owns the seal groove and lower transition floor.
 - DO NOT change the frozen 6-channel, 14.5 mm minimum-bore, 28 mm transition baseline without explicit design intent.
 - DO NOT present a reference SVG as though it were a formal manufacturing drawing.
 
 ## Focus
 
-- keep dedicated lid, base, whole-block, combined, and coupon sheets internally consistent
+- keep dedicated lid, base, whole-block, combined, and hose-plug option sheets internally consistent
 - preserve a consistent palette: charcoal outlines/text, blue water, green seals, amber thermal zones, blue-gray hidden geometry
 - keep section annotations legible and tied to actual ownership of geometry
 - put professional header metadata on each sheet: units, scale status, source of truth, and reference-only status

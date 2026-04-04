@@ -31,7 +31,7 @@ Recommended structure:
 
 Practical baseline parts:
 
-- main PSU: Mean Well LRS-350-24
+- main PSU: Mean Well LRS-350-24, approved project baseline PSU
 - logic converter: industrial 24 V to 5 V DC-DC module, 1 A minimum
 - optional fan converter: 24 V to 12 V DC-DC, 1 A minimum
 
@@ -42,13 +42,13 @@ Logic power budget note:
 
 ## TEC driver strategy
 
-Prototype baseline already discussed:
+Approved prototype baseline:
 
-- external IBT-2 / BTS7960 module
+- external Double BTS7960 43A H-bridge module
 
 Current engineering stance:
 
-- acceptable for first bring-up
+- approved for the first powered prototype
 - not automatically trusted for long-term continuous-duty use
 
 Important issue:

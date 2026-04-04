@@ -10,7 +10,7 @@ Build a high-quality prototype aquarium chiller around a 50 x 50 mm TEC module, 
 
 - an inline custom heat exchanger instead of cooling the canister body
 - low hydraulic restriction so the Fluval 107 and inline CO2 diffuser do not see excessive backpressure
-- a two-stage manufacturing path: low-cost PLA fit prototype first, CNC stainless final
+- a two-stage manufacturing path: low-cost PLA fit prototype first, then a hybrid CNC wet-part release with a 316L lid and CNC POM base and plugs
 - wireless monitoring and control using a Seeed Studio XIAO nRF52840 Plus
 - a local HMI using the Seeed Studio Round Display for XIAO
 - documentation written for practical RFQs to PCBWay
@@ -30,17 +30,19 @@ The current cold block baseline is:
 - 6 straight parallel channels
 - full-bore 14.5 mm minimum internal water path
 - smooth 28 mm inlet diffuser and 28 mm outlet converger
-- body excluding spigots: 140 x 92 x 24 mm
+- body excluding hose plugs: 140 x 92 x 24 mm
 - lid/base split: 8 mm / 16 mm
 - cavity envelope: 112 x 62 x 6 mm
 - 6 channels, each about 8.67 x 56 x 6 mm
 - 5 internal fins at 2 mm and no dedicated side walls
 - 6 assembly screws after the side-center pair was removed
-- 24 mm split spigots
+- current SCAD uses separate 24 mm hose plugs for the prototype and final hybrid baseline
 - 4 x Intel LGA1700 / LGA1851 hot-side mounting holes on a 78 x 78 mm square
-- open prototype support frame: about 248 x 190 mm footprint with block cradle, side display mast, compact rear vertical PSU panel with fixed Mean Well side-mount holes, upper driver shelf, and low hose strain-relief tabs aligned to the spigot bead position
-- provisional full-block spigot OD: 16.0 mm
-- extra hose-fit coupon ODs: 15.4 mm and 14.8 mm
+- open prototype support frame: about 248 x 190 mm footprint with block cradle, side display mast, compact rear vertical PSU panel with fixed Mean Well LRS-350-24 side-mount spacing, a rear-facing Double BTS7960 mount with the heatsink outboard plus a pass-through window and widened lower cable notch behind the board, and low hose strain-relief tabs aligned to the hose-plug bead position
+- provisional installed hose-plug OD: 16.0 mm
+- extra hose-plug option ODs: 15.4 mm and 14.8 mm
+- final wet-part material split: 316L lid, CNC POM base, separate CNC POM hose plugs
+- final wet-part direction: separate trapped hose plugs are now the active SCAD and package baseline
 
 The current mechanical source files live one level above this folder:
 
@@ -55,8 +57,8 @@ The current mechanical source files live one level above this folder:
 ## Reference SVG conventions
 
 - use a consistent palette: charcoal outlines and text, blue water, green seals, amber thermal zones, and blue-gray hidden geometry
-- in section views, show blue water only inside block-owned internal volumes; do not let water overlays float over split-spigot support unless both halves are intentionally shown
-- split spigot support is shared: the lid owns the upper half and the base owns the lower half, both aligned to the split plane
+- in section views, show blue water only inside block-owned internal volumes; do not let water overlays float over dry plug-capture pockets unless the plug or wetted throat is intentionally shown
+- the SCAD and SVGs must stay aligned on the separate trapped hose-plug baseline; if the plug geometry changes, update the lid, base, whole, and combined sheets together
 - combined overview sheets should reuse the dedicated lid and base reference geometry rather than looser sketches
 - if reference SVGs are included with RFQ material, verify them against the current SCAD before relying on them
 
@@ -69,7 +71,7 @@ These decisions are intentionally treated as fixed unless new test data invalida
 3. Use 6 channels, not 7 or 9, because low head loss matters more than extra wetted perimeter in this application.
 4. Keep minimum internal bore at or above the Fluval hose ID target of 14.5 mm.
 5. Do not use aluminum in the wet water path.
-6. Prototype the geometry in PLA first, then machine the final wet part in 316L stainless steel by default.
+6. Prototype the geometry in PLA first, then use a 316L lid with CNC POM base and separate CNC POM hose plugs as the default final wet assembly.
 7. Use the 230 W class CPU air cooler as the hot-side cooler, with a copper spreader between TEC and cooler base.
 8. Keep the high-current TEC driver separate from the XIAO logic board in the first electronics revision.
 9. Use the Seeed Studio XIAO nRF52840 Plus as the main controller platform.
@@ -110,13 +112,13 @@ Control architecture:
 
 Power supply:
 
-- Preferred: Mean Well LRS-350-24
+- Locked: Mean Well LRS-350-24
 - Output: 24 V, 14.6 A, 350.4 W
 - Reason: enough headroom for the TEC, control electronics, cooling fan conversion losses, and continuous-duty margin
 
 Prototype TEC driver:
 
-- Low-cost option already discussed: generic IBT-2 / BTS7960 module
+- Locked for the first powered prototype: Double BTS7960 43A H-bridge module
 - Quality-preferred option for later refinement: a better-qualified 24 V motor/H-bridge module or a custom MOSFET power stage
 
 Important electrical note:
@@ -193,14 +195,14 @@ Important implications:
 - `pcbway_handoff.md`: PCBWay-oriented RFQ and file-prep notes for the plastic-fit, CNC, and PCB phases
 - `validation_and_open_items.md`: prototype gates, test plan, and open decisions
 - `packages/controller_hmi_schematic_package.md`: schematic-ready system package for the XIAO Plus, Round Display, and interface board
-- `../rfq/abs_prototype/abs_prototype_rfq_package.md`: first PCBWay RFQ package for the plastic fit mockup, kept in a legacy folder name
+- `../rfq/pla_prototype/pla_prototype_rfq_package.md`: first PCBWay RFQ package for the PLA plastic fit mockup
 
 ## Immediate next actions
 
 1. review the SCAD and SVGs visually
-2. order the PLA mockup and hose-fit coupons
-3. use the coupon results to lock the final spigot OD
-4. freeze the stainless block drawing and machining request
+2. order the PLA mockup and hose-plug option set
+3. use the prototype hose-plug results to lock the final hose-plug OD
+4. freeze the hybrid lid/base/plug drawing and machining request
 5. bring up the XIAO Plus plus Round Display HMI stack using Arduino GFX or Seeed_GFX, not the TFT-only path
 6. decide whether the first electronics spin uses an external TEC driver module or a custom power stage
 

@@ -9,8 +9,10 @@
 
 ## Geometry ownership
 
-- The lid owns the upper half of the split spigots.
-- The base owns the lower half of the split spigots.
+- The final baseline uses separate trapped hose plugs as distinct parts at both ports.
+- The lid owns the six straight channels, the thermal landing, and the upper transition roof.
+- The base owns the rectangular seal groove and the lower transition floor.
+- The hose plugs are separate parts trapped between lid and base through plug pockets.
 - The six straight 56 mm channels are cut into the lid half, not the base.
 - The base carries the rectangular seal groove.
 - Section views must not imply a continuous cavity in the base under the straight-channel region.
@@ -20,7 +22,7 @@
 - Use blue water overlays only for block-owned internal water volume shown by that sheet.
 - If a section shows only the base-owned geometry, the water fill must stay inside the base-owned lower volume.
 - If a section shows only the lid-owned geometry, the water fill must stay inside the lid-owned upper volume.
-- Do not let water overlays float over split-spigot support areas unless both halves are deliberately being compared.
+- Do not let water overlays float over plug-capture pockets unless the plug or the wetted throat is deliberately being shown.
 
 ## Palette
 

@@ -17,6 +17,7 @@ user-invocable: true
 1. Read `agent/validation_and_open_items.md`.
 2. Use [validation-gates.md](./references/validation-gates.md) to stage the work.
 3. Record results using [test-record-template.md](./references/test-record-template.md).
+4. If the user is really asking whether the project is ready to send out, hand the review off to `manufacturing-readiness-review` instead of treating open gates as resolved.
 
 ## Rules
 

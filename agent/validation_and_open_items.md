@@ -6,24 +6,25 @@ This file captures what still needs to be validated before the project is truly 
 
 ### Gate 1: geometry and hose-fit validation
 
-Required before stainless order:
+Required before the final hybrid wet-part order:
 
-- test 16.0 mm full-block spigot fit on real Fluval hose
-- test 15.4 mm coupon fit
-- test 14.8 mm coupon fit
+- test 16.0 mm hose plug fit on real Fluval hose
+- test 15.4 mm hose plug fit
+- test 14.8 mm hose plug fit
+- confirm the plug roots seat correctly in the trapped pockets before the lid is clamped
 - verify insertion depth and clamp access
 - verify that the body size fits the intended installation envelope
 
 Output from Gate 1:
 
-- final spigot OD decision
+- final hose-plug OD decision
 - confirmation or revision of block body clearance assumptions
 
 ### Gate 2: mechanical CAD freeze
 
-Required before CNC metal order:
+Required before the final hybrid CNC order:
 
-- lock final spigot OD
+- lock final hose-plug OD
 - confirm seal strategy
 - confirm screw length and assembly method
 - confirm whether any external flats or mounting details are needed
@@ -64,10 +65,10 @@ Output from Gate 4:
 
 These are still intentionally unresolved.
 
-1. Final spigot OD after coupon fit testing.
-2. Final wet material: 316L stainless default or Grade 2 titanium premium.
+1. Final hose-plug OD after prototype hose-plug fit testing.
+2. Exact trapped hose-plug interlock geometry and whether the plug root needs a dedicated secondary seal.
 3. Exact seal implementation: cord, custom O-ring, or gasket-equivalent.
-4. Exact TEC driver used for the first powered prototype.
+4. Logic-threshold compatibility and safe-default behavior on the approved Double BTS7960 43A driver module.
 5. Whether the first controller PCB only conditions signals or also integrates some low-current switched outputs.
 6. Exact CPU cooler fan voltage and current.
 7. Exact sensor part numbers and connector family.
@@ -76,10 +77,11 @@ These are still intentionally unresolved.
 ## Important measurements still needed
 
 1. Actual hose inside diameter on the real Fluval hose when measured with calipers.
-2. Actual hose compliance and insertion force on each prototype coupon.
+2. Actual hose compliance and insertion force on each prototype hose-plug option.
 3. Actual installed space around the canister, hose bend radii, and cable routing.
 4. Actual current draw and voltage rating of the chosen CPU cooler fan.
-5. Practical enclosure or mounting space for the 43 x 43 mm class Round Display board and any controller enclosure around it.
+5. Practical enclosure or mounting space for the exact 43 x 43 mm Round Display board and any controller enclosure around it.
+6. Measured Double BTS7960 board hole-center spacing and preferred final retention method if the rear-facing windowed mount is later upgraded from the plain ledge support.
 
 ## Prototype test checklist
 

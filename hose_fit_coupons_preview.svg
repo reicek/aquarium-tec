@@ -1,5 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 920" width="1920" height="920">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 980" width="1920" height="980">
   <defs>
+    <marker id="dimArrow" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,5 L10,0 L8,5 L10,10 z" fill="#1f2933"/>
+    </marker>
     <style>
       .title { font: 700 24px Arial, sans-serif; fill: #1f2933; }
       .subtitle { font: 700 18px Arial, sans-serif; fill: #1f2933; }
@@ -7,68 +10,139 @@
       .small { font: 12px Arial, sans-serif; fill: #1f2933; }
       .tiny { font: 11px Arial, sans-serif; fill: #1f2933; }
       .outline { fill: none; stroke: #1f2933; stroke-width: 2; }
-      .solid { fill: #e6e9ef; stroke: #1f2933; stroke-width: 2; }
-      .accent { fill: #d9ecff; stroke: #2563eb; stroke-width: 1.5; }
+      .dim { fill: none; stroke: #1f2933; stroke-width: 1.3; marker-start: url(#dimArrow); marker-end: url(#dimArrow); }
+      .ext { fill: none; stroke: #1f2933; stroke-width: 1; }
+      .leader { fill: none; stroke: #1f2933; stroke-width: 1; }
       .divider { fill: none; stroke: #98a1af; stroke-width: 1.2; }
+      .part { fill: #e6e9ef; stroke: #1f2933; stroke-width: 2; }
+      .water { fill: #d9ecff; stroke: #2563eb; stroke-width: 1.4; }
+      .seal { fill: none; stroke: #2f7d4a; stroke-width: 1.6; stroke-dasharray: 8 4; }
       .noteBox { fill: #fcfdff; stroke: #1f2933; stroke-width: 1.5; }
     </style>
   </defs>
 
-  <rect width="1920" height="920" fill="#fff"/>
-  <text x="960" y="48" text-anchor="middle" class="title">Hose-Fit Coupon Set</text>
-  <text x="960" y="78" text-anchor="middle" class="label">Three PLA-first fit gauges for hose grip only. Use them to lock the split-spigot OD before the wet-part release.</text>
+  <rect x="0" y="0" width="1920" height="980" fill="#fff"/>
+
+  <text x="960" y="48" text-anchor="middle" class="title">Hose Plug Size Options</text>
+  <text x="960" y="78" text-anchor="middle" class="label">Three interchangeable PLA-first hose-plug options using the same trapped root geometry planned for the final hybrid block</text>
   <text x="960" y="102" text-anchor="middle" class="small">Units: mm | Scale: not to scale | Source of truth: tec_cold_block_mockup.scad</text>
   <text x="960" y="124" text-anchor="middle" class="small">Reference diagram only; use formal CAD and a release drawing for manufacturing.</text>
 
   <g transform="translate(70,170)">
     <rect x="0" y="0" width="520" height="520" rx="10" ry="10" class="noteBox"/>
-    <text x="260" y="36" text-anchor="middle" class="subtitle">Coupon A</text>
+    <text x="260" y="36" text-anchor="middle" class="subtitle">Option A</text>
     <text x="260" y="62" text-anchor="middle" class="label">14.8 OD easy-fit fallback</text>
     <line x1="40" y1="78" x2="480" y2="78" class="divider"/>
-    <rect x="140" y="240" width="240" height="40" rx="6" ry="6" class="solid"/>
-    <rect x="180" y="180.8" width="180" height="88.8" rx="8" ry="8" class="accent"/>
-    <rect x="318" y="178" width="8" height="94.4" class="solid"/>
-    <circle cx="210" cy="436" r="44.4" class="accent"/>
-    <text x="210" y="442" text-anchor="middle" class="small">14.8</text>
-    <line x1="40" y1="460" x2="480" y2="460" class="divider"/>
-    <text x="260" y="488" text-anchor="middle" class="small">Use when larger diameters feel too aggressive</text>
-    <text x="260" y="512" text-anchor="middle" class="small">on the real hose.</text>
+
+    <line x1="348" y1="150" x2="348" y2="326" class="ext"/>
+    <text x="360" y="164" class="tiny">Block side face</text>
+
+    <rect x="96" y="238" width="230" height="32" rx="16" ry="16" class="part"/>
+    <rect x="326" y="220" width="22" height="68" rx="4" ry="4" class="part"/>
+    <rect x="348" y="230" width="40" height="48" rx="10" ry="10" class="part"/>
+    <rect x="388" y="208" width="78" height="92" rx="12" ry="12" class="part"/>
+    <rect x="108" y="250" width="358" height="8" rx="4" ry="4" class="water"/>
+    <rect x="329" y="226" width="16" height="56" class="seal"/>
+
+    <line x1="96" y1="336" x2="348" y2="336" class="dim"/>
+    <line x1="96" y1="270" x2="96" y2="336" class="ext"/>
+    <line x1="348" y1="288" x2="348" y2="336" class="ext"/>
+    <text x="222" y="358" text-anchor="middle" class="label">24 plug projection</text>
+
+    <text x="92" y="198" class="tiny">Retaining bead near tip</text>
+    <line x1="198" y1="202" x2="204" y2="238" class="leader"/>
+    <text x="370" y="194" class="tiny">2 mm face-seal flange</text>
+    <line x1="386" y1="198" x2="338" y2="220" class="leader"/>
+    <text x="438" y="186" class="tiny">Rounded trapped head</text>
+    <line x1="448" y1="190" x2="432" y2="208" class="leader"/>
+
+    <circle cx="120" cy="434" r="42" class="water"/>
+    <text x="120" y="440" text-anchor="middle" class="small">14.8</text>
+    <text x="188" y="420" class="label">Outer hose OD</text>
+    <text x="188" y="444" class="small">Use when larger options feel too aggressive</text>
+    <text x="188" y="466" class="small">on the real hose.</text>
+
+    <line x1="40" y1="486" x2="480" y2="486" class="divider"/>
+    <text x="260" y="510" text-anchor="middle" class="small">Same 14.5 mm bore, same trapped root, only the outside hose OD changes.</text>
   </g>
 
   <g transform="translate(700,170)">
     <rect x="0" y="0" width="520" height="520" rx="10" ry="10" class="noteBox"/>
-    <text x="260" y="36" text-anchor="middle" class="subtitle">Coupon B</text>
+    <text x="260" y="36" text-anchor="middle" class="subtitle">Option B</text>
     <text x="260" y="62" text-anchor="middle" class="label">15.4 OD middle-ground check</text>
     <line x1="40" y1="78" x2="480" y2="78" class="divider"/>
-    <rect x="140" y="240" width="240" height="40" rx="6" ry="6" class="solid"/>
-    <rect x="180" y="178.4" width="180" height="92.4" rx="8" ry="8" class="accent"/>
-    <rect x="318" y="175.8" width="8" height="97.6" class="solid"/>
-    <circle cx="210" cy="436" r="46.2" class="accent"/>
-    <text x="210" y="442" text-anchor="middle" class="small">15.4</text>
-    <line x1="40" y1="460" x2="480" y2="460" class="divider"/>
-    <text x="260" y="488" text-anchor="middle" class="small">Use if 16.0 OD is too tight but 14.8 OD</text>
-    <text x="260" y="512" text-anchor="middle" class="small">looks unnecessarily loose.</text>
+
+    <line x1="348" y1="150" x2="348" y2="326" class="ext"/>
+    <text x="360" y="164" class="tiny">Block side face</text>
+
+    <rect x="96" y="236" width="230" height="36" rx="18" ry="18" class="part"/>
+    <rect x="326" y="220" width="22" height="68" rx="4" ry="4" class="part"/>
+    <rect x="348" y="230" width="40" height="48" rx="10" ry="10" class="part"/>
+    <rect x="388" y="208" width="78" height="92" rx="12" ry="12" class="part"/>
+    <rect x="108" y="250" width="358" height="8" rx="4" ry="4" class="water"/>
+    <rect x="329" y="226" width="16" height="56" class="seal"/>
+
+    <line x1="96" y1="336" x2="348" y2="336" class="dim"/>
+    <line x1="96" y1="272" x2="96" y2="336" class="ext"/>
+    <line x1="348" y1="288" x2="348" y2="336" class="ext"/>
+    <text x="222" y="358" text-anchor="middle" class="label">24 plug projection</text>
+
+    <text x="74" y="198" class="tiny">Same outer length and bead location</text>
+    <line x1="184" y1="202" x2="196" y2="236" class="leader"/>
+    <text x="440" y="186" class="tiny">Trapped head and neck unchanged</text>
+    <line x1="444" y1="190" x2="432" y2="208" class="leader"/>
+
+    <circle cx="120" cy="434" r="45" class="water"/>
+    <text x="120" y="440" text-anchor="middle" class="small">15.4</text>
+    <text x="188" y="420" class="label">Outer hose OD</text>
+    <text x="188" y="444" class="small">Use if 16.0 feels too tight but 14.8</text>
+    <text x="188" y="466" class="small">looks unnecessarily loose.</text>
+
+    <line x1="40" y1="486" x2="480" y2="486" class="divider"/>
+    <text x="260" y="510" text-anchor="middle" class="small">Prototype order can use quantity 1; final selected size should be quoted as quantity 2.</text>
   </g>
 
   <g transform="translate(1330,170)">
     <rect x="0" y="0" width="520" height="520" rx="10" ry="10" class="noteBox"/>
-    <text x="260" y="36" text-anchor="middle" class="subtitle">Main Guess</text>
-    <text x="260" y="62" text-anchor="middle" class="label">16.0 OD used on the full block preview</text>
+    <text x="260" y="36" text-anchor="middle" class="subtitle">Option C</text>
+    <text x="260" y="62" text-anchor="middle" class="label">16.0 OD installed main guess</text>
     <line x1="40" y1="78" x2="480" y2="78" class="divider"/>
-    <rect x="140" y="240" width="240" height="46" rx="6" ry="6" class="solid"/>
-    <rect x="190" y="167" width="180" height="96" rx="8" ry="8" class="accent"/>
-    <rect x="325" y="164" width="10" height="102" class="solid"/>
-    <circle cx="210" cy="436" r="48" class="accent"/>
-    <text x="210" y="442" text-anchor="middle" class="small">16.0</text>
-    <line x1="40" y1="460" x2="480" y2="460" class="divider"/>
-    <text x="260" y="488" text-anchor="middle" class="small">Best-guess full-block OD with more wall</text>
-    <text x="260" y="512" text-anchor="middle" class="small">around the near-full 14.5 mm bore.</text>
+
+    <line x1="348" y1="150" x2="348" y2="326" class="ext"/>
+    <text x="360" y="164" class="tiny">Block side face</text>
+
+    <rect x="96" y="234" width="230" height="40" rx="20" ry="20" class="part"/>
+    <rect x="326" y="220" width="22" height="68" rx="4" ry="4" class="part"/>
+    <rect x="348" y="230" width="40" height="48" rx="10" ry="10" class="part"/>
+    <rect x="388" y="208" width="78" height="92" rx="12" ry="12" class="part"/>
+    <rect x="108" y="250" width="358" height="8" rx="4" ry="4" class="water"/>
+    <rect x="329" y="226" width="16" height="56" class="seal"/>
+
+    <line x1="96" y1="336" x2="348" y2="336" class="dim"/>
+    <line x1="96" y1="274" x2="96" y2="336" class="ext"/>
+    <line x1="348" y1="288" x2="348" y2="336" class="ext"/>
+    <text x="222" y="358" text-anchor="middle" class="label">24 plug projection</text>
+
+    <text x="66" y="198" class="tiny">Largest hose OD with the same trapped root</text>
+    <line x1="196" y1="202" x2="212" y2="234" class="leader"/>
+    <text x="442" y="186" class="tiny">22 x 15 x 6 capture head</text>
+    <line x1="444" y1="190" x2="432" y2="208" class="leader"/>
+
+    <circle cx="120" cy="434" r="48" class="water"/>
+    <text x="120" y="440" text-anchor="middle" class="small">16.0</text>
+    <text x="188" y="420" class="label">Outer hose OD</text>
+    <text x="188" y="444" class="small">Current installed main guess for the assembled</text>
+    <text x="188" y="466" class="small">preview and final hybrid quote study.</text>
+
+    <line x1="40" y1="486" x2="480" y2="486" class="divider"/>
+    <text x="260" y="510" text-anchor="middle" class="small">Only the outer hose OD changes between options; the lid and base stay the same.</text>
   </g>
 
   <g transform="translate(70,760)">
-    <rect x="0" y="0" width="1780" height="110" rx="10" ry="10" class="noteBox"/>
-    <text x="20" y="34" class="label">Shared coupon geometry: base 40 x 24 x 5 | stub length 30 | retaining bead 1.0 | same insertion length on all three.</text>
-    <text x="20" y="66" class="label">These are grip and sizing checks only, not leak or hydraulic tests.</text>
-    <text x="20" y="94" class="label">Use the winning coupon OD to update the split spigots on the full block before releasing the wet-service part.</text>
+    <rect x="0" y="0" width="1780" height="140" rx="10" ry="10" class="noteBox"/>
+    <text x="20" y="34" class="label">Shared plug-root geometry: 22 OD face-seal flange x 2 thick | 16.8 OD neck x 4 long | rounded trapped head 22 x 15 x 6 | 14.5 bore through all three.</text>
+    <text x="20" y="66" class="label">Prototype use: print one of each size for hose-fit study. Final hybrid quote use: quote the selected hose-plug size as a pair, one for each port.</text>
+    <text x="20" y="98" class="label">These are fit and interface parts only in PLA. The final wet release remains CNC POM hose plugs with the same trapped-root architecture.</text>
+    <text x="20" y="126" class="label">Keep the outside hose profile, bead location, flange face, and trapped head unchanged unless the design baseline is deliberately revised.</text>
   </g>
 </svg>

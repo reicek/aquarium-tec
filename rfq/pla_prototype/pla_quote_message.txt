@@ -1,0 +1,29 @@
+Please quote this as a PLA fit and geometry prototype only for an aquarium chiller cold block.
+
+All stated dimensions are in mm.
+
+Required print files in this first order:
+
+1. Prototype lid-and-base bundle STL containing 1 cold block base and 1 cold block lid
+2. Prototype hose bundle STL containing 2 hose plugs at 16.0 mm OD, 2 hose plugs at 15.4 mm OD, and 2 hose plugs at 14.8 mm OD
+3. Interlocking prototype support kit
+
+Critical requirements:
+
+- prioritize dimensional fidelity over cosmetic finish
+- use the lowest-cost PLA printing option that still keeps dimensions accurate enough for fit checks
+- do not alter the hose-plug outside profiles, trapped root geometry, or plug-pocket geometry without approval
+- do not make any manufacturability-driven geometry changes without approval
+- keep the three hose-plug ODs accurate
+- keep the lid/base bundle and the hose bundle as separate multi-part print files unless you first ask for approval to split them differently
+- preserve the block outline, current 6-screw assembly layout, the Intel LGA1700 / LGA1851 hot-side hole pattern, and the trapped plug-pocket geometry at both ports
+
+Notes:
+
+- this is not a final wet-service part
+- this prototype is for hose fit, plug-pocket fit, installation space, clamp access, lid/base alignment, support-frame fit, and general assembly checks only
+- File 1 is intentionally bundled so the lid and base can be quoted together as one print file
+- File 2 is intentionally bundled so all three hose-plug size pairs can be quoted together as one print file
+- File 3 is intentionally split into a flat interlocking support-part set so individual cradle, mast, shelf, or rear-support pieces can be reprinted without replacing the full frame
+- if any preview SVGs are shared later, treat them as reference-only, not-to-scale support sheets; the STL files remain the primary print geometry
+- final hybrid CNC machining will be quoted later after these PLA parts are tested

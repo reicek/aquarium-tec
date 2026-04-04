@@ -2,8 +2,8 @@
 
 ## Mechanical Gate
 
-- hose-fit coupons tested on the real hose
-- spigot insertion force acceptable
+- hose-plug size options tested on the real hose
+- hose-plug insertion force acceptable
 - clamp access confirmed
 - block envelope fits the intended installation space
 

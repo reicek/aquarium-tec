@@ -26,44 +26,44 @@ What to send:
 
 - STEP or STL exported from the SCAD model
 - clear note that this is a fit prototype only
-- request that the three hose-fit coupon diameters ship in the same order
+- request that the three hose-plug size options ship in the same order
 
 Preferred request notes:
 
 - prefer PLA for the first quote because cost matters more than final material similarity
 - prioritize dimensional fidelity over cosmetic finish
-- keep the coupon diameters accurate
-- do not resize or smooth the spigot profiles without approval
+- keep the three hose-plug ODs accurate
+- do not resize or smooth the hose-plug outside profiles or trapped root geometry without approval
 
 If PLA process selection becomes awkward:
 
 - ABS is acceptable
 - another rigid prototype plastic is acceptable for fit-only work, but document the substitution
 
-## Track 2: Final CNC wet block
+## Track 2: Final hybrid wet block
 
-Default material:
+Default materials:
 
-- 316L stainless steel
-
-Premium material option:
-
-- Grade 2 titanium
+- lid: 316L stainless steel
+- base: CNC POM
+- separate hose plugs: CNC POM
 
 What to send:
 
-- STEP model
+- separate STEP models for the lid, base, and hose plugs
 - 2D drawing or PDF with explicit dimensions and callouts
-- notes for flatness, finish, seal groove, and leak test
+- notes for flatness, finish, seal groove, hose-plug interlock, and leak test
 
 Critical callouts for the quote package:
 
 - no internal bore reduction below 14.5 mm
-- keep the 6 straight-channel geometry
+- keep the 6 straight-channel geometry in the lid
 - preserve the 28 mm smooth transition sections
+- POM base and hose plugs must be CNC machined from solid stock, not printed
 - wet surfaces must be deburred
-- TEC landing face must be flat and smooth
-- O-ring groove must be clean and burr-free
+- TEC landing face in the lid must be flat and smooth
+- O-ring groove in the base must be clean and burr-free
+- use through-bolts and compression control; do not silently convert the POM base to tapped screw retention
 - part must be leak tested before shipment
 
 Preferred added notes:
@@ -71,11 +71,11 @@ Preferred added notes:
 - passivate 316L after machining if available
 - do not abrasive-blast inside wet passages
 - hand polish or otherwise smooth the diffuser / converger surfaces if tool marks are heavy
-- send photos of the landing face, groove, and spigots before shipping if possible
+- send photos of the landing face, groove, and hose plugs before shipping if possible
 
-If the final spigot OD is not frozen yet:
+If the final hose-plug OD is not frozen yet:
 
-- do not release the stainless order until the plastic coupons are tested on the real Fluval hose
+- do not release the final hybrid wet-part order until the plastic hose-plug options are tested on the real Fluval hose
 
 ## Track 3: XIAO carrier PCB and PCB assembly
 
@@ -191,4 +191,4 @@ When the part is close to being ordered:
 - restate the wet-surface finish and leak-test requirement
 - ask for confirmation that there are no manufacturability changes without approval
 
-This is especially important for the final stainless part because silent geometry changes inside the water path would defeat the design intent.
+This is especially important for the final hybrid wet part because silent geometry changes inside the water path would defeat the design intent.

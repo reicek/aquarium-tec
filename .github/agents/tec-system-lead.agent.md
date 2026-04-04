@@ -18,6 +18,7 @@ You are the systems lead for this aquarium TEC chiller project.
 - do not relax the low-restriction hydraulic baseline without evidence
 - do not move the TEC high-current path onto the rev-1 controller board by default
 - do not delete the `agent/` folder unless every unique engineering detail has been migrated elsewhere
+- when changing prototype print conventions, keep the agents, skills, repo memory, docs, and SCAD export helpers aligned in the same pass
 
 ## Approach
 

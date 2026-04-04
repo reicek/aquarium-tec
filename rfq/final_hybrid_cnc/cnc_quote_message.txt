@@ -1,0 +1,34 @@
+Please quote this as a preliminary hybrid CNC wet-part package for an aquarium inline cold block.
+
+All stated dimensions are in mm.
+
+Required fixed parts:
+
+1. Cold block lid in 316L stainless steel, quantity 1
+2. Cold block base in CNC POM machined from solid stock, quantity 1
+
+Please quote these as alternate hose-plug pair options in CNC POM machined from solid stock:
+
+3. Hose-plug pair at 16.0 mm OD, quantity 2
+4. Hose-plug pair at 15.4 mm OD, quantity 2
+5. Hose-plug pair at 14.8 mm OD, quantity 2
+
+Critical requirements:
+
+- preserve the 14.5 mm minimum bore through the plugs and block water path
+- keep the 6 straight channels in the lid and preserve the smooth 28 mm transitions
+- do not alter the hose-plug outside profiles, trapped root geometry, or plug-pocket geometry without approval
+- do not make any manufacturability-driven geometry changes without approval
+- machine the POM base and hose plugs from solid stock; do not substitute printed parts
+- deburr all wet passages
+- keep the TEC landing face flat and smooth
+- keep the base groove clean and burr-free
+- use through-bolts and compression control in the final assembly; do not silently redesign for tapped-plastic-only retention
+- leak test before shipment if available
+
+Notes:
+
+- this is a quote-only package before the final hose-plug OD is frozen on the real hose
+- the formal 2D manufacturing drawing is still pending, so this message should not be treated as the final machining release
+- please quote the lid and base once, then quote each hose-plug pair option separately
+- attached SVGs, if shared, are reference-only and not to scale; the STEP files and written notes are the primary quote package

@@ -1,0 +1,4 @@
+part_id,quote_group,file_name,quantity,description,source
+FIT-A,core,prototype_lid_base_bundle.stl,1,Block bundle STL with 1 cold block lid and 1 cold block base,rfq/pla_prototype/exports/export_prototype_lid_base_bundle.scad
+FIT-B,core,prototype_hose_bundle.stl,1,Hose bundle STL with 2 copies each of the 16.0 mm 15.4 mm and 14.8 mm hose plugs,rfq/pla_prototype/exports/export_prototype_hose_bundle.scad
+FIT-C,core,prototype_support_frame.stl,1,Interlocking prototype support kit with display mast split PSU uprights and spine-keyed driver shelf,rfq/pla_prototype/exports/export_prototype_support.scad

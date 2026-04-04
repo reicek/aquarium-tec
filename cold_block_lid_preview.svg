@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2060 1460" width="2060" height="1460">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2140 1500" width="2140" height="1500">
   <defs>
     <marker id="dimArrow" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto" markerUnits="strokeWidth">
       <path d="M0,5 L10,0 L8,5 L10,10 z" fill="#1f2933"/>
@@ -17,154 +17,203 @@
       .leader { fill: none; stroke: #1f2933; stroke-width: 1; }
       .divider { fill: none; stroke: #98a1af; stroke-width: 1.2; }
       .water { fill: #d9ecff; stroke: #2563eb; stroke-width: 1.6; }
-      .metal { fill: #e6e9ef; stroke: #1f2933; stroke-width: 2; }
-      .accent { fill: #f7f8fa; stroke: #1f2933; stroke-width: 2; }
+      .metalA { fill: #f7f8fa; stroke: #1f2933; stroke-width: 2; }
       .heat { fill: #fde1c4; stroke: #c56a1b; stroke-width: 1.2; }
       .noteBox { fill: #fcfdff; stroke: #1f2933; stroke-width: 1.5; }
     </style>
   </defs>
 
-  <rect x="0" y="0" width="2060" height="1460" fill="#fff"/>
+  <rect x="0" y="0" width="2140" height="1500" fill="#fff"/>
 
-  <text x="1030" y="48" text-anchor="middle" class="title">Cold-Block Lid Preview</text>
-  <text x="1030" y="78" text-anchor="middle" class="label">Lid-half reference sheet showing the thermal face, underside channel geometry, and channel-depth control</text>
-  <text x="1030" y="102" text-anchor="middle" class="small">Units: mm | Scale: not to scale | Source of truth: tec_cold_block_mockup.scad</text>
-  <text x="1030" y="124" text-anchor="middle" class="small">Reference diagram only; use formal CAD and a release drawing for manufacturing.</text>
+  <text x="1070" y="48" text-anchor="middle" class="title">Cold-Block Lid Preview</text>
+  <text x="1070" y="78" text-anchor="middle" class="label">Lid-half reference sheet for the thermal face, channel ownership, and trapped hose-plug pocket interface</text>
+  <text x="1070" y="102" text-anchor="middle" class="small">Units: mm | Scale: not to scale | Source of truth: tec_cold_block_mockup.scad</text>
+  <text x="1070" y="124" text-anchor="middle" class="small">Reference diagram only; use formal CAD, STEP, and a release drawing for manufacturing.</text>
 
-  <g transform="translate(80,220)">
-    <text x="8" y="-50" class="subtitle">Top Thermal Face</text>
-    <rect x="0" y="0" width="700" height="460" class="outline"/>
-    <rect x="70" y="75" width="560" height="310" class="hidden"/>
-    <text x="638" y="88" class="tiny">Hidden underside cavity envelope 112 x 62 x 6</text>
-    <polygon points="70,198.75 210,75 210,385 70,261.25" class="hidden"/>
-    <polygon points="490,75 630,198.75 630,261.25 490,385" class="hidden"/>
-    <rect x="190" y="70" width="320" height="320" class="outline"/>
-    <rect x="220" y="100" width="260" height="260" class="outline"/>
-    <text x="206" y="58" class="tiny">Flat landing 64 x 64 on lid top face</text>
-    <line x1="314" y1="60" x2="220" y2="100" class="leader"/>
-    <circle cx="35" cy="35" r="8.5" class="outline"/>
-    <circle cx="155" cy="35" r="10.75" class="outline"/>
-    <circle cx="350" cy="35" r="8.5" class="outline"/>
-    <circle cx="545" cy="35" r="10.75" class="outline"/>
-    <circle cx="665" cy="35" r="8.5" class="outline"/>
-    <circle cx="35" cy="425" r="8.5" class="outline"/>
-    <circle cx="155" cy="425" r="10.75" class="outline"/>
-    <circle cx="350" cy="425" r="8.5" class="outline"/>
-    <circle cx="545" cy="425" r="10.75" class="outline"/>
-    <circle cx="665" cy="425" r="8.5" class="outline"/>
-    <text x="12" y="22" class="tiny">6 x 3.4 clearance</text>
-    <text x="148" y="22" class="tiny">4 x 4.3 hot-side mount</text>
-    <rect x="260" y="180" width="180" height="100" class="heat"/>
-    <text x="452" y="174" class="tiny">TEC 50 x 50 zone</text>
-    <line x1="448" y1="178" x2="440" y2="180" class="leader"/>
-    <line x1="0" y1="0" x2="0" y2="-36" class="ext"/>
-    <line x1="700" y1="0" x2="700" y2="-36" class="ext"/>
-    <line x1="0" y1="-36" x2="700" y2="-36" class="dim"/>
-    <text x="350" y="-48" text-anchor="middle" class="label">140 body</text>
-    <line x1="0" y1="0" x2="-36" y2="0" class="ext"/>
-    <line x1="0" y1="460" x2="-36" y2="460" class="ext"/>
-    <line x1="-36" y1="0" x2="-36" y2="460" class="dim"/>
-    <text x="-54" y="230" transform="rotate(-90 -54 230)" text-anchor="middle" class="label">92</text>
-    <line x1="190" y1="455" x2="510" y2="455" class="dim"/>
-    <line x1="190" y1="390" x2="190" y2="455" class="ext"/>
-    <line x1="510" y1="390" x2="510" y2="455" class="ext"/>
-    <line x1="190" y1="470" x2="510" y2="470" class="divider"/>
-    <text x="350" y="475" text-anchor="middle" class="label">64 landing</text>
-    <text x="350" y="498" text-anchor="middle" class="tiny">Critical flat zone 52 x 52 min</text>
-  </g>
+  <g transform="translate(70,210)">
+    <rect x="0" y="0" width="980" height="760" rx="10" ry="10" class="noteBox"/>
+    <text x="20" y="34" class="subtitle">Top Thermal Face</text>
+    <line x1="20" y1="52" x2="960" y2="52" class="divider"/>
 
-  <g transform="translate(1280,220)">
-    <text x="8" y="-50" class="subtitle">Underside Split-Plane Face</text>
-    <rect x="0" y="0" width="700" height="460" class="outline"/>
-    <polygon points="70,198.75 210,75 210,385 70,261.25" class="water"/>
-    <polygon points="490,75 630,198.75 630,261.25 490,385" class="water"/>
-    <rect x="210" y="75" width="280" height="43.33" class="water"/>
-    <rect x="210" y="128.33" width="280" height="43.33" class="water"/>
-    <rect x="210" y="181.67" width="280" height="43.33" class="water"/>
-    <rect x="210" y="235" width="280" height="43.33" class="water"/>
-    <rect x="210" y="288.33" width="280" height="43.33" class="water"/>
-    <rect x="210" y="341.67" width="280" height="43.33" class="water"/>
-    <circle cx="35" cy="35" r="8.5" class="outline"/>
-    <circle cx="155" cy="35" r="10.75" class="outline"/>
-    <circle cx="350" cy="35" r="8.5" class="outline"/>
-    <circle cx="545" cy="35" r="10.75" class="outline"/>
-    <circle cx="665" cy="35" r="8.5" class="outline"/>
-    <circle cx="35" cy="425" r="8.5" class="outline"/>
-    <circle cx="155" cy="425" r="10.75" class="outline"/>
-    <circle cx="350" cy="425" r="8.5" class="outline"/>
-    <circle cx="545" cy="425" r="10.75" class="outline"/>
-    <circle cx="665" cy="425" r="8.5" class="outline"/>
-    <text x="12" y="22" class="tiny">6 x 3.4 clearance</text>
-    <text x="148" y="22" class="tiny">4 x 4.3 hot-side mount</text>
-    <line x1="0" y1="0" x2="0" y2="-36" class="ext"/>
-    <line x1="700" y1="0" x2="700" y2="-36" class="ext"/>
-    <line x1="0" y1="-36" x2="700" y2="-36" class="dim"/>
-    <text x="350" y="-48" text-anchor="middle" class="label">140 body</text>
-    <line x1="0" y1="0" x2="-36" y2="0" class="ext"/>
-    <line x1="0" y1="460" x2="-36" y2="460" class="ext"/>
-    <line x1="-36" y1="0" x2="-36" y2="460" class="dim"/>
-    <text x="-54" y="230" transform="rotate(-90 -54 230)" text-anchor="middle" class="label">92</text>
-    <line x1="120" y1="470" x2="580" y2="470" class="divider"/>
-    <text x="470" y="490" class="tiny">No O-ring groove on lid split face</text>
-    <line x1="610" y1="486" x2="630" y2="385" class="leader"/>
-    <text x="350" y="513" text-anchor="middle" class="tiny">6 lanes at about 8.67 x 56 each | 5 fins at 2 mm</text>
-  </g>
+    <g transform="translate(0,10)">
+      <rect x="140" y="130" width="700" height="460" class="metalA"/>
+      <rect x="210" y="205" width="560" height="310" class="hidden"/>
+      <rect x="145" y="308" width="45" height="104" rx="10" ry="10" class="hidden"/>
+      <rect x="790" y="308" width="45" height="104" rx="10" ry="10" class="hidden"/>
+      <rect x="330" y="200" width="320" height="320" class="outline"/>
+      <rect x="360" y="230" width="260" height="260" class="outline"/>
+      <rect x="430" y="300" width="120" height="120" class="heat"/>
 
-  <g transform="translate(80,860)">
-    <rect x="0" y="0" width="860" height="580" class="noteBox"/>
-    <g transform="translate(0,145)">
-      <text x="8" y="-50" class="subtitle">Section C-C Through Lid-Only Water Geometry</text>
-      <rect x="108" y="50" width="630" height="36" class="metal"/>
-      <rect x="0" y="55" width="108" height="31" rx="8" ry="8" class="metal"/>
-      <rect x="738" y="55" width="108" height="31" rx="8" ry="8" class="metal"/>
-      <line x1="108" y1="86" x2="738" y2="86" class="outline"/>
-      <text x="746" y="102" class="tiny">Split plane to base</text>
-      <path d="M 108 59 L 738 59 L 738 86 L 108 86 Z" class="water"/>
-      <rect x="189" y="59" width="252" height="27" class="water" opacity="0.45"/>
-      <text x="154" y="122" class="tiny">Upper inlet half-bore</text>
-      <text x="315" y="122" class="tiny">Straight lane in lid</text>
-      <text x="585" y="122" class="tiny">Upper outlet half-bore</text>
-      <line x1="108" y1="18" x2="738" y2="18" class="dim"/>
-      <line x1="108" y1="50" x2="108" y2="18" class="ext"/>
-      <line x1="738" y1="50" x2="738" y2="18" class="ext"/>
-      <text x="423" y="8" text-anchor="middle" class="label">140 body</text>
-      <line x1="0" y1="138" x2="108" y2="138" class="dim"/>
-      <line x1="0" y1="86" x2="0" y2="138" class="ext"/>
-      <line x1="108" y1="86" x2="108" y2="138" class="ext"/>
-      <text x="54" y="162" text-anchor="middle" class="tiny">Upper split support</text>
-      <line x1="778" y1="55" x2="828" y2="55" class="ext"/>
-      <line x1="778" y1="86" x2="828" y2="86" class="ext"/>
-      <line x1="828" y1="55" x2="828" y2="86" class="dim"/>
-      <text x="846" y="70" transform="rotate(-90 846 70)" text-anchor="middle" class="tiny">Upper support</text>
-      <line x1="866" y1="50" x2="866" y2="59" class="dim"/>
-      <line x1="738" y1="50" x2="866" y2="50" class="ext"/>
-      <line x1="738" y1="59" x2="866" y2="59" class="ext"/>
-      <text x="884" y="55" transform="rotate(-90 884 55)" text-anchor="middle" class="tiny">2 roof</text>
-      <line x1="912" y1="59" x2="912" y2="86" class="dim"/>
-      <line x1="738" y1="59" x2="912" y2="59" class="ext"/>
-      <line x1="738" y1="86" x2="912" y2="86" class="ext"/>
-      <text x="930" y="72" transform="rotate(-90 930 72)" text-anchor="middle" class="tiny">6 depth</text>
-      <line x1="958" y1="50" x2="958" y2="86" class="dim"/>
-      <line x1="738" y1="50" x2="958" y2="50" class="ext"/>
-      <line x1="738" y1="86" x2="958" y2="86" class="ext"/>
-      <text x="976" y="68" transform="rotate(-90 976 68)" text-anchor="middle" class="tiny">8 lid</text>
+      <circle cx="170" cy="160" r="8.5" class="outline"/>
+      <circle cx="295" cy="165" r="10.75" class="outline"/>
+      <circle cx="490" cy="160" r="8.5" class="outline"/>
+      <circle cx="685" cy="165" r="10.75" class="outline"/>
+      <circle cx="810" cy="160" r="8.5" class="outline"/>
+      <circle cx="170" cy="560" r="8.5" class="outline"/>
+      <circle cx="295" cy="555" r="10.75" class="outline"/>
+      <circle cx="490" cy="560" r="8.5" class="outline"/>
+      <circle cx="685" cy="555" r="10.75" class="outline"/>
+      <circle cx="810" cy="560" r="8.5" class="outline"/>
+
+      <line x1="140" y1="360" x2="840" y2="360" class="centerline"/>
+      <text x="490" y="286" text-anchor="middle" class="tiny">TEC 50 x 50 zone</text>
+      <line x1="490" y1="290" x2="490" y2="300" class="leader"/>
+      <text x="120" y="240" class="tiny">Hidden trapped plug pocket</text>
+      <line x1="196" y1="244" x2="168" y2="308" class="leader"/>
+      <text x="686" y="240" class="tiny">Same pocket on outlet side</text>
+      <line x1="764" y1="244" x2="812" y2="308" class="leader"/>
+
+      <line x1="140" y1="96" x2="840" y2="96" class="dim"/>
+      <line x1="140" y1="130" x2="140" y2="96" class="ext"/>
+      <line x1="840" y1="130" x2="840" y2="96" class="ext"/>
+      <text x="490" y="86" text-anchor="middle" class="label">140 body</text>
+
+      <line x1="100" y1="130" x2="100" y2="590" class="dim"/>
+      <line x1="140" y1="130" x2="100" y2="130" class="ext"/>
+      <line x1="140" y1="590" x2="100" y2="590" class="ext"/>
+      <text x="82" y="360" transform="rotate(-90 82 360)" text-anchor="middle" class="label">92</text>
+
+      <line x1="330" y1="620" x2="650" y2="620" class="dim"/>
+      <line x1="330" y1="520" x2="330" y2="620" class="ext"/>
+      <line x1="650" y1="520" x2="650" y2="620" class="ext"/>
+      <text x="490" y="642" text-anchor="middle" class="label">64 landing</text>
+
+      <line x1="30" y1="688" x2="950" y2="688" class="divider"/>
+      <text x="30" y="716" class="small">6 x 3.4 clearance holes plus 4 x 4.3 hot-side mount holes are shown on the lid thermal face.</text>
+      <text x="30" y="742" class="small">The 64 x 64 landing is on top; the cavity, trapped plug pockets, and channel geometry stay on the underside.</text>
     </g>
   </g>
 
-  <g transform="translate(1120,860)">
-    <rect x="0" y="0" width="860" height="580" class="noteBox"/>
-    <text x="20" y="34" class="subtitle">What The Lid Actually Owns</text>
-    <text x="20" y="74" class="label">1. The lid carries the six straight 56 mm lanes, the upper halves of</text>
-    <text x="44" y="98" class="label">the inlet and outlet transitions, and the upper split support.</text>
-    <text x="20" y="138" class="label">2. The underside face shows the channel pattern; the top face stays flat for</text>
-    <text x="44" y="162" class="label">the TEC and copper stack.</text>
-    <text x="20" y="202" class="label">3. The lid uses 3.4 mm clearance holes for the six assembly screws;</text>
-    <text x="44" y="226" class="label">the base keeps the 2.5 mm pilot holes.</text>
-    <text x="20" y="266" class="label">4. The lid does not carry the rectangular O-ring groove; that groove</text>
-    <text x="44" y="290" class="label">stays in the base half.</text>
-    <text x="20" y="330" class="label">5. Keep the 2 mm roof above the channel set when the metal drawing</text>
-    <text x="44" y="354" class="label">is frozen.</text>
-    <text x="20" y="394" class="label">6. This sheet is for geometry clarity; PCBWay still only needs the STL</text>
-    <text x="44" y="418" class="label">set for the PLA quote round.</text>
+  <g transform="translate(1090,210)">
+    <rect x="0" y="0" width="980" height="760" rx="10" ry="10" class="noteBox"/>
+    <text x="20" y="34" class="subtitle">Underside Split-Plane Face</text>
+    <line x1="20" y1="52" x2="960" y2="52" class="divider"/>
+
+    <g transform="translate(0,10)">
+      <rect x="140" y="130" width="700" height="460" class="outline"/>
+      <rect x="140" y="305" width="50" height="110" rx="12" ry="12" class="outline"/>
+      <rect x="140" y="317.5" width="20" height="85" rx="10" ry="10" class="water"/>
+      <rect x="790" y="305" width="50" height="110" rx="12" ry="12" class="outline"/>
+      <rect x="820" y="317.5" width="20" height="85" rx="10" ry="10" class="water"/>
+      <polygon points="210,328.75 350,205 350,515 210,391.25" class="water"/>
+      <polygon points="630,205 770,328.75 770,391.25 630,515" class="water"/>
+      <rect x="350" y="205" width="280" height="43.33" class="water"/>
+      <rect x="350" y="258.33" width="280" height="43.33" class="water"/>
+      <rect x="350" y="311.67" width="280" height="43.33" class="water"/>
+      <rect x="350" y="365" width="280" height="43.33" class="water"/>
+      <rect x="350" y="418.33" width="280" height="43.33" class="water"/>
+      <rect x="350" y="471.67" width="280" height="43.33" class="water"/>
+
+      <circle cx="170" cy="160" r="8.5" class="outline"/>
+      <circle cx="295" cy="165" r="10.75" class="outline"/>
+      <circle cx="490" cy="160" r="8.5" class="outline"/>
+      <circle cx="685" cy="165" r="10.75" class="outline"/>
+      <circle cx="810" cy="160" r="8.5" class="outline"/>
+      <circle cx="170" cy="560" r="8.5" class="outline"/>
+      <circle cx="295" cy="555" r="10.75" class="outline"/>
+      <circle cx="490" cy="560" r="8.5" class="outline"/>
+      <circle cx="685" cy="555" r="10.75" class="outline"/>
+      <circle cx="810" cy="560" r="8.5" class="outline"/>
+
+      <line x1="120" y1="360" x2="860" y2="360" class="centerline"/>
+
+      <text x="56" y="238" class="tiny">Plug pocket outline</text>
+      <line x1="132" y1="242" x2="162" y2="305" class="leader"/>
+      <text x="38" y="388" class="tiny">Only the throat is wetted here</text>
+      <line x1="168" y1="392" x2="150" y2="360" class="leader"/>
+
+      <line x1="140" y1="96" x2="840" y2="96" class="dim"/>
+      <line x1="140" y1="130" x2="140" y2="96" class="ext"/>
+      <line x1="840" y1="130" x2="840" y2="96" class="ext"/>
+      <text x="490" y="86" text-anchor="middle" class="label">140 body</text>
+
+      <line x1="100" y1="130" x2="100" y2="590" class="dim"/>
+      <line x1="140" y1="130" x2="100" y2="130" class="ext"/>
+      <line x1="140" y1="590" x2="100" y2="590" class="ext"/>
+      <text x="82" y="360" transform="rotate(-90 82 360)" text-anchor="middle" class="label">92</text>
+
+      <line x1="860" y1="205" x2="900" y2="205" class="ext"/>
+      <line x1="860" y1="515" x2="900" y2="515" class="ext"/>
+      <line x1="900" y1="205" x2="900" y2="515" class="dim"/>
+      <text x="918" y="360" transform="rotate(-90 918 360)" text-anchor="middle" class="label">62 cavity width</text>
+
+      <line x1="30" y1="688" x2="950" y2="688" class="divider"/>
+      <text x="30" y="716" class="small">6 x 3.4 clearance holes plus 4 x 4.3 hot-side holes remain on this lid face.</text>
+      <text x="30" y="742" class="small">Blue is limited to the wetted throat and six-lane lid volume; the base groove is intentionally absent here.</text>
+    </g>
+  </g>
+
+  <g transform="translate(70,980)">
+    <rect x="0" y="0" width="980" height="520" rx="10" ry="10" class="noteBox"/>
+    <text x="20" y="34" class="subtitle">Section C-C Through Lid-Owned Water Geometry</text>
+    <line x1="20" y1="52" x2="960" y2="52" class="divider"/>
+
+    <g transform="translate(0,40)">
+      <rect x="120" y="170" width="630" height="72" class="metalA"/>
+      <rect x="132" y="186" width="50" height="56" class="hidden"/>
+      <rect x="688" y="186" width="50" height="56" class="hidden"/>
+      <path d="M 120 188 L 750 188 L 750 242 L 120 242 Z" class="water"/>
+      <rect x="246" y="188" width="252" height="54" class="water" opacity="0.45"/>
+      <line x1="90" y1="242" x2="780" y2="242" class="centerline"/>
+
+      <text x="20" y="186" class="tiny">Separate plug pocket opens below this face</text>
+      <line x1="176" y1="190" x2="158" y2="186" class="leader"/>
+
+      <line x1="120" y1="132" x2="750" y2="132" class="dim"/>
+      <line x1="120" y1="170" x2="120" y2="132" class="ext"/>
+      <line x1="750" y1="170" x2="750" y2="132" class="ext"/>
+      <text x="435" y="122" text-anchor="middle" class="label">140 body</text>
+
+      <line x1="786" y1="170" x2="836" y2="170" class="ext"/>
+      <line x1="786" y1="188" x2="836" y2="188" class="ext"/>
+      <line x1="836" y1="170" x2="836" y2="188" class="dim"/>
+      <text x="854" y="179" transform="rotate(-90 854 179)" text-anchor="middle" class="tiny">2 roof</text>
+
+      <line x1="866" y1="188" x2="866" y2="242" class="dim"/>
+      <line x1="750" y1="188" x2="866" y2="188" class="ext"/>
+      <line x1="750" y1="242" x2="866" y2="242" class="ext"/>
+      <text x="884" y="215" transform="rotate(-90 884 215)" text-anchor="middle" class="tiny">6 cavity depth</text>
+
+      <line x1="896" y1="170" x2="896" y2="242" class="dim"/>
+      <line x1="750" y1="170" x2="896" y2="170" class="ext"/>
+      <line x1="750" y1="242" x2="896" y2="242" class="ext"/>
+      <text x="914" y="206" transform="rotate(-90 914 206)" text-anchor="middle" class="label">8 lid</text>
+
+      <line x1="246" y1="304" x2="372" y2="304" class="dim"/>
+      <line x1="246" y1="242" x2="246" y2="304" class="ext"/>
+      <line x1="372" y1="242" x2="372" y2="304" class="ext"/>
+      <text x="309" y="326" text-anchor="middle" class="label">28 diffuser roof</text>
+
+      <line x1="372" y1="338" x2="624" y2="338" class="dim"/>
+      <line x1="372" y1="242" x2="372" y2="338" class="ext"/>
+      <line x1="624" y1="242" x2="624" y2="338" class="ext"/>
+      <text x="498" y="360" text-anchor="middle" class="label">56 straight channels</text>
+
+      <line x1="624" y1="304" x2="750" y2="304" class="dim"/>
+      <line x1="624" y1="242" x2="624" y2="304" class="ext"/>
+      <line x1="750" y1="242" x2="750" y2="304" class="ext"/>
+      <text x="687" y="326" text-anchor="middle" class="label">28 converger roof</text>
+
+      <line x1="20" y1="392" x2="940" y2="392" class="divider"/>
+      <text x="20" y="420" class="small">Section C-C isolates the lid-owned upper flow volume only: inlet half-bore, straight lane roof, and outlet half-bore.</text>
+      <text x="20" y="446" class="small">The separate plug pocket opens below this face, so the pocket itself stays out of the blue wetted volume.</text>
+    </g>
+  </g>
+
+  <g transform="translate(1090,980)">
+    <rect x="0" y="0" width="980" height="520" rx="10" ry="10" class="noteBox"/>
+    <text x="20" y="34" class="subtitle">Lid Ownership Notes</text>
+    <text x="20" y="76" class="label">1. The lid owns the thermal landing, the six straight 56 mm channels, and the upper halves of the inlet and outlet transitions.</text>
+    <text x="20" y="116" class="label">2. The lid face shown here uses six 3.4 mm clearance holes for the assembly screws and four 4.3 mm through-holes for the hot-side mount.</text>
+    <text x="20" y="156" class="label">3. The trapped hose-plug pockets are cut into the lid and base together; only the wetted throat should read as blue on this sheet.</text>
+    <text x="20" y="196" class="label">4. The lid does not carry the rectangular O-ring groove. That groove remains entirely in the base sheet and final POM base geometry.</text>
+    <text x="20" y="236" class="label">5. Keep the 2 mm roof above the channel set and preserve the current port-axis placement 1.25 mm below the split plane.</text>
+    <text x="20" y="276" class="label">6. Final wet-path material for this part is 316L stainless steel, with the 60 x 60 x 5 copper spreader still above the TEC on the hot side.</text>
+    <text x="20" y="336" class="subtitle">Current Lid Summary</text>
+    <text x="20" y="370" class="label">Body face 140 x 92 | Lid thickness 8 | Landing 64 x 64 | Hot-side mount 78 x 78</text>
+    <text x="20" y="398" class="label">Channel pack 6 x 8.67 x 56 x 6 | Roof 2 | Cavity envelope 112 x 62 x 6</text>
+    <text x="20" y="426" class="label">Plug throat 17 | Plug neck 16.8 x 4 | Capture head 22 x 15 x 6 shared with the base pocket</text>
+    <line x1="20" y1="472" x2="960" y2="472" class="divider"/>
+    <text x="20" y="504" class="small">Use this sheet to review lid-owned surfaces and pocket interfaces. For supplier release, drive the final lid from the same frozen CAD that generates the neutral CNC export.</text>
   </g>
 </svg>

@@ -4,7 +4,31 @@
     {
       "label": "Export OpenSCAD Prototype STL Set",
       "type": "shell",
-      "command": "$ErrorActionPreference = 'Stop'; Set-Location '${workspaceFolder}'; $out = Join-Path $PWD 'rfq\\abs_prototype\\stl'; $src = Join-Path $PWD 'rfq\\abs_prototype\\exports'; New-Item -ItemType Directory -Force -Path $out | Out-Null; $exe = if (Test-Path 'C:\\Program Files (x86)\\OpenSCAD\\openscad.com') { 'C:\\Program Files (x86)\\OpenSCAD\\openscad.com' } elseif ($env:OPENSCAD_EXE) { $env:OPENSCAD_EXE } else { 'C:\\Program Files (x86)\\OpenSCAD\\openscad.exe' }; & $exe -o (Join-Path $out 'cold_block_lid.stl') (Join-Path $src 'export_lid.scad'); & $exe -o (Join-Path $out 'cold_block_base.stl') (Join-Path $src 'export_base.scad'); & $exe -o (Join-Path $out 'coupon_main_16_0mm.stl') (Join-Path $src 'export_coupon_main.scad'); & $exe -o (Join-Path $out 'coupon_mid_15_4mm.stl') (Join-Path $src 'export_coupon_mid.scad'); & $exe -o (Join-Path $out 'coupon_small_14_8mm.stl') (Join-Path $src 'export_coupon_small.scad'); & $exe -o (Join-Path $out 'prototype_support_frame.stl') (Join-Path $src 'export_prototype_support.scad')",
+      "command": "$ErrorActionPreference = 'Stop'; Set-Location '${workspaceFolder}'; $out = Join-Path $PWD 'rfq\\pla_prototype\\stl'; $src = Join-Path $PWD 'rfq\\pla_prototype\\exports'; New-Item -ItemType Directory -Force -Path $out | Out-Null; Get-ChildItem -Path $out -Filter '*.stl' -File -ErrorAction SilentlyContinue | Remove-Item -Force; $exe = if (Test-Path 'C:\\Program Files (x86)\\OpenSCAD\\openscad.com') { 'C:\\Program Files (x86)\\OpenSCAD\\openscad.com' } elseif ($env:OPENSCAD_EXE) { $env:OPENSCAD_EXE } else { 'C:\\Program Files (x86)\\OpenSCAD\\openscad.exe' }; & $exe -o (Join-Path $out 'prototype_lid_base_bundle.stl') (Join-Path $src 'export_prototype_lid_base_bundle.scad'); & $exe -o (Join-Path $out 'prototype_hose_bundle.stl') (Join-Path $src 'export_prototype_hose_bundle.scad'); & $exe -o (Join-Path $out 'prototype_hose_lid_base_bundle.stl') (Join-Path $src 'export_prototype_hose_lid_base_bundle.scad'); & $exe -o (Join-Path $out 'prototype_support_frame.stl') (Join-Path $src 'export_prototype_support.scad'); & (Join-Path $PWD 'rfq\\pla_prototype\\verify_prototype_stl_layouts.ps1')",
+      "problemMatcher": []
+    },
+    {
+      "label": "Verify OpenSCAD Prototype STL Layouts",
+      "type": "shell",
+      "command": "$ErrorActionPreference = 'Stop'; Set-Location '${workspaceFolder}'; & (Join-Path $PWD 'rfq\\pla_prototype\\verify_prototype_stl_layouts.ps1')",
+      "problemMatcher": []
+    },
+    {
+      "label": "Export OpenSCAD Prototype Support Service STL Set",
+      "type": "shell",
+      "command": "$ErrorActionPreference = 'Stop'; Set-Location '${workspaceFolder}'; $out = Join-Path $PWD 'rfq\\pla_prototype\\stl\\support_service'; $src = Join-Path $PWD 'rfq\\pla_prototype\\exports'; New-Item -ItemType Directory -Force -Path $out | Out-Null; Get-ChildItem -Path $out -Filter 'support_*.stl' -ErrorAction SilentlyContinue | Remove-Item -Force; $exe = if (Test-Path 'C:\\Program Files (x86)\\OpenSCAD\\openscad.com') { 'C:\\Program Files (x86)\\OpenSCAD\\openscad.com' } elseif ($env:OPENSCAD_EXE) { $env:OPENSCAD_EXE } else { 'C:\\Program Files (x86)\\OpenSCAD\\openscad.exe' }; & $exe -o (Join-Path $out 'support_cradle_panel.stl') (Join-Path $src 'export_support_cradle_panel.scad'); & $exe -o (Join-Path $out 'support_display_base.stl') (Join-Path $src 'export_support_display_base.scad'); & $exe -o (Join-Path $out 'support_rear_deck.stl') (Join-Path $src 'export_support_rear_deck.scad'); & $exe -o (Join-Path $out 'support_display_mast.stl') (Join-Path $src 'export_support_display_mast.scad'); & $exe -o (Join-Path $out 'support_psu_upright.stl') (Join-Path $src 'export_support_psu_upright.scad'); & $exe -o (Join-Path $out 'support_driver_spine.stl') (Join-Path $src 'export_support_driver_spine.scad'); & $exe -o (Join-Path $out 'support_driver_shelf.stl') (Join-Path $src 'export_support_driver_shelf.scad'); & $exe -o (Join-Path $out 'support_keeper.stl') (Join-Path $src 'export_support_keeper.scad'); & $exe -o (Join-Path $out 'support_hose_tab.stl') (Join-Path $src 'export_support_hose_tab.scad')",
+      "problemMatcher": []
+    },
+    {
+      "label": "Export OpenSCAD Hybrid STL Set",
+      "type": "shell",
+      "command": "$ErrorActionPreference = 'Stop'; Set-Location '${workspaceFolder}'; $out = Join-Path $PWD 'rfq\\final_hybrid_cnc\\stl'; $src = Join-Path $PWD 'rfq\\final_hybrid_cnc\\exports'; New-Item -ItemType Directory -Force -Path $out | Out-Null; $exe = if (Test-Path 'C:\\Program Files (x86)\\OpenSCAD\\openscad.com') { 'C:\\Program Files (x86)\\OpenSCAD\\openscad.com' } elseif ($env:OPENSCAD_EXE) { $env:OPENSCAD_EXE } else { 'C:\\Program Files (x86)\\OpenSCAD\\openscad.exe' }; & $exe -o (Join-Path $out 'cold_block_lid.stl') (Join-Path $src 'export_lid.scad'); & $exe -o (Join-Path $out 'cold_block_base.stl') (Join-Path $src 'export_base.scad'); & $exe -o (Join-Path $out 'hose_plug_main_16_0mm.stl') (Join-Path $src 'export_plug_main.scad'); & $exe -o (Join-Path $out 'hose_plug_mid_15_4mm.stl') (Join-Path $src 'export_plug_mid.scad'); & $exe -o (Join-Path $out 'hose_plug_small_14_8mm.stl') (Join-Path $src 'export_plug_small.scad')",
+      "problemMatcher": []
+    },
+    {
+      "label": "Export OpenSCAD Hybrid STEP Set",
+      "type": "shell",
+      "command": "$ErrorActionPreference = 'Stop'; Set-Location '${workspaceFolder}'; & (Join-Path $PWD 'rfq\\final_hybrid_cnc\\export_hybrid_step_set.ps1')",
       "problemMatcher": []
     }
   ]

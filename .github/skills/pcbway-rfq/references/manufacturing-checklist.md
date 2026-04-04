@@ -13,7 +13,7 @@
 - include source geometry or exported STL files
 - include a fit-only summary
 - list every part in the order
-- call out hose-spigot diameters as critical
+- call out hose-plug outer diameters as critical
 - state that finish is secondary to dimensional fidelity
 - request PLA first when the goal is the lowest-cost fit check
 - if reference SVGs are attached, make sure they match the current SCAD geometry and are clearly labeled as reference-only, NTS sheets
