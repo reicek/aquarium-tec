@@ -5,11 +5,14 @@ This folder contains the first-pass OpenSCAD source for the low-restriction 6-ch
 ## Files
 
 - `tec_cold_block_mockup.scad`: Parametric model for the two-piece block, three hose-plug size options, the interlocking support kit, and preview views.
+- `README.md`: Consolidated project overview with the current SVG gallery and key notes.
 - `whole_block_preview.svg`: Assembled block reference sheet.
 - `cold_block_lid_preview.svg`: Lid-half reference sheet for the thermal face, underside channels, and lid depth control.
 - `cold_block_base_preview.svg`: Base-half reference sheet for the split-plane face, seal groove, and lower water-path role.
 - `hose_fit_coupons_preview.svg`: Hose-plug sizing option reference sheet.
 - `cold_block_combined_preview.svg`: One-sheet combined overview of the block, lid, base, and hose-plug option set.
+- `powered_prototype_component_layout.svg`: Powered-prototype component placement sheet.
+- `powered_prototype_electrical_block.svg`: Powered-prototype simplified electrical block sheet.
 
 All preview SVGs are reference diagrams in mm. Treat them as not-to-scale communication sheets, not as the sole manufacturing drawing for release.
 
@@ -29,7 +32,7 @@ All preview SVGs are reference diagrams in mm. Treat them as not-to-scale commun
 - Side wall thickness inside cavity: 0 mm dedicated side walls, so the outer channels run to the cavity edge
 - Inlet and outlet transition length: 28 mm each
 - Prototype support frame: interlocking flat-part support kit, about 248 x 190 mm assembled footprint
-- Support frame structure: 8 mm cradle panel plus rear deck, separate side display mast, split rear PSU uprights with fixed Mean Well LRS-350-24 side-mount holes on the 150 mm long-axis pitch, a narrow center driver spine, a rear-facing Double BTS7960 mount with the heatsink outboard plus a large pass-through window and widened lower cable notch behind the board, and low hose strain-relief tabs aligned with the block base and spigot bead position
+- Support frame structure: 8 mm cradle panel plus rear deck, separate side display mast, split rear PSU uprights with fixed Mean Well LRS-350-24 side-mount holes on the 150 mm long-axis pitch, a narrow center driver spine, a rear-facing Double BTS7960 mount with the heatsink outboard plus a compact lower tie-slot landing for an external 24 V to 5 V logic buck, a large pass-through window above that buck zone, a widened lower cable notch behind the driver board, and low hose strain-relief tabs aligned with the block base and spigot bead position
 - Support kit identification: major support parts now carry simple engraved A-G / K / T IDs, with matching mating marks on the main interlock panels for faster sorting and reassembly
 - O-ring groove centerline rectangle: 116 x 68 mm
 - O-ring groove width/depth: 2.4 x 1.5 mm
@@ -106,10 +109,13 @@ Support service reprints:
 
 ## Related files
 
+- `README.md`: Consolidated overview and SVG gallery.
 - `whole_block_preview.svg`: Assembled block reference sheet.
 - `cold_block_lid_preview.svg`: Lid-half reference sheet.
 - `cold_block_base_preview.svg`: Base-half reference sheet.
 - `hose_fit_coupons_preview.svg`: Hose-plug sizing option reference sheet.
 - `cold_block_combined_preview.svg`: Combined overview sheet.
+- `powered_prototype_component_layout.svg`: Powered-prototype component placement sheet.
+- `powered_prototype_electrical_block.svg`: Powered-prototype simplified electrical block sheet.
 
 All preview SVGs remain reference-only support sheets. The final hybrid release still needs formal CAD plus a manufacturing drawing generated from the frozen geometry.

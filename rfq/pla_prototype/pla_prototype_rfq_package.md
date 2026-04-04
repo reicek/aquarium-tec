@@ -64,7 +64,7 @@ This order is not intended to validate:
 - quantity: 1
 - source geometry: `tec_cold_block_mockup.scad`
 - export mode: `part = "prototype_support"`
-- intent: hold the block in a cradle, present the Round Display on the side with the XIAO mounted below the display, and provide an interlocking support kit with split rear PSU uprights, a center driver spine, and a shallow upper shelf for the external driver keyed only into the spine
+- intent: hold the block in a cradle, present the Round Display on the side with the XIAO mounted below the display, and provide an interlocking support kit with split rear PSU uprights, a center driver spine, a shallow upper shelf for the external driver keyed only into the spine, and a lower tie-slot landing on that spine for the external 24 V to 5 V logic buck
 - assembly aids: hidden matching interface letters and light snap detents are built into the printed joints so the support kit can be dry-fit and glued without leaving visible assembly marks on the finished prototype
 - release intent: include this in the first prototype order because fit and size validation now covers the full prototype assembly envelope
 
@@ -104,7 +104,7 @@ Prototype support frame:
 - cradle height: 8 mm
 - side display mast: 62 mm wide, 116 mm tall overall, with a 34 mm screen window, controller slots relocated below the display, and universal Round Display mounting slots
 - rear PSU support: full-width rear deck with two fixed-hole PSU uprights instead of a full solid wall
-- upper driver shelf above the PSU position for the external TEC driver module, keyed into a narrow center spine without separate rear-deck brace legs
+- upper driver shelf above the PSU position for the external TEC driver module, keyed into a narrow center spine without separate rear-deck brace legs, plus a lower tie-slot landing on the same spine for a compact external 24 V to 5 V logic buck below the driver
 - low hose strain-relief tabs tucked close to both hose-plug positions and aligned with the bead position
 
 ## Requested material and process

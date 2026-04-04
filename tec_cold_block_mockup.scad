@@ -113,6 +113,12 @@ support_driver_clear_above_psu = 6;
 support_driver_cutout_margin = 4.5;
 support_driver_cable_notch_width = 24;
 support_driver_cable_notch_height = 12;
+support_logic_buck_ref_size = [48, 19, 52];
+support_logic_buck_mount_clear_z = 12;
+support_logic_buck_slot_length = 8;
+support_logic_buck_slot_height = 2.8;
+support_logic_buck_slot_margin_x = 4;
+support_logic_buck_strap_inset_z = 4.5;
 support_hose_tab_thickness = 4;
 support_hose_tab_width = 10;
 support_hose_tab_height = 24;
@@ -187,6 +193,9 @@ support_rear_deck_length = support_rear_panel_length;
 support_rear_deck_depth = (support_width - support_rear_span_y0) + support_plan_tab_length;
 support_driver_spine_x0 = (support_length - support_driver_spine_width) / 2;
 support_driver_spine_height = support_driver_ref_z0 + support_driver_ref_size[2] + 12;
+support_logic_buck_ref_x0 = (support_length - support_logic_buck_ref_size[0]) / 2;
+support_logic_buck_ref_y0 = support_rear_panel_y0 + support_rear_panel_thickness;
+support_logic_buck_ref_z0 = support_beam_height + support_logic_buck_mount_clear_z;
 support_psu_upright_width = 28;
 support_psu_upright_height = support_psu_ref_z0 + support_psu_mount_offset_z + 38;
 support_psu_upright_x = [
@@ -1048,10 +1057,20 @@ module support_psu_upright_piece() {
 module support_driver_spine_piece() {
     driver_cutout_x0 = ((support_driver_spine_width - support_driver_ref_size[0]) / 2) + support_driver_cutout_margin;
     driver_cutout_width = support_driver_ref_size[0] - (2 * support_driver_cutout_margin);
+    driver_lower_relief_z0 = support_logic_buck_ref_z0 + support_logic_buck_ref_size[2] + 4;
+    driver_lower_relief_height = (support_driver_shelf_z0 - 16) - driver_lower_relief_z0;
     driver_cutout_z0 = support_driver_ref_z0 + support_driver_cutout_margin;
     driver_cutout_height = support_driver_ref_size[2] - (2 * support_driver_cutout_margin);
     driver_cable_notch_x0 = (support_driver_spine_width - support_driver_cable_notch_width) / 2;
     driver_cable_notch_height = support_driver_cutout_margin + support_driver_cable_notch_height;
+    logic_buck_slot_x = [
+        support_logic_buck_slot_margin_x,
+        support_driver_spine_width - support_logic_buck_slot_margin_x - support_logic_buck_slot_length
+    ];
+    logic_buck_slot_z = [
+        support_logic_buck_ref_z0 + support_logic_buck_strap_inset_z,
+        support_logic_buck_ref_z0 + support_logic_buck_ref_size[2] - support_logic_buck_strap_inset_z - support_logic_buck_slot_height
+    ];
     spine_label_x = support_even_positions(3, support_driver_spine_width, 8);
     spine_snap_x = support_even_positions(2, support_driver_spine_width, 18);
 
@@ -1086,15 +1105,29 @@ module support_driver_spine_piece() {
             );
         }
 
+        // Leave a lower landing zone for a compact external 24 V to 5 V buck
+        // below the BTS7960, while keeping the main center window open above it.
         translate([
             10,
             -0.1,
-            support_beam_height + 16
+            driver_lower_relief_z0
         ]) cube([
             support_driver_spine_width - 20,
             support_rear_panel_thickness + 0.2,
-            support_driver_shelf_z0 - (support_beam_height + 32)
+            driver_lower_relief_height
         ]);
+
+        for (x_pos = logic_buck_slot_x, z_pos = logic_buck_slot_z) {
+            translate([
+                x_pos,
+                -0.1,
+                z_pos
+            ]) cube([
+                support_logic_buck_slot_length,
+                support_rear_panel_thickness + 0.2,
+                support_logic_buck_slot_height
+            ]);
+        }
 
         for (x_pos = support_spine_slot_x) {
             translate([
@@ -1423,6 +1456,15 @@ module driver_reference() {
         ]) cube([support_driver_ref_size[0], support_driver_outboard_depth, support_driver_ref_size[2]]);
 }
 
+module logic_buck_reference() {
+    color([0.18, 0.26, 0.62, 0.55])
+        translate([
+            support_logic_buck_ref_x0,
+            support_logic_buck_ref_y0,
+            support_logic_buck_ref_z0
+        ]) cube(support_logic_buck_ref_size);
+}
+
 module display_reference() {
     color([0.16, 0.16, 0.16, 0.75])
         translate([
@@ -1559,6 +1601,7 @@ module prototype_preview() {
     xiao_reference();
     psu_reference();
     driver_reference();
+    logic_buck_reference();
 }
 
 if (part == "preview") {

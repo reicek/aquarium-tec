@@ -1,0 +1,403 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2400 2160" width="2400" height="2160">
+  <defs>
+    <marker id="arrowRed" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,4 L0,8 z" fill="#c62828"/>
+    </marker>
+    <marker id="arrowOrange" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,4 L0,8 z" fill="#ea580c"/>
+    </marker>
+    <marker id="arrowBlue" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,4 L0,8 z" fill="#2563eb"/>
+    </marker>
+    <marker id="arrowCyan" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,4 L0,8 z" fill="#0891b2"/>
+    </marker>
+    <marker id="arrowPurple" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,4 L0,8 z" fill="#7c3aed"/>
+    </marker>
+    <marker id="arrowYellow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,4 L0,8 z" fill="#a16207"/>
+    </marker>
+    <marker id="arrowGreen" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,4 L0,8 z" fill="#15803d"/>
+    </marker>
+    <marker id="arrowTeal" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,4 L0,8 z" fill="#0f766e"/>
+    </marker>
+    <marker id="arrowAmber" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,4 L0,8 z" fill="#b45309"/>
+    </marker>
+    <marker id="arrowMagenta" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,4 L0,8 z" fill="#db2777"/>
+    </marker>
+    <style>
+      .title { font: 700 26px Arial, sans-serif; fill: #1f2933; }
+      .subtitle { font: 700 19px Arial, sans-serif; fill: #1f2933; }
+      .label { font: 14px Arial, sans-serif; fill: #1f2933; }
+      .small { font: 12px Arial, sans-serif; fill: #1f2933; }
+      .tiny { font: 11px Arial, sans-serif; fill: #1f2933; }
+      .divider { fill: none; stroke: #98a1af; stroke-width: 1.2; }
+      .noteBox { fill: #fcfdff; stroke: #1f2933; stroke-width: 1.5; }
+      .powerBox { fill: #fde1c4; stroke: #c56a1b; stroke-width: 1.8; }
+      .logicBox { fill: #d9ecff; stroke: #2563eb; stroke-width: 1.8; }
+      .senseBox { fill: #f7f8fa; stroke: #1f2933; stroke-width: 1.6; }
+      .junction { fill: #ffffff; stroke: #1f2933; stroke-width: 1.6; }
+      .labelBg { fill: #ffffff; stroke: #cbd5e1; stroke-width: 0.8; }
+      .labelUnderline { fill: none; stroke-width: 2.1; stroke-linecap: round; }
+      .ulRed { stroke: #c62828; }
+      .ulOrange { stroke: #ea580c; }
+      .ulBlue { stroke: #2563eb; }
+      .ulCyan { stroke: #0891b2; }
+      .ulPurple { stroke: #7c3aed; }
+      .ulYellow { stroke: #a16207; }
+      .ulGreen { stroke: #15803d; }
+      .ulTeal { stroke: #0f766e; }
+      .ulAmber { stroke: #b45309; }
+      .ulMagenta { stroke: #db2777; }
+      .hRed { fill: none; stroke: #c62828; stroke-width: 3.2; stroke-linecap: round; stroke-linejoin: round; marker-end: url(#arrowRed); }
+      .hOrange { fill: none; stroke: #ea580c; stroke-width: 3.2; stroke-linecap: round; stroke-linejoin: round; marker-end: url(#arrowOrange); }
+      .hBlue { fill: none; stroke: #2563eb; stroke-width: 3.2; stroke-linecap: round; stroke-linejoin: round; marker-end: url(#arrowBlue); }
+      .hCyan { fill: none; stroke: #0891b2; stroke-width: 3.2; stroke-linecap: round; stroke-linejoin: round; marker-end: url(#arrowCyan); }
+      .hPurple { fill: none; stroke: #7c3aed; stroke-width: 3.2; stroke-linecap: round; stroke-linejoin: round; marker-end: url(#arrowPurple); }
+      .hYellow { fill: none; stroke: #a16207; stroke-width: 3.2; stroke-linecap: round; stroke-linejoin: round; marker-end: url(#arrowYellow); }
+      .hGreen { fill: none; stroke: #15803d; stroke-width: 3.2; stroke-linecap: round; stroke-linejoin: round; marker-end: url(#arrowGreen); }
+      .hTeal { fill: none; stroke: #0f766e; stroke-width: 3.2; stroke-linecap: round; stroke-linejoin: round; marker-end: url(#arrowTeal); }
+      .hAmber { fill: none; stroke: #b45309; stroke-width: 3.2; stroke-linecap: round; stroke-linejoin: round; marker-end: url(#arrowAmber); }
+      .hMagenta { fill: none; stroke: #db2777; stroke-width: 3.2; stroke-linecap: round; stroke-linejoin: round; marker-end: url(#arrowMagenta); }
+    </style>
+  </defs>
+
+  <rect width="2400" height="2160" fill="#ffffff"/>
+
+  <text x="1200" y="50" text-anchor="middle" class="title">Powered Prototype Electrical Wiring Diagram</text>
+  <text x="1200" y="80" text-anchor="middle" class="label">Color-coded harness-level wiring sheet for the current dry-fit and dry-wire prototype baseline</text>
+  <text x="1200" y="106" text-anchor="middle" class="small">Units: mm | Scale: not to scale | Wiring baseline from agent/powered_prototype_wiring_diagram.md</text>
+  <text x="1200" y="128" text-anchor="middle" class="small">Reference diagram only; use the future controller schematic for circuit implementation and pin-level release work.</text>
+
+  <g transform="translate(50,180)">
+    <rect x="0" y="0" width="2300" height="1900" rx="10" ry="10" class="noteBox"/>
+    <text x="20" y="34" class="subtitle">Wiring Field</text>
+    <line x1="20" y1="52" x2="2280" y2="52" class="divider"/>
+
+    <rect x="20" y="78" width="2260" height="1320" class="noteBox"/>
+
+    <rect x="90" y="220" width="250" height="120" rx="12" ry="12" class="powerBox"/>
+    <text x="215" y="258" text-anchor="middle" class="label">P1 Main PSU</text>
+    <text x="215" y="284" text-anchor="middle" class="small">Mean Well LRS-350-24</text>
+    <text x="215" y="308" text-anchor="middle" class="small">24 V, 14.6 A</text>
+
+    <rect x="420" y="160" width="220" height="88" rx="10" ry="10" class="powerBox"/>
+    <text x="530" y="194" text-anchor="middle" class="label">FTEC</text>
+    <text x="530" y="216" text-anchor="middle" class="small">Bussmann ATM-10</text>
+
+    <rect x="420" y="360" width="220" height="88" rx="10" ry="10" class="powerBox"/>
+    <text x="530" y="394" text-anchor="middle" class="label">FAUX</text>
+    <text x="530" y="416" text-anchor="middle" class="small">Bussmann ATM-2</text>
+
+    <rect x="800" y="145" width="290" height="130" rx="12" ry="12" class="powerBox"/>
+    <text x="945" y="184" text-anchor="middle" class="label">D1 TEC Driver</text>
+    <text x="945" y="210" text-anchor="middle" class="small">IBT-2 Double BTS7960</text>
+    <text x="945" y="234" text-anchor="middle" class="small">43 A module class</text>
+
+    <rect x="1260" y="145" width="290" height="130" rx="12" ry="12" class="powerBox"/>
+    <text x="1405" y="184" text-anchor="middle" class="label">A2 TEC Module</text>
+    <text x="1405" y="210" text-anchor="middle" class="small">TEC126306 / TEC1-26306</text>
+    <text x="1405" y="234" text-anchor="middle" class="small">24 V nominal, 50 x 50 mm</text>
+
+    <rect x="800" y="345" width="290" height="130" rx="12" ry="12" class="powerBox"/>
+    <text x="945" y="384" text-anchor="middle" class="label">P2 Logic Buck</text>
+    <text x="945" y="410" text-anchor="middle" class="small">TOBSUN EA15-5V</text>
+    <text x="945" y="434" text-anchor="middle" class="small">24 V to 5 V, 3 A</text>
+
+    <rect x="1210" y="390" width="340" height="180" rx="14" ry="14" class="logicBox"/>
+    <text x="1380" y="430" text-anchor="middle" class="label">C1 Controller And Local HMI</text>
+    <text x="1380" y="456" text-anchor="middle" class="small">Seeed XIAO nRF52840 Plus</text>
+    <text x="1380" y="480" text-anchor="middle" class="small">Round Display for XIAO</text>
+    <text x="1380" y="514" text-anchor="middle" class="small">5 V input, 3.3 V logic domain</text>
+
+    <rect x="1680" y="345" width="300" height="130" rx="12" ry="12" class="powerBox"/>
+    <text x="1830" y="384" text-anchor="middle" class="label">M1 Hot-Side Fan</text>
+    <text x="1830" y="410" text-anchor="middle" class="small">Noctua NF-F12 industrialPPC-24V-2000</text>
+    <text x="1830" y="434" text-anchor="middle" class="small">24 V PWM fan</text>
+
+    <rect x="1210" y="680" width="340" height="110" rx="10" ry="10" class="logicBox"/>
+    <text x="1380" y="722" text-anchor="middle" class="label">B1 Driver Buffer</text>
+    <text x="1380" y="746" text-anchor="middle" class="small">SN74AHCT125PW</text>
+
+    <rect x="1680" y="650" width="300" height="110" rx="10" ry="10" class="senseBox"/>
+    <text x="1830" y="692" text-anchor="middle" class="label">S1 One-Wire Splice</text>
+    <text x="1830" y="716" text-anchor="middle" class="small">Belden 9533 trunk branch node</text>
+
+    <rect x="2050" y="560" width="210" height="70" rx="10" ry="10" class="senseBox"/>
+    <text x="2155" y="588" text-anchor="middle" class="tiny">S4 T_WATER</text>
+    <text x="2155" y="610" text-anchor="middle" class="tiny">DS18B20</text>
+
+    <rect x="2050" y="670" width="210" height="70" rx="10" ry="10" class="senseBox"/>
+    <text x="2155" y="698" text-anchor="middle" class="tiny">S5 T_COLD</text>
+    <text x="2155" y="720" text-anchor="middle" class="tiny">DS18B20</text>
+
+    <rect x="2050" y="780" width="210" height="70" rx="10" ry="10" class="senseBox"/>
+    <text x="2155" y="808" text-anchor="middle" class="tiny">S6 T_HOT</text>
+    <text x="2155" y="830" text-anchor="middle" class="tiny">DS18B20</text>
+
+    <rect x="2050" y="890" width="210" height="70" rx="10" ry="10" class="senseBox"/>
+    <text x="2155" y="918" text-anchor="middle" class="tiny">S7 T_AIR_IN</text>
+    <text x="2155" y="940" text-anchor="middle" class="tiny">DS18B20</text>
+
+    <rect x="2050" y="1000" width="210" height="70" rx="10" ry="10" class="senseBox"/>
+    <text x="2155" y="1028" text-anchor="middle" class="tiny">S8 T_AIR_OUT</text>
+    <text x="2155" y="1050" text-anchor="middle" class="tiny">DS18B20</text>
+
+    <rect x="1680" y="860" width="300" height="90" rx="10" ry="10" class="senseBox"/>
+    <text x="1830" y="897" text-anchor="middle" class="label">S2 Humidity Sensor</text>
+    <text x="1830" y="921" text-anchor="middle" class="small">Adafruit SHT31-D</text>
+
+    <rect x="1680" y="1020" width="300" height="90" rx="10" ry="10" class="senseBox"/>
+    <text x="1830" y="1057" text-anchor="middle" class="label">S3 Leak Sensor</text>
+    <text x="1830" y="1081" text-anchor="middle" class="small">DFRobot SEN0205</text>
+
+    <rect x="1680" y="1180" width="300" height="90" rx="10" ry="10" class="senseBox"/>
+    <text x="1830" y="1217" text-anchor="middle" class="label">BZ1 Local Alarm</text>
+    <text x="1830" y="1241" text-anchor="middle" class="small">Mallory Sonalert PS-580Q</text>
+
+    <circle cx="1630" cy="410" r="6" class="junction"/>
+
+    <path d="M340 280 H380 V204 H420" class="hRed"/>
+    <path d="M640 204 H800" class="hRed"/>
+
+    <path d="M1090 210 H1260" class="hOrange"/>
+
+    <path d="M340 280 H380 V404 H420" class="hBlue"/>
+    <path d="M640 404 H800" class="hBlue"/>
+
+    <path d="M1090 410 H1150 V480 H1210" class="hCyan"/>
+
+    <path d="M1550 450 H1630 V410" class="hYellow"/>
+    <path d="M1630 410 H1680" class="hYellow"/>
+    <path d="M640 404 H720 V590 H1630 V410" class="hYellow"/>
+
+    <path d="M1380 570 V680" class="hPurple"/>
+    <path d="M1210 735 H1120 V315 H945 V275" class="hPurple"/>
+
+    <path d="M1550 530 H1600 V705 H1680" class="hGreen"/>
+    <path d="M1980 705 H2020 V595" class="hGreen"/>
+    <path d="M2020 595 V1035" class="hGreen"/>
+    <path d="M2020 595 H2050" class="hGreen"/>
+    <path d="M2020 705 H2050" class="hGreen"/>
+    <path d="M2020 815 H2050" class="hGreen"/>
+    <path d="M2020 925 H2050" class="hGreen"/>
+    <path d="M2020 1035 H2050" class="hGreen"/>
+
+    <path d="M1550 545 H1600 V905 H1680" class="hTeal"/>
+    <path d="M1550 560 H1625 V1065 H1680" class="hAmber"/>
+    <path d="M1550 575 H1650 V1225 H1680" class="hMagenta"/>
+
+    <rect x="248" y="176" width="156" height="20" class="labelBg"/>
+    <text x="256" y="190" class="tiny">H_PWR_TEC_PSU_DRIVER</text>
+    <line x1="256" y1="194" x2="390" y2="194" class="labelUnderline ulRed"/>
+
+    <rect x="658" y="176" width="112" height="20" class="labelBg"/>
+    <text x="666" y="190" class="tiny">2 x 16 AWG pair</text>
+    <line x1="666" y1="194" x2="754" y2="194" class="labelUnderline ulRed"/>
+
+    <rect x="1098" y="138" width="162" height="20" class="labelBg"/>
+    <text x="1106" y="152" class="tiny">H_PWR_TEC_DRIVER_TEC</text>
+    <line x1="1106" y1="156" x2="1246" y2="156" class="labelUnderline ulOrange"/>
+
+    <rect x="1118" y="164" width="126" height="20" class="labelBg"/>
+    <text x="1126" y="178" class="tiny">2 x 16 AWG silicone</text>
+    <line x1="1126" y1="182" x2="1232" y2="182" class="labelUnderline ulOrange"/>
+
+    <rect x="246" y="346" width="118" height="20" class="labelBg"/>
+    <text x="254" y="360" class="tiny">H_PWR_AUX_24V</text>
+    <line x1="254" y1="364" x2="354" y2="364" class="labelUnderline ulBlue"/>
+
+    <rect x="664" y="378" width="118" height="20" class="labelBg"/>
+    <text x="672" y="392" class="tiny">2 x 24 AWG pair</text>
+    <line x1="672" y1="396" x2="766" y2="396" class="labelUnderline ulBlue"/>
+
+    <rect x="1110" y="386" width="92" height="20" class="labelBg"/>
+    <text x="1118" y="400" class="tiny">H_PWR_5V</text>
+    <line x1="1118" y1="404" x2="1190" y2="404" class="labelUnderline ulCyan"/>
+
+    <rect x="972" y="498" width="132" height="20" class="labelBg"/>
+    <text x="980" y="512" class="tiny">420 mm, 2 x 24 AWG</text>
+    <line x1="980" y1="516" x2="1090" y2="516" class="labelUnderline ulCyan"/>
+
+    <rect x="852" y="598" width="176" height="20" class="labelBg"/>
+    <text x="860" y="612" class="tiny">H_FAN power pair: 24 V + GND</text>
+    <line x1="860" y1="616" x2="1014" y2="616" class="labelUnderline ulYellow"/>
+
+    <rect x="1552" y="308" width="116" height="20" class="labelBg"/>
+    <text x="1560" y="322" class="tiny">H_FAN PWM + TACH</text>
+    <line x1="1560" y1="326" x2="1658" y2="326" class="labelUnderline ulYellow"/>
+
+    <rect x="1420" y="592" width="108" height="20" class="labelBg"/>
+    <text x="1428" y="606" class="tiny">H_CTRL_DRIVER</text>
+    <line x1="1428" y1="610" x2="1510" y2="610" class="labelUnderline ulPurple"/>
+
+    <rect x="986" y="526" width="120" height="20" class="labelBg"/>
+    <text x="994" y="540" class="tiny">5 x 24 AWG bundle</text>
+    <line x1="994" y1="544" x2="1092" y2="544" class="labelUnderline ulPurple"/>
+
+    <rect x="1696" y="678" width="98" height="20" class="labelBg"/>
+    <text x="1704" y="692" class="tiny">H_TEMP trunk</text>
+    <line x1="1704" y1="696" x2="1784" y2="696" class="labelUnderline ulGreen"/>
+
+    <rect x="2038" y="534" width="114" height="20" class="labelBg"/>
+    <text x="2046" y="548" class="tiny">T_WATER 1200 mm</text>
+    <line x1="2046" y1="552" x2="2140" y2="552" class="labelUnderline ulGreen"/>
+
+    <rect x="2038" y="644" width="104" height="20" class="labelBg"/>
+    <text x="2046" y="658" class="tiny">T_COLD 200 mm</text>
+    <line x1="2046" y1="662" x2="2132" y2="662" class="labelUnderline ulGreen"/>
+
+    <rect x="2038" y="754" width="98" height="20" class="labelBg"/>
+    <text x="2046" y="768" class="tiny">T_HOT 180 mm</text>
+    <line x1="2046" y1="772" x2="2126" y2="772" class="labelUnderline ulGreen"/>
+
+    <rect x="2038" y="864" width="114" height="20" class="labelBg"/>
+    <text x="2046" y="878" class="tiny">T_AIR_IN 220 mm</text>
+    <line x1="2046" y1="882" x2="2140" y2="882" class="labelUnderline ulGreen"/>
+
+    <rect x="2038" y="974" width="120" height="20" class="labelBg"/>
+    <text x="2046" y="988" class="tiny">T_AIR_OUT 100 mm</text>
+    <line x1="2046" y1="992" x2="2146" y2="992" class="labelUnderline ulGreen"/>
+
+    <rect x="1696" y="882" width="106" height="20" class="labelBg"/>
+    <text x="1704" y="896" class="tiny">H_HUMID 4 x 24</text>
+    <line x1="1704" y1="900" x2="1790" y2="900" class="labelUnderline ulTeal"/>
+
+    <rect x="1696" y="1042" width="102" height="20" class="labelBg"/>
+    <text x="1704" y="1056" class="tiny">H_LEAK 3 x 24</text>
+    <line x1="1704" y1="1060" x2="1788" y2="1060" class="labelUnderline ulAmber"/>
+
+    <rect x="1696" y="1202" width="108" height="20" class="labelBg"/>
+    <text x="1704" y="1216" class="tiny">H_ALARM 2 x 24</text>
+    <line x1="1704" y1="1220" x2="1794" y2="1220" class="labelUnderline ulMagenta"/>
+
+    <line x1="20" y1="1420" x2="2280" y2="1420" class="divider"/>
+
+    <rect x="30" y="1440" width="1040" height="390" class="noteBox"/>
+    <text x="50" y="1468" class="label">Harness Legend</text>
+    <line x1="50" y1="1480" x2="1050" y2="1480" class="divider"/>
+    <line x1="120" y1="1480" x2="120" y2="1810" class="divider"/>
+    <line x1="380" y1="1480" x2="380" y2="1810" class="divider"/>
+    <line x1="550" y1="1480" x2="550" y2="1810" class="divider"/>
+    <line x1="810" y1="1480" x2="810" y2="1810" class="divider"/>
+    <text x="62" y="1508" class="tiny">Color</text>
+    <text x="140" y="1508" class="tiny">Harness ID</text>
+    <text x="398" y="1508" class="tiny">Conductors</text>
+    <text x="568" y="1508" class="tiny">Target wire</text>
+    <text x="828" y="1508" class="tiny">Target cut length</text>
+
+    <line x1="50" y1="1525" x2="1050" y2="1525" class="divider"/>
+    <line x1="50" y1="1553" x2="1050" y2="1553" class="divider"/>
+    <line x1="50" y1="1581" x2="1050" y2="1581" class="divider"/>
+    <line x1="50" y1="1609" x2="1050" y2="1609" class="divider"/>
+    <line x1="50" y1="1637" x2="1050" y2="1637" class="divider"/>
+    <line x1="50" y1="1665" x2="1050" y2="1665" class="divider"/>
+    <line x1="50" y1="1693" x2="1050" y2="1693" class="divider"/>
+    <line x1="50" y1="1721" x2="1050" y2="1721" class="divider"/>
+    <line x1="50" y1="1749" x2="1050" y2="1749" class="divider"/>
+    <line x1="50" y1="1777" x2="1050" y2="1777" class="divider"/>
+    <line x1="50" y1="1805" x2="1050" y2="1805" class="divider"/>
+
+    <line x1="62" y1="1539" x2="108" y2="1539" class="hRed"/>
+    <text x="140" y="1544" class="tiny">H_PWR_TEC_PSU_DRIVER</text>
+    <text x="398" y="1544" class="tiny">2</text>
+    <text x="568" y="1544" class="tiny">16 AWG silicone pair</text>
+    <text x="828" y="1544" class="tiny">280 mm</text>
+
+    <line x1="62" y1="1567" x2="108" y2="1567" class="hOrange"/>
+    <text x="140" y="1572" class="tiny">H_PWR_TEC_DRIVER_TEC</text>
+    <text x="398" y="1572" class="tiny">2</text>
+    <text x="568" y="1572" class="tiny">16 AWG silicone pair</text>
+    <text x="828" y="1572" class="tiny">260 mm</text>
+
+    <line x1="62" y1="1595" x2="108" y2="1595" class="hBlue"/>
+    <text x="140" y="1600" class="tiny">H_PWR_AUX_24V</text>
+    <text x="398" y="1600" class="tiny">2</text>
+    <text x="568" y="1600" class="tiny">24 AWG pair</text>
+    <text x="828" y="1600" class="tiny">220 mm</text>
+
+    <line x1="62" y1="1623" x2="108" y2="1623" class="hCyan"/>
+    <text x="140" y="1628" class="tiny">H_PWR_5V</text>
+    <text x="398" y="1628" class="tiny">2</text>
+    <text x="568" y="1628" class="tiny">24 AWG pair</text>
+    <text x="828" y="1628" class="tiny">420 mm</text>
+
+    <line x1="62" y1="1651" x2="108" y2="1651" class="hPurple"/>
+    <text x="140" y="1656" class="tiny">H_CTRL_DRIVER</text>
+    <text x="398" y="1656" class="tiny">5</text>
+    <text x="568" y="1656" class="tiny">24 AWG bundle</text>
+    <text x="828" y="1656" class="tiny">360 mm</text>
+
+    <line x1="62" y1="1679" x2="108" y2="1679" class="hYellow"/>
+    <text x="140" y="1684" class="tiny">H_FAN</text>
+    <text x="398" y="1684" class="tiny">4</text>
+    <text x="568" y="1684" class="tiny">24 AWG bundle</text>
+    <text x="828" y="1684" class="tiny">320 mm</text>
+
+    <line x1="62" y1="1707" x2="108" y2="1707" class="hGreen"/>
+    <text x="140" y="1712" class="tiny">H_TEMP</text>
+    <text x="398" y="1712" class="tiny">3 trunk + 5 drops</text>
+    <text x="568" y="1712" class="tiny">Belden 9533 trunk + drops</text>
+    <text x="828" y="1712" class="tiny">see temp schedule</text>
+
+    <line x1="62" y1="1735" x2="108" y2="1735" class="hTeal"/>
+    <text x="140" y="1740" class="tiny">H_HUMID</text>
+    <text x="398" y="1740" class="tiny">4</text>
+    <text x="568" y="1740" class="tiny">24 AWG bundle</text>
+    <text x="828" y="1740" class="tiny">260 mm</text>
+
+    <line x1="62" y1="1763" x2="108" y2="1763" class="hAmber"/>
+    <text x="140" y="1768" class="tiny">H_LEAK</text>
+    <text x="398" y="1768" class="tiny">3</text>
+    <text x="568" y="1768" class="tiny">24 AWG bundle</text>
+    <text x="828" y="1768" class="tiny">240 mm</text>
+
+    <line x1="62" y1="1791" x2="108" y2="1791" class="hMagenta"/>
+    <text x="140" y="1796" class="tiny">H_ALARM</text>
+    <text x="398" y="1796" class="tiny">2</text>
+    <text x="568" y="1796" class="tiny">24 AWG pair</text>
+    <text x="828" y="1796" class="tiny">180 mm</text>
+
+    <rect x="1090" y="1440" width="520" height="390" class="noteBox"/>
+    <text x="1110" y="1468" class="label">Temperature Branch Schedule</text>
+    <line x1="1110" y1="1480" x2="1590" y2="1480" class="divider"/>
+    <line x1="1355" y1="1480" x2="1355" y2="1810" class="divider"/>
+    <text x="1130" y="1508" class="tiny">Branch</text>
+    <text x="1375" y="1508" class="tiny">Target cut length</text>
+    <line x1="1110" y1="1525" x2="1590" y2="1525" class="divider"/>
+    <line x1="1110" y1="1561" x2="1590" y2="1561" class="divider"/>
+    <line x1="1110" y1="1597" x2="1590" y2="1597" class="divider"/>
+    <line x1="1110" y1="1633" x2="1590" y2="1633" class="divider"/>
+    <line x1="1110" y1="1669" x2="1590" y2="1669" class="divider"/>
+    <line x1="1110" y1="1705" x2="1590" y2="1705" class="divider"/>
+    <text x="1130" y="1549" class="tiny">J3 trunk to S1 splice</text>
+    <text x="1375" y="1549" class="tiny">280 mm</text>
+    <text x="1130" y="1585" class="tiny">T_WATER</text>
+    <text x="1375" y="1585" class="tiny">1200 mm</text>
+    <text x="1130" y="1621" class="tiny">T_COLD</text>
+    <text x="1375" y="1621" class="tiny">200 mm</text>
+    <text x="1130" y="1657" class="tiny">T_HOT</text>
+    <text x="1375" y="1657" class="tiny">180 mm</text>
+    <text x="1130" y="1693" class="tiny">T_AIR_IN</text>
+    <text x="1375" y="1693" class="tiny">220 mm</text>
+    <text x="1130" y="1729" class="tiny">T_AIR_OUT</text>
+    <text x="1375" y="1729" class="tiny">100 mm</text>
+
+    <rect x="1630" y="1440" width="640" height="390" class="noteBox"/>
+    <text x="1650" y="1468" class="label">Notes That Matter</text>
+    <line x1="1650" y1="1480" x2="2250" y2="1480" class="divider"/>
+    <text x="1650" y="1514" class="small">1. This is the primary color-coded wiring sheet for the current dry prototype.</text>
+    <text x="1650" y="1544" class="small">2. Pair this sheet with powered_prototype_component_layout.svg for physical placement.</text>
+    <text x="1650" y="1574" class="small">3. C1 is powered from 5 V but remains a 3.3 V logic system.</text>
+    <text x="1650" y="1604" class="small">4. B1 stays in the control path as a conservative buffer before D1.</text>
+    <text x="1650" y="1634" class="small">5. The current exact powered prototype uses only 24 V and 5 V rails.</text>
+    <text x="1650" y="1664" class="small">6. The stock 12 V cooler fan is not part of the current exact build.</text>
+    <text x="1650" y="1694" class="small">7. Current documentation assumes the 16.0 mm main hose-plug option on both ports.</text>
+    <text x="1650" y="1724" class="small">8. This remains a harness-planning reference, not a circuit schematic release.</text>
+  </g>
+</svg>

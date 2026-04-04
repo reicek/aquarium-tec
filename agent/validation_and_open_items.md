@@ -67,21 +67,19 @@ These are still intentionally unresolved.
 
 1. Final hose-plug OD after prototype hose-plug fit testing.
 2. Exact trapped hose-plug interlock geometry and whether the plug root needs a dedicated secondary seal.
-3. Exact seal implementation: cord, custom O-ring, or gasket-equivalent.
-4. Logic-threshold compatibility and safe-default behavior on the approved Double BTS7960 43A driver module.
+3. Exact final seal implementation and released cut length after the wet-part groove is frozen.
+4. Logic-threshold compatibility and safe-default behavior on the approved IBT-2 Double BTS7960 43 A driver module.
 5. Whether the first controller PCB only conditions signals or also integrates some low-current switched outputs.
-6. Exact CPU cooler fan voltage and current.
-7. Exact sensor part numbers and connector family.
-8. Whether the Round Display is assembled as a direct HMI module at the first PCBWay stage or left as a customer-installed module after the interface board is received.
+6. Leak-threshold calibration and firmware trip policy for the DFRobot SEN0205 prototype sensor.
+7. Whether the Round Display is assembled as a direct HMI module at the first PCBWay stage or left as a customer-installed module after the interface board is received.
 
 ## Important measurements still needed
 
 1. Actual hose inside diameter on the real Fluval hose when measured with calipers.
 2. Actual hose compliance and insertion force on each prototype hose-plug option.
 3. Actual installed space around the canister, hose bend radii, and cable routing.
-4. Actual current draw and voltage rating of the chosen CPU cooler fan.
-5. Practical enclosure or mounting space for the exact 43 x 43 mm Round Display board and any controller enclosure around it.
-6. Measured Double BTS7960 board hole-center spacing and preferred final retention method if the rear-facing windowed mount is later upgraded from the plain ledge support.
+4. Practical enclosure or mounting space for the exact 43 x 43 mm Round Display board and any controller enclosure around it.
+5. Measured Double BTS7960 board hole-center spacing and preferred final retention method if the rear-facing windowed mount is later upgraded from the plain ledge support.
 
 ## Prototype test checklist
 

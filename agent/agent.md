@@ -72,7 +72,7 @@ These decisions are intentionally treated as fixed unless new test data invalida
 4. Keep minimum internal bore at or above the Fluval hose ID target of 14.5 mm.
 5. Do not use aluminum in the wet water path.
 6. Prototype the geometry in PLA first, then use a 316L lid with CNC POM base and separate CNC POM hose plugs as the default final wet assembly.
-7. Use the 230 W class CPU air cooler as the hot-side cooler, with a copper spreader between TEC and cooler base.
+7. Use the Thermalright Assassin X 120 Refined SE as the current exact hot-side heatsink, pair it with a Noctua NF-F12 industrialPPC-24V-2000 IP67 PWM fan, and keep the copper spreader between TEC and cooler base.
 8. Keep the high-current TEC driver separate from the XIAO logic board in the first electronics revision.
 9. Use the Seeed Studio XIAO nRF52840 Plus as the main controller platform.
 10. Use the Seeed Studio Round Display for XIAO as the screen and touch HMI.
@@ -82,7 +82,8 @@ These decisions are intentionally treated as fixed unless new test data invalida
 
 Mechanical and thermal stack:
 
-- 230 W class CPU air cooler
+- Thermalright Assassin X 120 Refined SE heatsink
+- Noctua NF-F12 industrialPPC-24V-2000 IP67 PWM fan
 - thermal paste
 - 60 x 60 x 5 mm copper spreader
 - thermal paste
@@ -97,8 +98,8 @@ Electrical architecture:
 - 24 V main PSU
 - dedicated TEC driver or H-bridge
 - separate regulated logic supply for the XIAO
-- optional separate regulated 12 V rail for the CPU cooler fan if the selected fan is 12 V
-- sensor suite for water, hot-side, cold-side, intake-air / ambient, outlet-air, ambient humidity, and optional leak detection
+- no separate 12 V rail in the current exact prototype build because the cooler uses a 24 V fan
+- sensor suite for water, hot-side, cold-side, intake-air / ambient, outlet-air, ambient humidity, and leak detection
 
 Control architecture:
 
@@ -118,7 +119,7 @@ Power supply:
 
 Prototype TEC driver:
 
-- Locked for the first powered prototype: Double BTS7960 43A H-bridge module
+- Locked for the first powered prototype: IBT-2 Double BTS7960 43A H-bridge module
 - Quality-preferred option for later refinement: a better-qualified 24 V motor/H-bridge module or a custom MOSFET power stage
 
 Important electrical note:

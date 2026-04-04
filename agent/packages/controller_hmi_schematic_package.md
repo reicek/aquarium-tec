@@ -21,10 +21,10 @@ TEC-HMI-CTRL-REV1
 Preferred block structure:
 
 - J1: 24 V auxiliary input from main PSU branch
-- U1: 24 V to 5 V buck or 5 V regulator module, 1 A class
-- U2: Seeed Studio XIAO nRF52840 Plus
-- U3: Seeed Studio Round Display for XIAO mating interface
-- U4: 3.3 V to 5 V compatible driver buffer if needed for TEC driver inputs
+- U1: Seeed Studio XIAO nRF52840 Plus
+- U2: Seeed Studio Round Display for XIAO mating interface
+- U3: Texas Instruments SN74AHCT125PW driver buffer for the TEC-driver control link
+- U4: TOBSUN EA15-5V or an electrically equivalent 24 V to 5 V logic power stage
 - J2: external TEC driver control connector
 - J3: shared DS18B20 temperature-harness trunk connector
 - J4: auxiliary I2C or humidity sensor connector if not placed on board
@@ -50,6 +50,10 @@ Primary rails:
 - +3V3_LOGIC: derived from XIAO or a local regulated rail for sensors and pull-ups
 - GND_LOGIC: common logic ground tied to driver and PSU ground at the board entry strategy
 
+Power rule:
+
+- +24VAUX must feed the 5 V buck stage first; do not route raw 24 V into XIAO VBUS or the Round Display
+
 Recommended power assumptions:
 
 - target at least 500 mA on the 5 V logic/HMI rail
@@ -69,8 +73,8 @@ Recommended power assumptions:
 
 ### U3: Driver interface buffer
 
-- Part class: AHCT-family or equivalent 3.3 V input, 5 V output-capable buffer
-- Reason: protect against unknown logic thresholds on generic TEC driver modules
+- Part: Texas Instruments SN74AHCT125PW
+- Reason: protect against unknown logic thresholds on generic IBT-2 / BTS7960 modules and make safe-default biasing easier to control
 - Suggested signals through buffer:
   - TEC_PWM
   - TEC_EN
@@ -78,7 +82,11 @@ Recommended power assumptions:
 
 ### U4: 24 V to 5 V logic power stage
 
-- Use a conservative, easy-to-source module or well-supported buck design
+- This stage is mandatory for the powered prototype; the XIAO Plus and Round Display must never be fed from raw 24 V
+- Current exact powered-prototype part is the TOBSUN EA15-5V fed from the fused 24 V auxiliary branch
+- Until the custom interface board exists, use this enclosed external fixed 5 V buck module rather than a generic open-frame buck board
+- Current support baseline reserves a lower rear-face tie-slot mount below the BTS7960 on the center spine for this module
+- Current preview assumes a vertical mounted envelope of about 48 x 19 x 52 mm on that lower spine landing
 - Rev 1 goal is reliability, not minimum BOM cost
 
 ## Standard XIAO pins reserved for the Round Display
@@ -104,7 +112,7 @@ Use the additional XIAO Plus pads for the non-HMI system I/O.
 Planning allocation:
 
 - XP1: 1-Wire temp bus for all DS18B20 probes
-- XP2: leak sensor digital input
+- XP2: leak sensor threshold input
 - XP3: TEC_PWM output
 - XP4: TEC_EN output
 - XP5: TEC_DIR output or second PWM output
@@ -154,11 +162,12 @@ Design notes:
 
 ### J1: 24 V auxiliary input
 
-- type: locking pluggable terminal or JST-VH class depending enclosure style
+- type: JST B2P-VH(LF)(SN) board header with VHR-2N housing and SVH-21T-P1.1 contacts
 - pins: +24VAUX, GND
 
 ### J2: External TEC driver control
 
+- type: JST B5B-XH-A(LF)(SN) board header with XHP-5 housing and SXH-001T-P0.6 contacts
 - pins:
   - 5V_REF or optional pull-up rail if needed
   - GND
@@ -168,21 +177,23 @@ Design notes:
 
 ### J3: 1-Wire temperature bus
 
-- type: keyed 3-pin JST-PH class or equivalent serviceable low-current connector
+- type: JST B3B-PH-K-S(LF)(SN) board header with PHR-3 housing and SPH-002T-P0.5S contacts
 - pins: 3V3, 1WIRE_TEMP, GND
 - use powered 3-wire DS18B20 mode only; do not use parasite-power mode
 
 ### J4: Aux I2C or humidity sensor
 
+- type: JST B4B-PH-K-S(LF)(SN) board header with PHR-4 housing and SPH-002T-P0.5S contacts
 - pins: 3V3, SDA, SCL, GND
 
 ### J5: Leak sensor
 
-- pins: 3V3 or pull-up source, LEAK_IN, GND
+- type: JST B3B-PH-K-S(LF)(SN) board header with PHR-3 housing and SPH-002T-P0.5S contacts
+- pins: 3V3, LEAK_IN, GND
 
 ### J6: Fan monitor and control
 
-- pins: 12V_FAN or external fan rail, GND, FAN_PWM, FAN_TACH
+- pins: 24V_FAN or external fan rail, GND, FAN_PWM, FAN_TACH
 
 ### J7: Alarm output
 
@@ -258,6 +269,7 @@ Target mounting positions:
 ## Open items before schematic capture is fully frozen
 
 1. exact XIAO Plus additional pad names from official Seeed symbol and footprint
-2. exact driver module selected for prototype, which determines whether the level-shift buffer is mandatory
-3. exact fan voltage and whether J6 needs a 12 V rail on the board or only a signal connector
-4. whether the Round Display is assembled by PCBWay or installed by the user after board delivery
+2. verify input-threshold compatibility and safe-default behavior on the approved IBT-2 Double BTS7960 43 A driver, even though the SN74AHCT125PW is now the default rev-1 buffer choice
+3. confirm whether the first controller board absorbs the 5 V stage or continues to rely on the external TOBSUN EA15-5V during prototype bring-up
+4. confirm the firmware leak threshold and calibration method for the SEN0205 on the prototype harness
+5. whether the Round Display is assembled by PCBWay or installed by the user after board delivery

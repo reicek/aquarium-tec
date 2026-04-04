@@ -25,15 +25,21 @@ Recommended structure:
 
 - 24 V main input from PSU
 - direct 24 V branch to TEC driver
-- fused low-current 24 V branch to DC-DC converters
+- fused low-current 24 V branch to the logic buck
 - 24 V to 5 V buck for the XIAO, Round Display, and low-current logic rail
-- optional 24 V to 12 V buck for the CPU fan if the selected fan is 12 V
+- direct 24 V branch to the current prototype fan
+- no 12 V rail in the current exact prototype build; keep a 24 V to 12 V buck only as a fallback if the stock 12 V cooler fan is reinstated later
+
+Important constraint:
+
+- raw 24 V must not be routed to the XIAO Plus or Round Display; the powered prototype must pass through the 24 V to 5 V logic buck first
 
 Practical baseline parts:
 
 - main PSU: Mean Well LRS-350-24, approved project baseline PSU
-- logic converter: industrial 24 V to 5 V DC-DC module, 1 A minimum
-- optional fan converter: 24 V to 12 V DC-DC, 1 A minimum
+- logic converter: TOBSUN EA15-5V, required for the powered prototype until the controller board exists
+- hot-side fan path: Thermalright Assassin X 120 Refined SE heatsink with a Noctua NF-F12 industrialPPC-24V-2000 IP67 PWM replacement fan
+- optional fallback fan converter: Pololu D24V10F12 only if the stock 12 V cooler fan is kept instead of the 24 V Noctua replacement
 
 Logic power budget note:
 
@@ -44,7 +50,7 @@ Logic power budget note:
 
 Approved prototype baseline:
 
-- external Double BTS7960 43A H-bridge module
+- external IBT-2 Double BTS7960 43A H-bridge module
 
 Current engineering stance:
 
@@ -61,7 +67,7 @@ Engineering recommendation:
 
 - either verify the driver input thresholds on the exact module used
 - or insert a proper logic-level translator / buffer between XIAO and driver
-- the preferred rev-1 solution is a small AHCT-family buffer powered from 5 V if the driver inputs are uncertain
+- the preferred rev-1 solution is a Texas Instruments SN74AHCT125PW powered from 5 V; treat it as standard in rev 1 unless the received IBT-2 board is fully verified for 3.3 V logic and safe defaults
 
 ## Control method
 
@@ -100,12 +106,13 @@ Why the extra air sensors are worth adding:
 
 Recommended sensor types:
 
-- waterproof DS18B20 for water temperature
-- bonded DS18B20 package or probe for the hot side
-- bonded DS18B20 package or probe for the cold block
-- DS18B20 digital temperature probe for intake air
-- DS18B20 digital temperature probe for outlet air
-- SHT31 class humidity sensor for ambient condensation monitoring
+- Adafruit Waterproof DS18B20, PID 381, for water temperature unless the stock probe already on hand is reused
+- Analog Devices DS18B20+ in TO-92 package for the hot side
+- Analog Devices DS18B20+ in TO-92 package for the cold block
+- Analog Devices DS18B20+ in TO-92 package for intake air
+- Analog Devices DS18B20+ in TO-92 package for outlet air
+- Adafruit SHT31-D breakout, PID 2857, for ambient condensation monitoring
+- DFRobot Gravity Water Sensor, SEN0205, as the current exact prototype leak-sensor choice
 
 Rev-1 integration recommendation:
 
@@ -118,6 +125,7 @@ Bus-sharing note:
 - the Round Display already occupies D4 and D5 for I2C-based RTC and touch functions
 - the humidity sensor can still share this I2C bus if pull-ups and address assignments are kept sensible
 - a shared DS18B20 bus lets water, cold-block, hot-side, intake-air, and outlet-air probes share a single extra GPIO on the Plus-only pad set
+- use the SEN0205 as the current exact leak-sensor part for the dry-build prototype and treat the controller-side channel as a thresholded leak input during harness bring-up
 
 ## Safety and fail-safe behaviors
 
@@ -173,14 +181,15 @@ What the board should include:
 - XIAO Plus module footprint using the official Seeed module data
 - mating geometry for the Round Display based on the standard XIAO pin rows
 - 24 V input connector for auxiliary power only, not TEC current path
-- 5 V buck stage or provision for an external 5 V module
-- sensor connectors
+- 5 V buck stage or a clearly documented 5 V input path from an external buck module; for the current powered prototype, the external TOBSUN EA15-5V module is mandatory
+- JST-VH for the 24 V auxiliary input, JST-PH for low-current sensor I/O, and JST-XH for the driver-control link
 - one dedicated 3-pin temperature-bus connector for the shared five-probe DS18B20 harness
 - separate low-current connectors for humidity and leak sensing
 - 1-Wire pull-up and a serviceable harness plan for the five DS18B20 temperature channels
+- SN74AHCT125PW driver-interface buffer
 - driver control connector
 - alarm output
-- SWD pads
+- Tag-Connect TC2030 compatible SWD pads
 - optional local user button if not relying entirely on the touch display
 
 What the board should not do in rev 1:
@@ -294,7 +303,7 @@ Design implication:
 
 ## Preferred bring-up order
 
-1. power the XIAO and sensors from a bench supply or logic buck only
+1. power the XIAO and sensors from a bench supply or the TOBSUN EA15-5V logic buck only
 2. validate Round Display bring-up using the Arduino GFX or Seeed_GFX path
 3. validate sensor readings and BLE behavior
 4. connect the external TEC driver with no TEC attached

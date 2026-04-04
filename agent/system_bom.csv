@@ -1,40 +1,45 @@
 Line,Category,Subsystem,Qty,Item,Manufacturer,MPN_or_Identifier,Specification,Status,Notes
-1,Thermal,Cold side,1,TEC module,Generic,TEC126306,50x50mm 24V 6A nominal,Locked,Electrical input ceiling about 144W
-2,Thermal,Hot side,1,CPU air cooler,User selected,230W-class CPU cooler,4x6mm heat pipes 120mm fan,Locked,Choose an Intel LGA1700 or LGA1851 compatible model and verify actual fan voltage and current
+1,Thermal,Cold side,1,TEC module,Generic,TEC126306 / TEC1-26306,50x50mm 24V 6A nominal,Locked,Electrical input ceiling about 144W
+2,Thermal,Hot side,1,CPU air cooler,Thermalright,Assassin X 120 Refined SE,Intel LGA1700 or LGA1851 tower heatsink,Locked,Current exact heatsink choice for the powered prototype
+2.1,Thermal,Hot side,1,Prototype replacement fan,Noctua,NF-F12 industrialPPC-24V-2000 IP67 PWM,120mm 24V PWM fan,Preferred,Use this fan on the chosen heatsink and set the bundled 12V fan aside in the current exact prototype build
 3,Thermal,Interface,1,Copper spreader,Custom,C110 copper plate,60x60x5mm,Locked,Between TEC and CPU cooler
-4,Thermal,Interface,1,Thermal paste,TBD,Non-conductive thermal paste,8W/mK or better,Preferred,Use on TEC-metal interfaces
+4,Thermal,Interface,1,Thermal paste,Noctua,NT-H2 10g,Non-conductive thermal paste,Preferred,Use on TEC-metal interfaces
 5,Mechanical,Prototype,1,PLA cold block mockup,Custom,SCAD-driven prototype,Fit and geometry validation only,Locked,Use PLA first for lowest cost; do not use for thermal conclusions
 5.1,Mechanical,Prototype,1,Plastic support kit,Custom,Interlocking support kit,About 248x190mm assembled cradle/deck with display mast split PSU uprights and spine-keyed driver shelf,Preferred,Non-wet structural prototype for the powered mockup with fixed Mean Well side-mount holes; can be quoted separately
 6,Mechanical,Final wet part,1,CNC cold block lid,Custom,Inline cold block lid,316L stainless steel,Locked,Thermal landing channel pack and upper wet path
 7,Mechanical,Final wet part,1,CNC cold block base,Custom,Inline cold block base,CNC POM,Locked,Lower wet path and O-ring groove; hybrid wet-part baseline
 7.1,Fluid,Hose interface,2,Final hose plugs,Custom,Replaceable hose plug,CNC POM,Locked,Separate trapped hose plugs; final OD follows prototype hose-plug fit result
-8,Mechanical,Sealing,1,O-ring or seal cord,TBD,2mm EPDM 70A,Rectangular groove-compatible seal,Provisional,Exact seal format still open
-9,Mechanical,Assembly,6,Block screws,TBD,M3 socket head screws,Stainless likely 16mm long,Preferred,Use through-bolts with washers; do not rely on tapped POM for clamp load
-9.1,Mechanical,Assembly,6,Compression sleeves,TBD,Metal compression limiter,Match stack and screw size,Preferred,Use with the POM base to control clamp load and reduce creep
-10,Mechanical,Insulation,1 lot,Closed-cell foam,TBD,Elastomer insulation,6-10mm thick,Preferred,Insulate block and nearby tubing
-11,Fluid,Hose retention,4,Tubing clamps,TBD,Clamp set,Sized after hose-plug fit result,Preferred,Use after hose-plug OD is frozen
+8,Mechanical,Sealing,1,O-ring or seal cord,TBD,EPDM 70A round cord,2.0mm cross section,Provisional,Final cut length should follow the released groove dimension
+9,Mechanical,Assembly,6,Block screws,Generic,M3 x 30mm A2-70 socket-head cap screws,Prototype through-bolts,Preferred,Use with washers and nyloc nuts; do not rely on tapped POM for clamp load
+9.1,Mechanical,Assembly,6,Compression sleeves,Custom or generic,316 stainless spacer,3.2mm ID x 4.0mm OD x 24mm long,Preferred,Use with the POM base to control clamp load and reduce creep
+10,Mechanical,Insulation,1 lot,Closed-cell foam,Armacell,AP ArmaFlex self-adhesive sheet,6mm thick,Preferred,Insulate block and nearby tubing
+11,Fluid,Hose retention,4,Oetiker clamp set,Oetiker,167-series stepless ear clamp,304 stainless size after hose test,Preferred,Freeze exact clamp size only after the hose-plug OD is validated on the real hose
 12,Power,Main PSU,1,DC power supply,Mean Well,LRS-350-24,24V 14.6A 350.4W,Locked,Approved baseline supply
-13,Power,TEC driver prototype,1,H-bridge module,Generic,Double BTS7960 43A H-bridge module,24V compatible external prototype TEC driver,Locked,Approved first powered-prototype driver; verify 3.3V logic compatibility on received module
+13,Power,TEC driver prototype,1,H-bridge module,Generic,IBT-2 Double BTS7960 43A H-bridge module,24V compatible external prototype TEC driver,Locked,Approved first powered-prototype driver; keep the board in the 50x50mm class that matches the current support reference
 14,Power,TEC driver upgrade,1,Qualified driver,TBD,24V driver or custom MOSFET stage,Quality-focused path,Provisional,Preferred later reliability path
-15,Power,Logic supply,1,DC-DC buck,TBD,24V to 5V buck,1A minimum industrial-grade,Preferred,Example class TSR 1-2450 or equivalent
-16,Power,Fan supply,1,DC-DC buck,TBD,24V to 12V buck,1A minimum if needed,Provisional,Only if cooler fan is 12V
-17,Power,Protection,1,TEC branch fuse,TBD,Inline fuse,10A,Preferred,Install near PSU output
-18,Power,Protection,1,Logic branch fuse,TBD,Inline fuse,1A to 2A,Preferred,Protect controller and auxiliaries
-19,Wiring,High current,1 lot,TEC wiring,TBD,Stranded copper wire,16AWG,Preferred,Keep short
-20,Wiring,Low current,1 lot,Logic wiring,TBD,Stranded copper wire,22-24AWG,Preferred,For sensors and logic
+15,Power,Logic supply,1,DC-DC buck,TOBSUN,EA15-5V,24V to 5V 3A 15W DC-DC converter,Locked,Required for the powered prototype and intended for the lower support-spine mount below the BTS7960
+16,Power,Fan supply,1,DC-DC buck,Pololu,D24V10F12,24V to 12V buck fallback,Provisional,Only needed if the stock 12V cooler fan is retained instead of the current 24V Noctua replacement
+17,Power,Protection,1,TEC branch fuse,Bussmann,ATM-10,10A blade fuse,Preferred,Install near PSU output
+18,Power,Protection,1,Logic branch fuse,Bussmann,ATM-2,2A blade fuse,Preferred,Protect controller and auxiliaries
+19,Wiring,High current,1 lot,TEC wiring,BNTECHGO,16AWG silicone wire red black,Flexible high-current wire,Preferred,Keep short
+20,Wiring,Low current,1 lot,Logic wiring,Alpha Wire,3050 24AWG,Stranded hookup wire,Preferred,For sensors and logic
 21,Control,Main MCU,1,Wireless controller,Seeed Studio,102010672,Seeed Studio XIAO nRF52840 Plus,Locked,BLE-capable MCU module with 9 extra SMD GPIO
 22,Control,Local HMI,1,Touch display,Seeed Studio,104030087,Round Display for XIAO 1.28 inch touch RTC TF,Locked,Primary local UI and input device
 23,Control,RTC backup,1,RTC battery,TBD,CR927 coin cell,Optional RTC retention battery,Provisional,Only needed if RTC retention is desired
 24,Control,Interface board,1,XIAO Plus interface PCB,Custom,Controller interposer,Custom PCB for XIAO Plus Round Display multi-point sensing and driver interface,Preferred,Primary PCBWay PCBA target
-25,Sensing,Water temperature,1,Water temp probe,TBD,DS18B20 waterproof probe,3.0-5.5V digital sensor,Locked,Main aquarium control sensor; user has stock on hand
-26,Sensing,Cold block temperature,1,Cold-side sensor,TBD,Bonded DS18B20 package or probe,Digital temperature sensor,Locked,Watch cold-side performance
-27,Sensing,Hot side temperature,1,Heatsink sensor,TBD,Bonded DS18B20 package or probe,Digital temperature sensor,Locked,Heatsink safety monitoring near the cooler base or heat-pipe root
-27.1,Sensing,Air intake,1,Air intake temperature sensor,TBD,DS18B20 digital probe,Intake air and ambient reference,Locked,Place upstream of the cooler fan and away from exhaust recirculation
-27.2,Sensing,Air outlet,1,Air outlet temperature sensor,TBD,DS18B20 digital probe,Cooler exhaust air temperature,Locked,Use for heatsink delta trending and airflow-fault detection
-28,Sensing,Humidity,1,Ambient humidity sensor,TBD,SHT31 or equivalent,I2C condensation monitor,Preferred,Can share D4 D5 bus with RTC and touch; keep out of the direct hot-air exhaust plume
-29,Sensing,Leak protection,1,Leak sensor,TBD,Leak strip or float sensor,Local leak-alarm input,Provisional,Recommended but optional
-30,UI,Alarm,1,Status buzzer or LED,TBD,Alarm indicator,Local status output,Preferred,Useful for failsafe events
+25,Sensing,Water temperature,1,Water temp probe,Adafruit,PID 381,Waterproof DS18B20 probe,Locked,Main aquarium control sensor if the stock probe is not reused
+26,Sensing,Cold block temperature,1,Cold-side sensor,Analog Devices,DS18B20+,TO-92 digital temperature sensor,Locked,Use on a short custom lead for cold-side monitoring
+27,Sensing,Hot side temperature,1,Heatsink sensor,Analog Devices,DS18B20+,TO-92 digital temperature sensor,Locked,Use on a short custom lead near the cooler base or heat-pipe root
+27.1,Sensing,Air intake,1,Air intake temperature sensor,Analog Devices,DS18B20+,TO-92 digital temperature sensor,Locked,Use on a light lead support ahead of the fan intake
+27.2,Sensing,Air outlet,1,Air outlet temperature sensor,Analog Devices,DS18B20+,TO-92 digital temperature sensor,Locked,Use on a light lead support in the cooler exhaust stream
+28,Sensing,Humidity,1,Ambient humidity sensor,Adafruit,PID 2857,SHT31-D breakout,Preferred,Can share D4 D5 bus with RTC and touch; keep out of the direct hot-air exhaust plume
+29,Sensing,Leak protection,1,Leak sensor,DFRobot,SEN0205,Gravity Water Sensor,Locked,Included in the current dry-fit and dry-wire prototype as the thresholded leak-input path
+30,UI,Alarm,1,Status buzzer,Mallory Sonalert,PS-580Q,5V buzzer,Preferred,Useful for failsafe events
 31,PCB,Assembly,1,Control PCB,Custom,4-layer FR-4 ENIG,1.6mm board,Preferred,XIAO Plus interface board with Round Display mating geometry
-32,PCB,Connectivity,several,Sensor connectors,TBD,JST-PH class or equivalent,Low-current locking connectors,Preferred,Use one 3-pin board-side connector for the shared DS18B20 bus plus separate humidity and leak connectors
-32.1,PCB,Connectivity,1,Temperature sensor harness,TBD,3-wire 1-Wire DS18B20 harness,24-26AWG trunk with five labeled drops,Preferred,Powered mode only; branch off-board near the support frame or thermal assembly
-33,PCB,Logic interface,1,Driver buffer,TBD,AHCT-family logic buffer,3.3V in to 5V-compatible out,Preferred,Use if TEC driver inputs are not guaranteed 3.3V compatible
+31.1,PCB,Connectivity,1,24V auxiliary power connector,JST,B2P-VH(LF)(SN) + VHR-2N + SVH-21T-P1.1,Board-side J1 power-entry family,Preferred,Current exact 24V auxiliary connector family
+32,PCB,Connectivity,several,Sensor connectors,JST,JST-PH family,Use B3B and B4B headers with matching PHR housings and SPH contacts,Preferred,Use 3-pin connectors for temperature and leak plus one 4-pin connector for humidity or auxiliary I2C
+32.1,PCB,Connectivity,1,Temperature sensor harness,Belden,9533,3-wire 1-Wire DS18B20 harness trunk with five labeled drops,Preferred,Powered mode only; branch off-board near the support frame or thermal assembly
+33,PCB,Logic interface,1,Driver buffer,Texas Instruments,SN74AHCT125PW,3.3V in to 5V-compatible logic buffer,Preferred,Treat as standard with the BTS7960 module
+33.1,PCB,Connectivity,1,External driver interface connector,JST,B5B-XH-A(LF)(SN) + XHP-5 + SXH-001T-P0.6,Board-side J2 control connector family,Preferred,XIAO board should not carry TEC current
+33.2,PCB,Debug,1,SWD debug cable,Tag-Connect,TC2030-IDC-NL,SWD cable and matching footprint,Preferred,Current exact recovery and debugging choice
+33.3,PCB,Connectivity,1,USB access extension,StarTech,USB31CSAFM1M,Panel-mount USB-C extension,Preferred,Only needed if direct XIAO USB-C access is blocked
