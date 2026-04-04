@@ -64,7 +64,8 @@ This order is not intended to validate:
 - quantity: 1
 - source geometry: `tec_cold_block_mockup.scad`
 - export mode: `part = "prototype_support"`
-- intent: hold the block in a cradle, present the Round Display on the side, and provide an interlocking support kit with split rear PSU uprights, a center driver spine, and a shallow upper shelf for the external driver keyed only into the spine
+- intent: hold the block in a cradle, present the Round Display on the side with the XIAO mounted below the display, and provide an interlocking support kit with split rear PSU uprights, a center driver spine, and a shallow upper shelf for the external driver keyed only into the spine
+- assembly aids: hidden matching interface letters and light snap detents are built into the printed joints so the support kit can be dry-fit and glued without leaving visible assembly marks on the finished prototype
 - release intent: include this in the first prototype order because fit and size validation now covers the full prototype assembly envelope
 
 ## Current geometry baseline
@@ -98,9 +99,10 @@ Hose-plug options:
 Prototype support frame:
 
 - overall support footprint: about 248 x 190 mm
+- packed support export footprint: about 282.9 x 240 x 8 mm
 - open ladder-style cradle panel under the 140 x 92 block body
 - cradle height: 8 mm
-- side display mast: 62 mm wide, 126 mm tall, with a 34 mm screen window and universal mounting slots
+- side display mast: 62 mm wide, 116 mm tall overall, with a 34 mm screen window, controller slots relocated below the display, and universal Round Display mounting slots
 - rear PSU support: full-width rear deck with two fixed-hole PSU uprights instead of a full solid wall
 - upper driver shelf above the PSU position for the external TEC driver module, keyed into a narrow center spine without separate rear-deck brace legs
 - low hose strain-relief tabs tucked close to both hose-plug positions and aligned with the bead position
@@ -158,7 +160,7 @@ What this means:
 - the primary upload STL set is generated in `rfq/pla_prototype/stl`
 - the top-level STL folder now contains the three core RFQ files plus `prototype_hose_lid_base_bundle.stl` as an additional convenience bundle
 - VS Code has a reusable task named `Export OpenSCAD Prototype STL Set`
-- the export task was run successfully on 2026-04-03 to regenerate the current STL set
+- the export task was run successfully on 2026-04-04 to regenerate the current STL set
 - wrapper entrypoints exist in `rfq/pla_prototype/exports` so the exports do not rely on fragile `-D` string overrides
 
 ## Suggested upload plan

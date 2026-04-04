@@ -1,6 +1,6 @@
 ---
 name: prototype-validation
-description: 'Validate the aquarium TEC prototype through staged checks. Use for plastic fit validation, electrical bring-up gates, thermal test sequencing, and recording pass/fail results.'
+description: "Validate the aquarium TEC prototype through staged checks. Use for plastic fit validation, electrical bring-up gates, thermal test sequencing, and recording pass/fail results."
 user-invocable: true
 ---
 

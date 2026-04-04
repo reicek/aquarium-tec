@@ -150,11 +150,13 @@ The powered-prototype baseline now includes an interlocking support kit so the c
 Current support-frame intent:
 
 - overall footprint: about 248 x 190 mm
+- packed print bundle: current `prototype_support_frame.stl` validates at about 282.9 x 240 x 8 mm
 - support height under block: 8 mm cradle beams
 - block position: supported from below in a ladder-style cradle, not suspended from the cooler holes
-- display side: one low-profile side mast with a 34 mm screen window, a simple lower relief cutout to save plastic, and universal mounting slots for the exact 43 x 43 mm Round Display board
+- display side: one low-profile side mast with a 34 mm screen window, the XIAO retained below the display in the lower opening band, and a split relief that trims the mast to about 116 mm overall while preserving the exact 43 x 43 mm Round Display mount pattern
 - PSU side: split rear structure rather than a full wall, using two fixed-hole Mean Well LRS-350-24 side-mount uprights aligned to the 150 mm long-axis hole pitch, a narrow center driver spine, and a rear-facing Double BTS7960 mount with the heatsink outboard, a lower ledge on the rear face, and a large pass-through window that leaves only screw-hole land plus a widened lower cable notch for the capacitor and cable exit
 - support construction: interlocking flat-print kit rather than a single monolithic print, so the cradle, rear deck, mast, uprights, spine, shelf, and small locator parts can be replaced individually
+- support joints: use hidden matching witness letters on the actual mating faces and light self-locating detents in the printed joints so alignment is obvious during assembly but the marks disappear once fully seated
 - driver shelf joint: rely on the shelf-to-spine interlock only for rev 1; do not add separate shelf legs unless testing shows the shelf needs them
 - serviceability: keep individual support sub-part wrappers available for one-piece reprints, and keep simple engraved part IDs on the printed pieces so the kit is easy to sort and reassemble
 - hose handling: low strain-relief tabs tucked close to the block base and aligned to the shifted hose-plug bead position so hose spring force and clamp load stay near the block, not at the tube tip

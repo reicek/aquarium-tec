@@ -1,6 +1,6 @@
 ---
 name: prototype-print-layout
-description: 'Design and review multi-part 3D-print export layouts for the aquarium TEC prototype. Use for STL bundle packing, print orientation, support avoidance, bed-footprint reduction, and keeping bundled prototype parts tightly packed in one print-ready layout.'
+description: "Design and review multi-part 3D-print export layouts for the aquarium TEC prototype. Use for STL bundle packing, print orientation, support avoidance, bed-footprint reduction, and keeping bundled prototype parts tightly packed in one print-ready layout."
 user-invocable: true
 ---
 
@@ -11,6 +11,7 @@ user-invocable: true
 - creating or revising any SCAD export mode that contains more than one printed part
 - tightening PLA-first STL bundles for PCBWay or local FDM printing
 - checking whether a print bundle is support-light, compact, and easy to identify after printing
+- checking whether interlocking prototype parts carry hidden matching joint cues instead of exposed assembly labels
 - deciding how to orient lids, bases, hose plugs, and support pieces so print cost stays low without hiding geometry problems
 
 ## Procedure
@@ -20,7 +21,8 @@ user-invocable: true
 3. Identify every part in the bundle and choose its print orientation before moving anything for packing.
 4. Pack the parts into the smallest coherent XY footprint that still leaves enough clearance for reliable printing and cleanup.
 5. Regenerate the STL and verify that every part sits on the same build plane with no accidental upside-down placement.
-6. If the RFQ notes or package docs mention the bundle, update them so the written instructions match the exported layout.
+6. If the bundle contains interlocking joints, keep the witness letters on buried mating faces and use only light PLA-safe detents that help alignment without turning into brittle clips.
+7. If the RFQ notes or package docs mention the bundle, update them so the written instructions match the exported layout.
 
 ## Rules
 
@@ -29,6 +31,8 @@ user-invocable: true
 - do not place open channels, grooves, plug pockets, or other cavity faces down unless there is no better stable orientation
 - do not lay hose plugs horizontally when a vertical bore-up orientation is practical
 - do not use arbitrary large gaps between parts; keep spacing small and justified
+- do not place assembly letters on exposed finished-facing support surfaces when the same cue can live on the buried joint faces
+- do not add large or aggressive snap hooks to PLA prototype joints when a shallow detent will locate the part just as well
 - if two parts cannot both be packed tightly and printed cleanly in one bundle, split the export intentionally instead of shipping a support-heavy compromise
 
 ## Best Practices
@@ -57,6 +61,8 @@ user-invocable: true
 - Hose plugs: stand them upright so the 14.5 mm bore stays vertical and the hose side points up.
 - Repeated hose plugs: keep like parts in a simple row-and-column arrangement with identical orientation.
 - Mixed bundles: keep the large body parts tightly packed first, then place the hose plugs in the smallest leftover band that does not increase the bounding box more than necessary.
+- Interlocking support parts: keep mirrored witness letters on both sides of the mating joint and make sure those marks disappear once the joint is fully seated.
+- PLA detents: prefer very small alignment bumps or pockets on the mating tongues, tabs, or stems instead of exposed hooks; they should help dry-fit alignment and glue-up without fighting clamps.
 
 ### Release Checks
 

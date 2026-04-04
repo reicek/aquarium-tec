@@ -26,6 +26,7 @@ user-invocable: true
 ## Rules
 
 - think like an industrial designer: prioritize assembly clarity, service access, hose and clamp usability, intentional placement of user-facing parts, and a package that is easy for a vendor to understand without guesswork
+- for interlocking prototype kits, prefer hidden mirrored witness letters and light PLA detents over exposed face labels or glue-only plain joints
 - require consistent part naming, quantities, materials, dimensions, and status statements across package docs and exported files
 - treat scattered multi-part prototype print exports or support-heavy orientations as package drift when a tighter support-light layout is available
 - treat preview SVGs as reference-only support sheets unless a formal drawing package exists separately

@@ -1,6 +1,6 @@
 ---
 name: xiao-carrier-board
-description: 'Design and review a Seeed Studio XIAO nRF52840 Plus interface board for this aquarium TEC project. Use for Round Display HMI integration, sensor interfaces, power tree, connector selection, antenna keepout, PCBA readiness, and conservative rev-1 scope control.'
+description: "Design and review a Seeed Studio XIAO nRF52840 Plus interface board for this aquarium TEC project. Use for Round Display HMI integration, sensor interfaces, power tree, connector selection, antenna keepout, PCBA readiness, and conservative rev-1 scope control."
 user-invocable: true
 ---
 

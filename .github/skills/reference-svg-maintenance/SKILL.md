@@ -1,6 +1,6 @@
 ---
 name: reference-svg-maintenance
-description: 'Maintain SCAD-aligned mechanical reference SVGs for this aquarium TEC project. Use for preview SVG fixes, section-view water-path corrections, hose-plug ownership, combined overview cleanup, palette consistency, and XML-safe diagram updates.'
+description: "Maintain SCAD-aligned mechanical reference SVGs for this aquarium TEC project. Use for preview SVG fixes, section-view water-path corrections, hose-plug ownership, combined overview cleanup, palette consistency, and XML-safe diagram updates."
 user-invocable: true
 ---
 

@@ -18,6 +18,7 @@
 - Preserve the current cold-block geometry in `tec_cold_block_mockup.scad` unless the task explicitly calls for a geometry revision.
 - Keep PCBWay deliverables explicit and manufacturing-oriented; prefer quote-ready notes over vague reminders.
 - For any multi-part prototype print export, pack the parts into one compact bundle with the smallest reliable XY footprint. Choose print orientation before spacing: broad flat non-feature exterior faces down, open cavities and grooves up, and hose-plug bores vertical with the hose end up when practical.
+- For interlocking prototype joints, default to hidden matching witness letters on the buried mating faces and light PLA-safe self-locating detents instead of exposed assembly marks or glue-only plain tabs, unless the task explicitly chooses another joint strategy.
 - For diagrams and CAD release documents, follow the shared professional drawing/CAD standard, prioritize PCBWay ambiguity-reduction guidance, and clearly label reference SVGs as non-manufacturing sheets.
 
 ## Manufacturing

@@ -75,7 +75,7 @@ support_keeper_thickness = 4;
 support_keeper_height = 14;
 support_display_margin = 42;
 support_display_panel_width = 62;
-support_display_panel_height = 126;
+support_display_panel_height = 108;
 support_display_panel_thickness = 4;
 support_display_board_size = 43;
 support_display_window_d = 34;
@@ -83,11 +83,15 @@ support_display_window_center_z = 82;
 support_display_slot_pitch = 34;
 support_display_slot_length = 8;
 support_display_slot_width = 3.4;
+support_controller_board_size = [21, 17.8];
 support_controller_slot_pitch = 24;
+support_controller_slot_length = 6;
 support_controller_slot_width = 2.4;
 support_display_relief_width = support_display_board_size;
 support_display_relief_height = support_display_board_size;
 support_display_relief_center_z = support_display_window_center_z - support_display_board_size;
+support_controller_center_z = support_display_relief_center_z;
+support_controller_bridge_height = 10;
 support_psu_size = [215, 115, 30];
 support_psu_mount_hole_d = 3.6;
 support_psu_mount_pitch_x = 150;
@@ -127,6 +131,22 @@ support_piece_label_depth = 0.6;
 support_piece_label_size = 7;
 support_small_label_size = 5;
 support_slot_label_size = 4.5;
+support_hidden_label_depth = 0.4;
+support_hidden_large_label_size = 5.4;
+support_hidden_medium_label_size = 4.4;
+support_hidden_compact_label_size = 3.0;
+support_plan_snap_depth = 0.12;
+support_plan_snap_pocket_depth = 0.20;
+support_plan_snap_length = 2.0;
+support_plan_snap_height = 3.0;
+support_vertical_snap_depth = 0.20;
+support_vertical_snap_pocket_depth = 0.25;
+support_vertical_snap_width = 2.5;
+support_vertical_snap_height = 3.0;
+support_small_snap_depth = 0.15;
+support_small_snap_pocket_depth = 0.20;
+support_small_snap_width = 2.0;
+support_small_snap_height = 2.0;
 
 cavity_x0 = (body_length - cavity_length) / 2;
 cavity_y0 = (body_width - cavity_width) / 2;
@@ -542,6 +562,66 @@ module support_side_label_cut(label_text, y_pos, z_pos, face_x, size = support_p
                 support_label_2d(label_text, size);
 }
 
+module support_back_label_cut(label_text, x_pos, z_pos, face_y, size = support_piece_label_size, depth = support_piece_label_depth) {
+    translate([x_pos, face_y - boolean_overlap, z_pos])
+        rotate([-90, 0, 0])
+            linear_extrude(height = depth + (2 * boolean_overlap))
+                support_label_2d(label_text, size);
+}
+
+module support_positive_x_snap_boss(face_x, y_center, z_center, depth, length, height) {
+    translate([
+        face_x - boolean_overlap,
+        y_center - (length / 2),
+        z_center - (height / 2)
+    ]) cube([
+        depth + boolean_overlap,
+        length,
+        height
+    ]);
+}
+
+module support_positive_x_snap_pocket(face_x, y_center, z_center, depth, length, height) {
+    translate([
+        face_x - boolean_overlap,
+        y_center - (length / 2) - boolean_overlap,
+        z_center - (height / 2) - boolean_overlap
+    ]) cube([
+        depth + (2 * boolean_overlap),
+        length + (2 * boolean_overlap),
+        height + (2 * boolean_overlap)
+    ]);
+}
+
+module support_positive_y_snap_boss(x_center, face_y, z_center, width, depth, height) {
+    translate([
+        x_center - (width / 2),
+        face_y - boolean_overlap,
+        z_center - (height / 2)
+    ]) cube([
+        width,
+        depth + boolean_overlap,
+        height
+    ]);
+}
+
+module support_positive_y_snap_pocket(x_center, face_y, z_center, width, depth, height) {
+    translate([
+        x_center - (width / 2) - boolean_overlap,
+        face_y - boolean_overlap,
+        z_center - (height / 2) - boolean_overlap
+    ]) cube([
+        width + (2 * boolean_overlap),
+        depth + (2 * boolean_overlap),
+        height + (2 * boolean_overlap)
+    ]);
+}
+
+function support_even_positions(count, span_length, margin) =
+    count <= 1
+        ? [span_length / 2]
+        : [for (index = [0 : count - 1]) margin + (index * ((span_length - (2 * margin)) / (count - 1)))];
+
 module support_plan_tabs(x_positions, y_pos, tab_length, tab_width) {
     for (x_pos = x_positions) {
         translate([x_pos, y_pos, 0])
@@ -590,6 +670,11 @@ module support_cradle_panel_piece() {
         support_hose_tab_mount_y[0] - support_body_y0,
         support_hose_tab_mount_y[1] - support_body_y0
     ];
+    display_slot_wall_y = support_plan_tab_length + (support_joint_clearance / 2);
+    rear_slot_wall_y = support_cradle_depth - support_plan_tab_length - (support_joint_clearance / 2);
+    hidden_a_x = [for (x_pos = crossmember_x) x_pos + (support_crossmember_width / 2)];
+    display_slot_centers = [for (x_pos = display_slot_x) x_pos + (support_plan_tab_width / 2)];
+    rear_slot_centers = [for (x_pos = crossmember_x) x_pos + (support_crossmember_width / 2)];
 
     difference() {
         union() {
@@ -630,9 +715,63 @@ module support_cradle_panel_piece() {
             ]);
         }
 
-        support_top_label_cut("A", center_crossmember_x, support_cradle_depth / 2, support_beam_height, 6);
-        support_top_label_cut("B", center_crossmember_x, support_rail_width / 2, support_beam_height, support_slot_label_size);
-        support_top_label_cut("C", center_crossmember_x, support_cradle_depth - (support_rail_width / 2), support_beam_height, support_slot_label_size);
+        for (x_center = hidden_a_x) {
+            support_top_label_cut("A", x_center, support_cradle_depth / 2, support_beam_height, support_hidden_large_label_size, support_hidden_label_depth);
+        }
+
+        for (x_center = display_slot_centers) {
+            support_front_label_cut("B", x_center, support_beam_height / 2, display_slot_wall_y, support_hidden_large_label_size, support_hidden_label_depth);
+        }
+
+        for (x_center = rear_slot_centers) {
+            support_back_label_cut("C", x_center, support_beam_height / 2, rear_slot_wall_y, support_hidden_large_label_size, support_hidden_label_depth);
+        }
+
+        for (x_pos = display_slot_x) {
+            support_positive_x_snap_pocket(
+                x_pos + support_plan_tab_width + (support_joint_clearance / 2),
+                support_plan_tab_length / 2,
+                support_beam_height / 2,
+                support_plan_snap_pocket_depth,
+                support_plan_snap_length,
+                support_plan_snap_height
+            );
+        }
+
+        for (x_pos = crossmember_x) {
+            support_positive_x_snap_pocket(
+                x_pos + support_crossmember_width + (support_joint_clearance / 2),
+                support_cradle_depth - (support_plan_tab_length / 2),
+                support_beam_height / 2,
+                support_plan_snap_pocket_depth,
+                support_plan_snap_length,
+                support_plan_snap_height
+            );
+        }
+
+        for (x_pos = keeper_slot_x, y_pos = keeper_slot_y) {
+            support_front_label_cut("K", x_pos + 8, support_beam_height / 2, y_pos + support_keeper_thickness + (support_joint_clearance / 2), support_hidden_medium_label_size, support_hidden_label_depth);
+            support_positive_x_snap_pocket(
+                x_pos + 16 + (support_joint_clearance / 2),
+                y_pos + (support_keeper_thickness / 2),
+                support_beam_height / 2,
+                support_small_snap_pocket_depth,
+                support_small_snap_width,
+                support_small_snap_height
+            );
+        }
+
+        for (x_pos = hose_slot_x, y_pos = hose_slot_y) {
+            support_side_label_cut("T", y_pos + (support_hose_tab_width / 2), support_beam_height / 2, x_pos + support_hose_tab_thickness + (support_joint_clearance / 2), support_hidden_medium_label_size, support_hidden_label_depth);
+            support_positive_y_snap_pocket(
+                x_pos + (support_hose_tab_thickness / 2),
+                y_pos + support_hose_tab_width + (support_joint_clearance / 2),
+                support_beam_height / 2,
+                support_small_snap_width,
+                support_small_snap_pocket_depth,
+                support_small_snap_height
+            );
+        }
     }
 }
 
@@ -641,11 +780,25 @@ module support_display_base_piece() {
         14,
         support_display_base_width - support_plan_tab_width - 14
     ];
+    display_slot_label_x = [for (offset = support_even_positions(3, support_display_panel_width, 10)) 12 + offset];
+    display_slot_snap_x = [for (offset = support_even_positions(2, support_display_panel_width, 20.5)) 12 + offset];
+    display_slot_wall_y = support_display_panel_thickness + (support_joint_clearance / 2);
 
     difference() {
         union() {
             cube([support_display_base_width, support_display_base_depth, support_beam_height]);
             support_plan_tabs(tab_x, support_display_base_depth, support_plan_tab_length, support_plan_tab_width);
+
+            for (x_pos = tab_x) {
+                support_positive_x_snap_boss(
+                    x_pos + support_plan_tab_width,
+                    support_display_base_depth + (support_plan_tab_length / 2),
+                    support_beam_height / 2,
+                    support_plan_snap_depth,
+                    support_plan_snap_length,
+                    support_plan_snap_height
+                );
+            }
         }
 
         translate([
@@ -658,8 +811,24 @@ module support_display_base_piece() {
             support_beam_height + 0.2
         ]);
 
-        support_top_label_cut("B", support_display_base_width / 2, support_display_base_depth - 12, support_beam_height, 6);
-        support_top_label_cut("D", support_display_base_width / 2, 11, support_beam_height, support_slot_label_size);
+        for (x_pos = tab_x) {
+            support_front_label_cut("B", x_pos + (support_plan_tab_width / 2), support_beam_height / 2, support_display_base_depth + support_plan_tab_length, support_hidden_large_label_size, support_hidden_label_depth);
+        }
+
+        for (x_center = display_slot_label_x) {
+            support_front_label_cut("D", x_center, support_beam_height / 2, display_slot_wall_y, support_hidden_large_label_size, support_hidden_label_depth);
+        }
+
+        for (x_center = display_slot_snap_x) {
+            support_positive_y_snap_pocket(
+                x_center,
+                display_slot_wall_y,
+                support_beam_height / 2,
+                support_vertical_snap_width,
+                support_vertical_snap_pocket_depth,
+                support_vertical_snap_height
+            );
+        }
     }
 }
 
@@ -677,6 +846,11 @@ module support_rear_deck_piece() {
         support_psu_upright_x[1] - support_rear_deck_x0 + (support_psu_upright_width / 2)
     ];
     spine_center_x = support_driver_spine_x0 - support_rear_deck_x0 + (support_driver_spine_width / 2);
+    bridge_centers_x = [for (x_pos = bridge_x) x_pos + (support_crossmember_width / 2)];
+    upright_label_offset_x = support_even_positions(2, support_psu_upright_width, 8);
+    spine_label_offset_x = support_even_positions(3, support_driver_spine_width, 8);
+    spine_snap_offset_x = support_even_positions(2, support_driver_spine_width, 18);
+    vertical_slot_wall_y = vertical_slot_y + support_rear_panel_thickness + (support_joint_clearance / 2);
 
     difference() {
         union() {
@@ -689,6 +863,17 @@ module support_rear_deck_piece() {
             }
 
             support_plan_tabs(bridge_x, 0, support_plan_tab_length, support_crossmember_width);
+
+            for (x_pos = bridge_x) {
+                support_positive_x_snap_boss(
+                    x_pos + support_crossmember_width,
+                    support_plan_tab_length / 2,
+                    support_beam_height / 2,
+                    support_plan_snap_depth,
+                    support_plan_snap_length,
+                    support_plan_snap_height
+                );
+            }
         }
 
         for (x_pos = support_psu_upright_x) {
@@ -713,16 +898,71 @@ module support_rear_deck_piece() {
             support_beam_height + 0.2
         ]);
 
-        support_top_label_cut("C", center_bridge_x, support_plan_tab_length + 16, support_beam_height, 6);
-        support_top_label_cut("E", upright_center_x[0], rear_rail_y + (support_rail_width / 2), support_beam_height, support_slot_label_size);
-        support_top_label_cut("E", upright_center_x[1], rear_rail_y + (support_rail_width / 2), support_beam_height, support_slot_label_size);
-        support_top_label_cut("F", spine_center_x, rear_rail_y + (support_rail_width / 2), support_beam_height, support_slot_label_size);
+        for (x_center = bridge_centers_x) {
+            support_back_label_cut("C", x_center, support_beam_height / 2, 0, support_hidden_large_label_size, support_hidden_label_depth);
+        }
+
+        for (x_pos = support_psu_upright_x) {
+            local_x = x_pos - support_rear_deck_x0;
+
+            for (x_offset = upright_label_offset_x) {
+                support_front_label_cut("E", local_x + x_offset, support_beam_height / 2, vertical_slot_wall_y, support_hidden_medium_label_size, support_hidden_label_depth);
+            }
+
+            support_positive_y_snap_pocket(
+                local_x + (support_psu_upright_width / 2),
+                vertical_slot_wall_y,
+                support_beam_height / 2,
+                support_vertical_snap_width,
+                support_vertical_snap_pocket_depth,
+                support_vertical_snap_height
+            );
+        }
+
+        for (x_offset = spine_label_offset_x) {
+            support_front_label_cut("F", support_driver_spine_x0 - support_rear_deck_x0 + x_offset, support_beam_height / 2, vertical_slot_wall_y, support_hidden_medium_label_size, support_hidden_label_depth);
+        }
+
+        for (x_offset = spine_snap_offset_x) {
+            support_positive_y_snap_pocket(
+                support_driver_spine_x0 - support_rear_deck_x0 + x_offset,
+                vertical_slot_wall_y,
+                support_beam_height / 2,
+                support_vertical_snap_width,
+                support_vertical_snap_pocket_depth,
+                support_vertical_snap_height
+            );
+        }
     }
 }
 
 module support_display_mast_piece() {
+    mast_label_x = support_even_positions(3, support_display_panel_width, 10);
+    mast_snap_x = support_even_positions(2, support_display_panel_width, 20.5);
+    relief_x0 = (support_display_panel_width - support_display_relief_width) / 2;
+    relief_z0 = support_display_relief_center_z - (support_display_relief_height / 2);
+    controller_bridge_z0 = support_controller_center_z - (support_controller_bridge_height / 2);
+    lower_relief_height = controller_bridge_z0 - relief_z0;
+    upper_relief_z0 = controller_bridge_z0 + support_controller_bridge_height;
+    upper_relief_height = (relief_z0 + support_display_relief_height) - upper_relief_z0;
+
     difference() {
         cube([support_display_panel_width, support_display_panel_thickness, support_beam_height + support_display_panel_height]);
+
+        for (x_center = mast_label_x) {
+            support_front_label_cut("D", x_center, support_beam_height / 2, support_display_panel_thickness, support_hidden_large_label_size, support_hidden_label_depth);
+        }
+
+        for (x_center = mast_snap_x) {
+            support_positive_y_snap_boss(
+                x_center,
+                support_display_panel_thickness,
+                support_beam_height / 2,
+                support_vertical_snap_width,
+                support_vertical_snap_depth,
+                support_vertical_snap_height
+            );
+        }
 
         for (dx = [-support_display_slot_pitch / 2, support_display_slot_pitch / 2], dz = [-support_display_slot_pitch / 2, support_display_slot_pitch / 2]) {
             translate([
@@ -737,9 +977,9 @@ module support_display_mast_piece() {
             translate([
                 (support_display_panel_width / 2) + dx,
                 support_display_panel_thickness + 0.1,
-                support_beam_height + support_display_panel_height - 14
+                support_controller_center_z
             ]) rotate([90, 0, 0])
-                rounded_slot(6, support_controller_slot_width, support_display_panel_thickness + 0.2);
+                rounded_slot(support_controller_slot_length, support_controller_slot_width, support_display_panel_thickness + 0.2);
         }
 
         translate([
@@ -749,25 +989,52 @@ module support_display_mast_piece() {
         ]) rotate([90, 0, 0])
             cylinder(h = support_display_panel_thickness + 0.2, d = support_display_window_d);
 
-        // Simple square relief below the display window to reduce print mass
-        // without changing the mast footprint or mount pattern.
-        translate([
-            (support_display_panel_width - support_display_relief_width) / 2,
-            -0.1,
-            support_display_relief_center_z - (support_display_relief_height / 2)
-        ]) cube([
-            support_display_relief_width,
-            support_display_panel_thickness + 0.2,
-            support_display_relief_height
-        ]);
+        // Use the lower relief band as the controller zone: keep a narrow bridge
+        // for the XIAO retention slots, while opening the material above and below it.
+        if (lower_relief_height > 0) {
+            translate([
+                relief_x0,
+                -0.1,
+                relief_z0
+            ]) cube([
+                support_display_relief_width,
+                support_display_panel_thickness + 0.2,
+                lower_relief_height
+            ]);
+        }
 
-        support_front_label_cut("D", support_display_panel_width / 2, 10, support_display_panel_thickness, 8);
+        if (upper_relief_height > 0) {
+            translate([
+                relief_x0,
+                -0.1,
+                upper_relief_z0
+            ]) cube([
+                support_display_relief_width,
+                support_display_panel_thickness + 0.2,
+                upper_relief_height
+            ]);
+        }
     }
 }
 
 module support_psu_upright_piece() {
+    upright_label_x = support_even_positions(2, support_psu_upright_width, 8);
+
     difference() {
         cube([support_psu_upright_width, support_rear_panel_thickness, support_psu_upright_height]);
+
+        for (x_center = upright_label_x) {
+            support_front_label_cut("E", x_center, support_beam_height / 2, support_rear_panel_thickness, support_hidden_medium_label_size, support_hidden_label_depth);
+        }
+
+        support_positive_y_snap_boss(
+            support_psu_upright_width / 2,
+            support_rear_panel_thickness,
+            support_beam_height / 2,
+            support_vertical_snap_width,
+            support_vertical_snap_depth,
+            support_vertical_snap_height
+        );
 
         translate([
             support_psu_upright_width / 2,
@@ -775,8 +1042,6 @@ module support_psu_upright_piece() {
             support_psu_ref_z0 + support_psu_mount_offset_z
         ]) rotate([90, 0, 0])
             cylinder(h = support_rear_panel_thickness + 0.2, d = support_psu_mount_hole_d);
-
-        support_front_label_cut("E", support_psu_upright_width / 2, 14, support_rear_panel_thickness, 7);
     }
 }
 
@@ -787,9 +1052,39 @@ module support_driver_spine_piece() {
     driver_cutout_height = support_driver_ref_size[2] - (2 * support_driver_cutout_margin);
     driver_cable_notch_x0 = (support_driver_spine_width - support_driver_cable_notch_width) / 2;
     driver_cable_notch_height = support_driver_cutout_margin + support_driver_cable_notch_height;
+    spine_label_x = support_even_positions(3, support_driver_spine_width, 8);
+    spine_snap_x = support_even_positions(2, support_driver_spine_width, 18);
 
     difference() {
         cube([support_driver_spine_width, support_rear_panel_thickness, support_driver_spine_height]);
+
+        for (x_center = spine_label_x) {
+            support_front_label_cut("F", x_center, support_beam_height / 2, support_rear_panel_thickness, support_hidden_medium_label_size, support_hidden_label_depth);
+        }
+
+        for (x_center = spine_snap_x) {
+            support_positive_y_snap_boss(
+                x_center,
+                support_rear_panel_thickness,
+                support_beam_height / 2,
+                support_vertical_snap_width,
+                support_vertical_snap_depth,
+                support_vertical_snap_height
+            );
+        }
+
+        for (x_pos = support_spine_slot_x) {
+            support_back_label_cut("G", x_pos + (support_shelf_tab_width / 2), support_driver_shelf_z0 + (support_driver_shelf_thickness / 2), -0.1, support_hidden_compact_label_size, support_hidden_label_depth);
+
+            support_positive_x_snap_pocket(
+                x_pos + support_shelf_tab_width + (support_joint_clearance / 2),
+                support_rear_panel_thickness / 2,
+                support_driver_shelf_z0 + (support_driver_shelf_thickness / 2),
+                support_small_snap_pocket_depth,
+                support_small_snap_width,
+                support_small_snap_height
+            );
+        }
 
         translate([
             10,
@@ -834,9 +1129,6 @@ module support_driver_spine_piece() {
             support_rear_panel_thickness + 0.2,
             driver_cable_notch_height + 0.2
         ]);
-
-        support_front_label_cut("F", support_driver_spine_width / 2, 14, support_rear_panel_thickness, 7);
-        support_front_label_cut("G", support_driver_spine_width / 2, support_driver_shelf_z0 + 10, support_rear_panel_thickness, support_slot_label_size);
     }
 }
 
@@ -848,23 +1140,46 @@ module support_driver_shelf_piece() {
             for (x_pos = support_shelf_tab_x) {
                 translate([x_pos, -support_rear_panel_thickness, 0])
                     cube([support_shelf_tab_width, support_rear_panel_thickness, support_driver_shelf_thickness]);
+
+                support_positive_x_snap_boss(
+                    x_pos + support_shelf_tab_width,
+                    -(support_rear_panel_thickness / 2),
+                    support_driver_shelf_thickness / 2,
+                    support_small_snap_depth,
+                    support_small_snap_width,
+                    support_small_snap_height
+                );
             }
         }
 
-        support_top_label_cut("G", 12, support_driver_shelf_depth / 2, support_driver_shelf_thickness, 6);
+        for (x_pos = support_shelf_tab_x) {
+            support_back_label_cut("G", x_pos + (support_shelf_tab_width / 2), support_driver_shelf_thickness / 2, -support_rear_panel_thickness, support_hidden_compact_label_size, support_hidden_label_depth);
+        }
     }
 }
 
 module support_keeper_piece() {
     difference() {
         cube([16, support_keeper_thickness, support_keeper_height]);
-        support_front_label_cut("K", 8, support_keeper_height / 2, support_keeper_thickness, support_small_label_size);
+
+        support_front_label_cut("K", 8, support_beam_height / 2, support_keeper_thickness, support_hidden_medium_label_size, support_hidden_label_depth);
     }
+
+    support_positive_x_snap_boss(
+        16,
+        support_keeper_thickness / 2,
+        support_beam_height / 2,
+        support_small_snap_depth,
+        support_small_snap_width,
+        support_small_snap_height
+    );
 }
 
 module support_hose_tab_piece() {
     difference() {
         cube([support_hose_tab_thickness, support_hose_tab_width, support_hose_tab_height]);
+
+        support_side_label_cut("T", support_hose_tab_width / 2, support_beam_height / 2, support_hose_tab_thickness, support_hidden_medium_label_size, support_hidden_label_depth);
 
         translate([
             support_hose_tab_thickness + 0.1,
@@ -872,9 +1187,16 @@ module support_hose_tab_piece() {
             support_hose_tab_slot_center_z
         ]) rotate([0, 90, 0])
             rounded_slot(support_hose_tab_slot_length, support_hose_tab_slot_width, support_hose_tab_thickness + 0.2);
-
-        support_side_label_cut("T", support_hose_tab_width / 2, support_hose_tab_height / 2, support_hose_tab_thickness, support_small_label_size);
     }
+
+    support_positive_y_snap_boss(
+        support_hose_tab_thickness / 2,
+        support_hose_tab_width,
+        support_beam_height / 2,
+        support_small_snap_width,
+        support_small_snap_depth,
+        support_small_snap_height
+    );
 }
 
 module support_cradle_panel_assembly() {
@@ -1113,10 +1435,10 @@ module display_reference() {
 module xiao_reference() {
     color([0.14, 0.46, 0.26, 0.8])
         translate([
-            support_display_center_x - 10.5,
+            support_display_center_x - (support_controller_board_size[0] / 2),
             support_display_panel_thickness + 0.6,
-            support_beam_height + support_display_panel_height - 24
-        ]) cube([21, 2.2, 17.8]);
+            support_controller_center_z - (support_controller_board_size[1] / 2)
+        ]) cube([support_controller_board_size[0], 2.2, support_controller_board_size[1]]);
 }
 
 module hose_plug_layout() {

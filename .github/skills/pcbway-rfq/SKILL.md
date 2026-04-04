@@ -1,6 +1,6 @@
 ---
 name: pcbway-rfq
-description: 'Prepare PCBWay-ready RFQ packages for PLA-first plastic fit prototypes, CNC wet parts, and controller PCBs. Use for quote notes, part manifests, manufacturing checklists, and customer-to-fab messages.'
+description: "Prepare PCBWay-ready RFQ packages for PLA-first plastic fit prototypes, CNC wet parts, and controller PCBs. Use for quote notes, part manifests, manufacturing checklists, and customer-to-fab messages."
 user-invocable: true
 ---
 
@@ -31,6 +31,7 @@ user-invocable: true
 - avoid silent assumptions about sourcing or assembly responsibility
 - request PLA first when minimizing prototype cost unless the task says otherwise
 - for any multi-part FDM prototype export, keep the parts in one compact bundle, minimize the XY footprint, put broad flat exterior faces down, keep open cavities and grooves up, and keep hose-plug bores vertical with the hose ends up when practical
+- for interlocking printed support parts, describe hidden matching joint letters and light alignment detents as intentional assembly aids so the vendor does not remove them as cosmetic artifacts
 - if supplemental SVGs are included, make sure they match the current SCAD geometry, carry reference-only metadata, and never substitute for a formal release drawing
 - for mechanical release packages, require clear units, material, finish, release status, and critical dimensions in the 2D drawing or PDF
 - require explicit approval before any manufacturability-driven geometry change

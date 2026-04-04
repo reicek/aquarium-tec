@@ -129,7 +129,7 @@ $expectations = @(
             MinX = 0.000
             MinY = 0.000
             MinZ = 0.000
-            SizeX = 290.000
+            SizeX = 282.903
             SizeY = 240.000
             SizeZ = 8.000
         }
@@ -137,7 +137,7 @@ $expectations = @(
             MinX = 0.010
             MinY = 0.010
             MinZ = 0.010
-            SizeX = 0.500
+            SizeX = 0.250
             SizeY = 0.250
             SizeZ = 0.250
         }

@@ -12,18 +12,18 @@
 
 ## Blockers
 
-- 
+-
 
 ## Drift Fixed In Repo
 
-- 
+-
 
 ## Residual Risks
 
-- 
+-
 
 ## Next Actions Before Send Or Release
 
-1. 
-2. 
-3. 
+1.
+2.
+3.
