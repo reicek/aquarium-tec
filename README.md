@@ -49,6 +49,22 @@ Prototype rules that remain important:
 - [rfq/pla_prototype/pla_prototype_rfq_package.md](rfq/pla_prototype/pla_prototype_rfq_package.md): PLA prototype package.
 - [rfq/final_hybrid_cnc/final_hybrid_cnc_rfq_package.md](rfq/final_hybrid_cnc/final_hybrid_cnc_rfq_package.md): final hybrid CNC package.
 
+3D Renders
+
+<img width="1011" height="1042" alt="image" src="https://github.com/user-attachments/assets/45bf1de1-333e-411f-a31e-f1f5fa0f5cea" />
+
+- Side
+<img width="925" height="850" alt="image" src="https://github.com/user-attachments/assets/dcf50868-08fd-4d69-9c43-52618f05101f" />
+
+- Top
+<img width="976" height="918" alt="image" src="https://github.com/user-attachments/assets/51de7508-6c98-4bf5-b91e-f89de1ae39e0" />
+
+- Front
+<img width="983" height="853" alt="image" src="https://github.com/user-attachments/assets/9b287e75-5b94-42f8-acb1-d133d08ee16e" />
+
+- Back
+<img width="998" height="867" alt="image" src="https://github.com/user-attachments/assets/e3268e77-b0d4-44ca-a6a3-fd5ca9016f0d" />
+
 ## SVG Gallery
 
 ### Whole Block Reference
