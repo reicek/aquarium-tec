@@ -29,12 +29,12 @@
     <text x="0" y="-24" class="subtitle">Assembled Block Overview</text>
     <rect x="0" y="0" width="980" height="560" rx="10" ry="10" class="noteBox"/>
     <g transform="translate(20,30)">
-      <rect x="40" y="227" width="90" height="66" rx="33" ry="33" class="metalA"/>
+      <rect x="40" y="227" width="90" height="66" class="metalA"/>
       <rect x="130" y="215" width="10" height="90" rx="4" ry="4" class="metalA"/>
       <rect x="140" y="90" width="700" height="340" class="metalB"/>
       <line x1="140" y1="260" x2="840" y2="260" class="centerline"/>
       <rect x="840" y="215" width="10" height="90" rx="4" ry="4" class="metalA"/>
-      <rect x="850" y="227" width="90" height="66" rx="33" ry="33" class="metalA"/>
+      <rect x="850" y="227" width="90" height="66" class="metalA"/>
       <rect x="200" y="130" width="580" height="260" class="oring"/>
       <rect x="210" y="145" width="560" height="230" class="hidden"/>
       <polygon points="210,236 350,145 350,375 210,284" class="hidden"/>
@@ -101,11 +101,11 @@
     <g transform="translate(40,54)">
       <g transform="translate(0,0)">
         <rect x="0" y="0" width="270" height="320" rx="10" ry="10" class="noteBox"/>
-        <rect x="40" y="128" width="116" height="32" rx="16" ry="16" class="metalA"/>
+        <rect x="40" y="128" width="116" height="32" class="metalA"/>
         <rect x="156" y="112" width="12" height="64" rx="4" ry="4" class="metalA"/>
         <rect x="168" y="120" width="32" height="48" rx="8" ry="8" class="metalA"/>
         <rect x="200" y="104" width="46" height="80" rx="10" ry="10" class="metalA"/>
-        <rect x="50" y="140" width="196" height="8" rx="4" ry="4" class="water"/>
+        <rect x="40" y="130" width="206" height="28" class="water"/>
         <circle cx="60" cy="256" r="42" class="water"/>
         <text x="60" y="262" text-anchor="middle" class="small">14.8</text>
         <text x="18" y="30" class="label">Option A</text>
@@ -113,11 +113,11 @@
       </g>
       <g transform="translate(315,0)">
         <rect x="0" y="0" width="270" height="320" rx="10" ry="10" class="noteBox"/>
-        <rect x="40" y="126" width="116" height="36" rx="18" ry="18" class="metalA"/>
+        <rect x="40" y="126" width="116" height="36" class="metalA"/>
         <rect x="156" y="112" width="12" height="64" rx="4" ry="4" class="metalA"/>
         <rect x="168" y="120" width="32" height="48" rx="8" ry="8" class="metalA"/>
         <rect x="200" y="104" width="46" height="80" rx="10" ry="10" class="metalA"/>
-        <rect x="50" y="140" width="196" height="8" rx="4" ry="4" class="water"/>
+        <rect x="40" y="130" width="206" height="28" class="water"/>
         <circle cx="60" cy="256" r="45" class="water"/>
         <text x="60" y="262" text-anchor="middle" class="small">15.4</text>
         <text x="18" y="30" class="label">Option B</text>
@@ -125,11 +125,11 @@
       </g>
       <g transform="translate(630,0)">
         <rect x="0" y="0" width="270" height="320" rx="10" ry="10" class="noteBox"/>
-        <rect x="40" y="124" width="116" height="40" rx="20" ry="20" class="metalA"/>
+        <rect x="40" y="124" width="116" height="40" class="metalA"/>
         <rect x="156" y="112" width="12" height="64" rx="4" ry="4" class="metalA"/>
         <rect x="168" y="120" width="32" height="48" rx="8" ry="8" class="metalA"/>
         <rect x="200" y="104" width="46" height="80" rx="10" ry="10" class="metalA"/>
-        <rect x="50" y="140" width="196" height="8" rx="4" ry="4" class="water"/>
+        <rect x="40" y="130" width="206" height="28" class="water"/>
         <circle cx="60" cy="256" r="48" class="water"/>
         <text x="60" y="262" text-anchor="middle" class="small">16.0</text>
         <text x="18" y="30" class="label">Option C</text>
